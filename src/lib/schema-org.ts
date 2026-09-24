@@ -29,7 +29,6 @@ export const LocalBusinessSchema = {
     "addressCountry": "MG"
   },
   "areaServed": ["Madagascar", "France", "Belgique", "Suisse", "Afrique francophone"],
-  "priceRange": "$$",
   "openingHours": "Mo-Fr 08:00-18:00",
   "sameAs": [
     "https://facebook.com/techbloomagency",
@@ -72,8 +71,6 @@ export const AggregateRatingSchema = (ratingValue = "4.9", reviewCount = "3") =>
 export const ServiceSchema = (service: {
   name: string;
   description: string;
-  price?: number;
-  currency?: string;
 }) => ({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -86,12 +83,6 @@ export const ServiceSchema = (service: {
     "url": SITE_CONFIG.url || "https://tech-bloom-agency.vercel.app"
   },
   "areaServed": "Madagascar",
-  "offers": service.price ? {
-    "@type": "Offer",
-    "price": service.price.toString(),
-    "priceCurrency": service.currency || "EUR",
-    "description": `À partir de ${service.price} ${service.currency || "EUR"}`
-  } : undefined
 });
 
 /**

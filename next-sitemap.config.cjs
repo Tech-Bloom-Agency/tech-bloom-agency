@@ -9,7 +9,7 @@
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://tech-bloom-agency.vercel.app",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://tech-bloom-agency.vercel.app",
   generateRobotsTxt: true,
   changefreq: "weekly",
   priority: 0.7,
@@ -49,7 +49,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      `${process.env.SITE_URL || "https://tech-bloom-agency.vercel.app"}/sitemap.xml`,
+      `${process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://tech-bloom-agency.vercel.app"}/sitemap.xml`,
     ],
   },
 };

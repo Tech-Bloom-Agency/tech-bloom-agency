@@ -62,7 +62,6 @@ const localBusinessSchema = {
     "addressCountry": "MG"
   },
   "areaServed": ["Madagascar","France","Belgique","Suisse","Afrique francophone"],
-  "priceRange": "$$",
   "openingHours": "Mo-Fr 08:00-18:00",
   "sameAs": [
     "https://facebook.com/techbloomagency",

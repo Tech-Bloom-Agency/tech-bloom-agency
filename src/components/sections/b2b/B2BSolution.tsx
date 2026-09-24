@@ -15,7 +15,7 @@ export default function B2BSolution() {
         },
         {
             title: "Tarifs compétitifs",
-            description: "Des prix 40-60% inférieurs à vos coûts internes, sans compromis sur la qualité. Marges préservées, rentabilité optimisée.",
+            description: "Une organisation souple qui vous aide à rester compétitif, sans compromis sur la qualité. Marges préservées, rentabilité optimisée.",
             features: [
                 "Forfaits adaptés à vos volumes",
                 "Tarification transparente",

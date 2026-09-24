@@ -4,7 +4,6 @@ export interface Service {
   description: string;
   icon: string;
   features: string[];
-  price: number; // Prix de base en Ariary
   duration: string; // Durée estimée
 }
 
@@ -21,7 +20,6 @@ export const services: Service[] = [
       "Landing pages optimisées",
       "Design responsive"
     ],
-    price: 1500000, // À partir de 1.5M Ar
     duration: "2-4 semaines"
   },
   {
@@ -36,7 +34,6 @@ export const services: Service[] = [
       "Guide de style",
       "Supports de communication"
     ],
-    price: 800000, // À partir de 800k Ar
     duration: "1-2 semaines"
   },
   {
@@ -51,7 +48,6 @@ export const services: Service[] = [
       "Analyse de performance",
       "Optimisation des conversions"
     ],
-    price: 500000, // À partir de 500k Ar / mois
     duration: "Mensuel"
   },
   {
@@ -66,7 +62,6 @@ export const services: Service[] = [
       "Engagement communautaire",
       "Reporting mensuel"
     ],
-    price: 400000, // À partir de 400k Ar / mois
     duration: "Mensuel"
   },
   {
@@ -81,7 +76,6 @@ export const services: Service[] = [
       "Surveillance 24/7",
       "Sauvegardes automatiques"
     ],
-    price: 300000, // À partir de 300k Ar / mois
     duration: "Mensuel"
   },
   {
@@ -96,12 +90,6 @@ export const services: Service[] = [
       "Accompagnement personnalisé",
       "Roadmap digitale"
     ],
-    price: 600000, // À partir de 600k Ar
     duration: "1 semaine"
   }
 ];
-
-// Format price helper
-export const formatPrice = (price: number): string => {
-  return new Intl.NumberFormat("fr-MG").format(price);
-};

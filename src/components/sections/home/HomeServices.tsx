@@ -23,7 +23,6 @@ interface ServiceCardProps {
     description: string;
     icon: string;
     features: string[];
-    price: number;
     duration: string;
   };
   index: number;

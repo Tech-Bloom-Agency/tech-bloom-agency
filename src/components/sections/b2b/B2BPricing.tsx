@@ -4,7 +4,6 @@ export default function B2BPricing() {
     const packages = [
         {
             name: "Starter",
-            price: "1 200€",
             description: "Par projet web",
             features: [
                 "Site vitrine responsive",
@@ -18,7 +17,6 @@ export default function B2BPricing() {
         },
         {
             name: "Business",
-            price: "2 800€",
             description: "Par projet web",
             features: [
                 "Site e-commerce complet",
@@ -32,7 +30,6 @@ export default function B2BPricing() {
         },
         {
             name: "Enterprise",
-            price: "Sur mesure",
             description: "Solutions complexes",
             features: [
                 "Applications web sur mesure",
@@ -47,10 +44,10 @@ export default function B2BPricing() {
     ];
 
     const additionalServices = [
-        { name: "Maintenance mensuelle", price: "300€/mois" },
-        { name: "Refonte complète", price: "À partir de 4 000€" },
-        { name: "Développement spécifique", price: "120€/heure" },
-        { name: "Formation technique", price: "800€/jour" }
+        { name: "Maintenance mensuelle" },
+        { name: "Refonte complète" },
+        { name: "Développement spécifique" },
+        { name: "Formation technique" }
     ];
 
     return (
@@ -58,14 +55,13 @@ export default function B2BPricing() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
-                        TARIFS TRANSPARENTS
+                        COLLABORATION SUR MESURE
                     </div>
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Des prix clairs, sans surprise
+                        Un cadre clair, adapté à votre projet
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Nos tarifs sont indicatifs et s'adaptent à vos besoins spécifiques. 
-                        Contactez-nous pour un devis personnalisé.
+                        Chaque projet est cadré selon son périmètre, ses livrables et ses contraintes réelles.
                     </p>
                 </div>
 
@@ -90,15 +86,7 @@ export default function B2BPricing() {
                                 <h3 className="text-2xl font-sans font-bold text-brand-dark mb-2">
                                     {pkg.name}
                                 </h3>
-                                <div className="mb-2">
-                                    <span className="text-4xl font-bold text-brand-blue">{pkg.price}</span>
-                                    {pkg.price !== "Sur mesure" && (
-                                        <span className="text-gray-500 ml-2">{pkg.description}</span>
-                                    )}
-                                </div>
-                                {pkg.price === "Sur mesure" && (
-                                    <p className="text-gray-600">{pkg.description}</p>
-                                )}
+                                <p className="text-gray-600">{pkg.description}</p>
                             </div>
                             
                             <ul className="space-y-4 mb-8">
@@ -115,7 +103,7 @@ export default function B2BPricing() {
                                     ? 'bg-brand-blue text-white hover:opacity-90'
                                     : 'border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white'
                             }`}>
-                                Demander un devis
+                                Parler de votre projet
                             </button>
                         </div>
                     ))}
@@ -130,7 +118,7 @@ export default function B2BPricing() {
                         {additionalServices.map((service, index) => (
                             <div key={index} className="text-center p-4 bg-brand-light rounded-agency">
                                 <h4 className="font-bold text-gray-800 mb-2">{service.name}</h4>
-                                <p className="text-brand-blue font-bold">{service.price}</p>
+                                <p className="text-gray-600 text-sm">Selon le périmètre</p>
                             </div>
                         ))}
                     </div>
@@ -139,23 +127,23 @@ export default function B2BPricing() {
                 <div className="mt-12 text-center">
                     <div className="bg-brand-dark/5 rounded-agency p-8 border border-brand-dark/10">
                         <h3 className="text-xl font-sans font-bold text-brand-dark mb-4">
-                            Volume = Réduction
+                            Une collaboration qui évolue avec vos besoins
                         </h3>
                         <p className="text-gray-600 mb-4">
-                            Plus vous commandez de projets, plus vous bénéficiez de tarifs préférentiels.
+                            Le périmètre et le rythme de collaboration sont définis ensemble après l’appel découverte.
                         </p>
                         <div className="grid md:grid-cols-3 gap-4 text-sm">
                             <div>
-                                <span className="font-bold text-brand-blue">5+ projets/mois</span>
-                                <span className="text-gray-600 ml-2">-10%</span>
+                                <span className="font-bold text-brand-blue">Rythme ponctuel</span>
+                                <span className="text-gray-600 ml-2">À définir ensemble</span>
                             </div>
                             <div>
-                                <span className="font-bold text-brand-blue">10+ projets/mois</span>
-                                <span className="text-gray-600 ml-2">-20%</span>
+                                <span className="font-bold text-brand-blue">Rythme régulier</span>
+                                <span className="text-gray-600 ml-2">À définir ensemble</span>
                             </div>
                             <div>
-                                <span className="font-bold text-brand-blue">20+ projets/mois</span>
-                                <span className="text-gray-600 ml-2">-30%</span>
+                                <span className="font-bold text-brand-blue">Partenariat continu</span>
+                                <span className="text-gray-600 ml-2">À définir ensemble</span>
                             </div>
                         </div>
                     </div>

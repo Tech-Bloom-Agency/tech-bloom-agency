@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -64,19 +65,19 @@ export default async function ProjectPage({ params }: PageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Accueil",
-        item: "https://techbloomagency.com",
+        item: SITE_CONFIG.url,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Portfolio",
-        item: "https://techbloomagency.com/portfolio",
+        item: `${SITE_CONFIG.url}/portfolio`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: project.title,
-        item: `https://techbloomagency.com/portfolio/${project.slug}`,
+        item: `${SITE_CONFIG.url}/portfolio/${project.slug}`,
       },
     ],
   };
@@ -234,7 +235,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 <h3 className="text-xl font-bold mb-3">Un projet similaire ?</h3>
                 <p className="text-sm opacity-90 mb-4">Discutons de vos besoins</p>
                 <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest group-hover:gap-2 transition-all">
-                  Demander un devis
+                  Parler de votre projet
                   <ExternalLink size={14} className="ml-2" />
                 </span>
               </Link>

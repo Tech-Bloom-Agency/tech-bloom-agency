@@ -20,8 +20,8 @@ const FAQS = [
         answer: "Absolument. Nous avons une offre spécifique 'Tech Bloom B2B' dédiée aux collaborations entre entreprises et à l'automatisation des processus internes."
     },
     {
-        question: "Comment se déroule la phase de devis ?",
-        answer: "Nous commençons par un appel gratuit pour comprendre vos besoins. Suite à cela, nous vous envoyons une proposition détaillée avec plusieurs options adaptées à votre budget."
+        question: "Comment se déroule l'appel découverte ?",
+        answer: "Chaque projet e-commerce est différent : catalogue, paiements, parcours client, gestion des commandes, automatisations et niveau d’administration. Après un appel découverte, nous proposons un périmètre clair, des livrables définis et un devis adapté au besoin réel."
     }
 ];
 

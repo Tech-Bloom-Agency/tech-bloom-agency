@@ -1,11 +1,14 @@
 export const SITE_CONFIG = {
     name: "Tech Bloom Agency",
-    url: "https://techbloomagency.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://tech-bloom-agency.vercel.app",
     taglineFr: "De la stratégie à l'éclosion digitale",
     taglineEn: "From Strategy to Digital Growth",
     description: "Agence digitale basée à Madagascar. Spécialisée dans la création de sites web, le branding, le marketing digital et l'accompagnement tech personnalisé.",
-    email: "sullivanjoro3@gmail.com",
-    phone: "+261 34 10 608 02",
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "sullivanjoro3@gmail.com",
+    phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+261 34 10 608 02",
+    calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/sullivan_techbloomagency",
+    b2bEmail: process.env.NEXT_PUBLIC_B2B_EMAIL || "sullivanjoro3@gmail.com",
+    b2bPhone: process.env.NEXT_PUBLIC_B2B_PHONE || "+261 34 10 608 02",
     address: "Toamasina, Madagascar",
     founder: "Joro Sullivan RAKOTONIAINA",
     social: {

@@ -65,7 +65,7 @@ export const projects: DetailedProject[] = [
         context: "Besoin de transmettre confiance et innovation pour une levée de fonds.",
         approach: "Recherche sur la psychologie des couleurs et création d'un logo iconique.",
         solutions: ["Logo & Charte", "Supports Pitchdeck", "Design Web"],
-        results: ["Levée de fonds réussie (2M€)", "Cohérence de marque sur tous les supports"],
+        results: ["Levée de fonds réussie", "Cohérence de marque sur tous les supports"],
         testimonial: {
             quote: "Notre nouvelle identité nous a permis de nous démarquer immédiatement sur le marché.",
             author: "Sarah, CTO de Cyber-Guard"

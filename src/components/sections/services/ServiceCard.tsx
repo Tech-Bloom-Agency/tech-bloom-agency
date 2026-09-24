@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import * as LucideIcons from "lucide-react";
 import Link from "next/link";
-import { formatPrice, Service } from "@/data/services";
+import { Service } from "@/data/services";
 
 interface ServiceCardProps {
   service: Service;
@@ -42,30 +42,15 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           </li>
         ))}
       </ul>
-
-      {/* Prix & Durée */}
+      {/* Appel à l'action */}
       <div className="pt-6 border-t border-gray/20 space-y-4">
-        <div className="flex justify-between items-center">
-          <div>
-            <p className="text-xs text-gray uppercase tracking-widest mb-1">À partir de</p>
-            <p className="text-2xl font-bold text-red">
-              {formatPrice(service.price)} <span className="text-sm font-normal text-gray">Ar</span>
-            </p>
-          </div>
-          <div className="text-right">
-            <p className="text-xs text-gray uppercase tracking-widest mb-1">Durée</p>
-            <p className="text-sm font-bold text-navy">{service.duration}</p>
-          </div>
-        </div>
-
-        {/* CTA Button */}
         <Link href={`/contact?service=${encodeURIComponent(service.id)}`} className="block">
           <Button 
             variant="primary" 
             size="md" 
             className="w-full"
           >
-            Demander un devis
+            Parler de votre projet
           </Button>
         </Link>
       </div>

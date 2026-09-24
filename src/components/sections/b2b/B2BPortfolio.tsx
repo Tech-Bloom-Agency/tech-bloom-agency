@@ -45,7 +45,7 @@ export default function B2BPortfolio() {
             results: [
                 "Automatisation de 90% des rapports",
                 "Temps de création divisé par 4",
-                "Nouveau service à 1500€/mois"
+                "Nouveau service lancé"
             ],
             tech: ["React", "Chart.js", "API REST"],
             image: "📊"

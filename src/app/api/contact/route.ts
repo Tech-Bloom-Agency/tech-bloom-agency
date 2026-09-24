@@ -97,6 +97,10 @@ export async function POST(request: NextRequest) {
           });
         } catch (emailError) {
           console.error("Resend fallback failed:", emailError);
+          return NextResponse.json(
+            { error: "Delivery failed" },
+            { status: 500 }
+          );
         }
       }
       return NextResponse.json(
@@ -132,14 +136,28 @@ export async function POST(request: NextRequest) {
 
     } catch (webhookError) {
       console.error("⚠️ n8n webhook failed, using Resend fallback:", webhookError);
-      
-      // Fallback: Email via Resend
+
       if (process.env.RESEND_API_KEY) {
-        await sendFallbackEmail(data);
-      } else {
-        // Dernier recours: retourner erreur mais logger pour debug
-        console.error("No fallback available - logging data:", data);
+        try {
+          await sendFallbackEmail(data);
+          return NextResponse.json({
+            success: true,
+            message: "Message envoyé avec succès"
+          });
+        } catch (fallbackError) {
+          console.error("Resend fallback failed after webhook error:", fallbackError);
+          return NextResponse.json(
+            { error: "Delivery failed" },
+            { status: 500 }
+          );
+        }
       }
+
+      console.error("No fallback available - logging data:", data);
+      return NextResponse.json(
+        { error: "Delivery failed" },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({ 
@@ -162,6 +180,8 @@ export async function POST(request: NextRequest) {
 async function sendFallbackEmail(data: any) {
   const resendDateUrl = "https://api.resend.com/emails";
   
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+
   await fetch(resendDateUrl, {
     method: "POST",
     headers: {
@@ -169,7 +189,7 @@ async function sendFallbackEmail(data: any) {
       "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
     },
     body: JSON.stringify({
-      from: "Tech Bloom Agency <contact@techbloomagency.com>",
+      from: `Tech Bloom Agency <${fromEmail}>`,
       to: [data.email],
       cc: ["sullivanjoro3@gmail.com"],
       subject: "Votre demande a bien été reçue — Tech Bloom Agency",

@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /merci
+Disallow: /admin/
+
+# Host
+Host: https://tech-bloom-agency.vercel.app
+
+# Sitemaps
+Sitemap: https://tech-bloom-agency.vercel.app/sitemap.xml

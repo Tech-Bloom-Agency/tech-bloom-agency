@@ -3,6 +3,7 @@ import StickyNav from "@/components/ui/StickyNav";
 import ServiceCard from "@/components/sections/services/ServiceCard";
 import ServicesFAQ from "@/components/sections/services/ServicesFAQ";
 import PageWrapper from "@/components/layout/PageWrapper";
+import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import type { Metadata } from "next";
 
@@ -43,7 +44,7 @@ const serviceSchema = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Tech Bloom Agency",
-    "url": "https://techbloomagency.com",
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://tech-bloom-agency.vercel.app",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Toamasina",
@@ -82,7 +83,7 @@ export default function ServicesPage() {
         badge="Expertises"
         title="Nos services"
         subtitle="digitaux."
-        description="De la conception à la maintenance, nous activons tous les leviers digitaux pour transformer vos idées en produits performants."
+        description="Du cadrage à la mise en ligne, nous combinons développement web, identité de marque, marketing digital et accompagnement pour faire avancer vos projets."
       />
 
       {/* Sticky Navigation Pills */}
@@ -94,6 +95,30 @@ export default function ServicesPage() {
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
+        </div>
+      </section>
+
+      <section className="bg-navy px-6 py-24 lg:px-12 lg:py-32">
+        <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+          <div>
+            <span className="mb-4 inline-block text-xs font-bold uppercase tracking-[0.3em] text-teal">
+              E-commerce sur mesure
+            </span>
+            <h2 className="max-w-3xl font-heading text-4xl font-black leading-tight text-white md:text-5xl">
+              Un e-commerce conçu pour votre réalité.
+            </h2>
+          </div>
+          <div className="space-y-8">
+            <p className="text-lg leading-relaxed text-white/75">
+              Chaque projet e-commerce est différent : catalogue, paiements, parcours client, gestion des commandes, automatisations et niveau d’administration. Après un appel découverte, nous proposons un périmètre clair, des livrables définis et un devis adapté au besoin réel.
+            </p>
+            <Link
+              href="/contact?service=creation-web"
+              className="inline-flex bg-red px-8 py-4 text-sm font-bold uppercase tracking-[0.15em] text-white transition-colors hover:bg-red-hover"
+            >
+              Demander un appel découverte
+            </Link>
+          </div>
         </div>
       </section>
 
