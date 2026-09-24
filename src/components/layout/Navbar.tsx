@@ -101,7 +101,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                 {link.label}
               </Link>
             ))}
-            
+
             <div className="pt-8 mt-auto border-t border-gray-100">
                <button
                 onClick={() => {
@@ -119,4 +119,3 @@ export default function Navbar({ scrolled }: NavbarProps) {
     </nav>
   );
 }
-

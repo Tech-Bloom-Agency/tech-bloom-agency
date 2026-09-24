@@ -59,12 +59,12 @@ export async function POST(request: NextRequest) {
 
     // 1. Validation Zod
     const validationResult = contactSchema.safeParse(body);
-    
+
     if (!validationResult.success) {
       return NextResponse.json(
-        { 
+        {
           error: "Validation failed",
-          details: validationResult.error.issues 
+          details: validationResult.error.issues
         },
         { status: 400 }
       );
@@ -84,14 +84,14 @@ export async function POST(request: NextRequest) {
 
     // 3. POST webhook n8n avec timeout 8s
     const webhookUrl = process.env.N8N_WEBHOOK_URL;
-    
+
     if (!webhookUrl) {
       console.error("N8N_WEBHOOK_URL not configured");
       // Fallback: Email via Resend si configuré
       if (process.env.RESEND_API_KEY) {
         try {
           await sendFallbackEmail(data);
-          return NextResponse.json({ 
+          return NextResponse.json({
             success: true,
             message: "Message envoyé avec succès"
           });
@@ -160,7 +160,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return NextResponse.json({ 
+    return NextResponse.json({
       success: true,
       message: "Message envoyé avec succès"
     });
@@ -179,7 +179,7 @@ export async function POST(request: NextRequest) {
  */
 async function sendFallbackEmail(data: any) {
   const resendDateUrl = "https://api.resend.com/emails";
-  
+
   const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 
   await fetch(resendDateUrl, {
@@ -211,6 +211,6 @@ async function sendFallbackEmail(data: any) {
       `,
     }),
   });
-  
+
   console.log("✅ Fallback email sent via Resend");
 }

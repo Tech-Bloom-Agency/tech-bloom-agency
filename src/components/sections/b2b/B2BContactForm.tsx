@@ -100,7 +100,7 @@ ${formData.message}
                         Discutons de votre projet
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Remplissez ce formulaire pour recevoir un devis personnalisé 
+                        Remplissez ce formulaire pour recevoir un devis personnalisé
                         et découvrir comment nous pouvons collaborer.
                     </p>
                 </div>
@@ -123,7 +123,7 @@ ${formData.message}
                                     placeholder="Nom de votre agence"
                                 />
                             </div>
-                            
+
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                                     Votre nom *
@@ -157,7 +157,7 @@ ${formData.message}
                                     placeholder="contact@votre-agence.fr"
                                 />
                             </div>
-                            
+
                             <div>
                                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                                     Téléphone
@@ -193,7 +193,7 @@ ${formData.message}
                                     <option value="10+">10+ personnes</option>
                                 </select>
                             </div>
-                            
+
                             <div>
                                 <label htmlFor="projectsPerMonth" className="block text-sm font-medium text-gray-700 mb-2">
                                     Projets par mois
@@ -220,7 +220,7 @@ ${formData.message}
                             </label>
                             <div className="grid md:grid-cols-2 gap-3">
                                 {services.map((service) => (
-                                    <label 
+                                    <label
                                         key={service}
                                         className="flex items-center gap-3 p-3 border border-gray-300 rounded-lg hover:bg-brand-light cursor-pointer transition-colors"
                                     >

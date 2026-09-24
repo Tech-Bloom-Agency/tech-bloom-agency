@@ -4,33 +4,33 @@ export default function B2BProcess() {
     const steps = [
         {
             number: "01",
-            title: "Brief détaillé",
-            description: "Vous nous transmettez le cahier des charges, les maquettes, les spécifications techniques et les délais. Nous analysons tout en 24h.",
-            icon: "📝"
+            title: "Audit",
+            description: "On regarde ce qui fonctionne, ce qui bloque et ce qui mérite d’être renforcé.",
+            icon: "🧭"
         },
         {
             number: "02",
-            title: "Devis & planning",
-            description: "Nous vous proposons un devis clair avec planning de livraison. Pas de surprise, tout est transparent dès le départ.",
+            title: "Direction",
+            description: "On pose la bonne direction. Le bon message. Le bon angle pour parler à la bonne audience.",
             icon: "📊"
         },
         {
             number: "03",
-            title: "Développement",
-            description: "Notre équipe développe selon vos standards, avec des livraisons intermédiaires pour validation. Vous restez maître de l'avancement.",
+            title: "Création",
+            description: "On construit les éléments concrets qui donnent vie à votre présence digitale.",
             icon: "💻"
         },
         {
             number: "04",
-            title: "Livraison finale",
-            description: "Code source complet, documentation technique, accès admin. Tout est livré prêt à l'emploi sous votre marque.",
-            icon: "📦"
+            title: "Lancement",
+            description: "On met tout en place pour que votre marque inspire confiance dès le premier contact.",
+            icon: "🚀"
         },
         {
             number: "05",
-            title: "Facturation",
-            description: "Paiement à la livraison satisfaisante. Conditions de paiement flexibles selon vos habitudes.",
-            icon: "💳"
+            title: "Suivi",
+            description: "On ajuste, on améliore, on fait grandir la présence de votre marque dans le temps.",
+            icon: "🤝"
         }
     ];
 
@@ -39,10 +39,10 @@ export default function B2BProcess() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Notre process de collaboration
+                        On va droit au but.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Simple, transparent et efficace. Rien de plus, rien de moins.
+                        Clarté. Priorités. Exécution. C’est la manière dont on avance.
                     </p>
                 </div>
 
@@ -86,18 +86,18 @@ export default function B2BProcess() {
                         <div className="grid md:grid-cols-3 gap-6 mt-6">
                             <div className="text-center">
                                 <div className="text-3xl mb-2">🔒</div>
-                                <h4 className="font-bold text-gray-800 mb-2">Confidentialité absolue</h4>
-                                <p className="text-gray-600 text-sm">NDAs et protection de vos données</p>
+                                <h4 className="font-bold text-gray-800 mb-2">Confiance</h4>
+                                <p className="text-gray-600 text-sm">Une relation claire, directe et respectueuse</p>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl mb-2">⏱️</div>
-                                <h4 className="font-bold text-gray-800 mb-2">Délais respectés</h4>
-                                <p className="text-gray-600 text-sm">Clause de pénalité en cas de retard</p>
+                                <div className="text-3xl mb-2">🎯</div>
+                                <h4 className="font-bold text-gray-800 mb-2">Objectif</h4>
+                                <p className="text-gray-600 text-sm">Des décisions guidées par les résultats</p>
                             </div>
                             <div className="text-center">
                                 <div className="text-3xl mb-2">🔄</div>
-                                <h4 className="font-bold text-gray-800 mb-2">Révisions incluses</h4>
-                                <p className="text-gray-600 text-sm">Jusqu'à 3 rounds de modifications</p>
+                                <h4 className="font-bold text-gray-800 mb-2">Adaptation</h4>
+                                <p className="text-gray-600 text-sm">L’accompagnement évolue avec votre croissance</p>
                             </div>
                         </div>
                     </div>

@@ -3,37 +3,37 @@
 export default function B2BSolution() {
     const solutions = [
         {
-            title: "White-label premium",
-            description: "Développement invisible de sites web, applications et solutions digitales sous votre marque. Vos clients ne savent même pas que nous existons.",
+            title: "Positionnement",
+            description: "On clarifie votre message. On met en avant ce qui compte. On donne à votre marque une vraie présence.",
             features: [
-                "Code de qualité professionnelle",
-                "Respect des délais impartis",
-                "Support technique inclus",
-                "Documentation complète"
+                "Message plus fort",
+                "Image plus claire",
+                "Valeur plus visible",
+                "Confiance renforcée"
             ],
-            icon: "🏷️"
+            icon: "🎯"
         },
         {
-            title: "Tarifs compétitifs",
-            description: "Une organisation souple qui vous aide à rester compétitif, sans compromis sur la qualité. Marges préservées, rentabilité optimisée.",
+            title: "Réseaux sociaux",
+            description: "On pilote votre présence avec un ton juste, cohérent et crédible. Sans bruit. Juste ce qui aide à grandir.",
             features: [
-                "Forfaits adaptés à vos volumes",
-                "Tarification transparente",
-                "Aucun frais caché",
-                "Paiement à la livraison"
+                "Contenus alignés",
+                "Audience engagée",
+                "Visibilité durable",
+                "Réseaux maîtrisés"
             ],
-            icon: "💰"
+            icon: "📱"
         },
         {
-            title: "Qualité garantie",
-            description: "Standards d'agence, processus rigoureux, tests approfondis. Chaque projet est validé par notre QA avant livraison.",
+            title: "Site web",
+            description: "Un site qui rassure, capte l’attention et guide le bon prospect vers le bon prochain pas.",
             features: [
-                "Code review systématique",
-                "Tests fonctionnels complets",
-                "Performance optimisée",
-                "Responsive design garanti"
+                "Design premium",
+                "Parcours clair",
+                "Action plus simple",
+                "Présence crédible"
             ],
-            icon: "✅"
+            icon: "✨"
         }
     ];
 
@@ -42,13 +42,13 @@ export default function B2BSolution() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
-                        NOTRE SOLUTION
+                        NOTRE APPROCHE
                     </div>
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Pourquoi nous sommes votre partenaire idéal
+                        Une présence forte. Un message clair.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Nous résolvons vos problèmes tout en renforçant votre position sur le marché.
+                        On structure la communication. On nettoie le message. On donne à votre marque l’impact qu’elle mérite.
                     </p>
                 </div>
 
@@ -80,20 +80,20 @@ export default function B2BSolution() {
                 <div className="bg-white rounded-agency p-8 border border-gray-200">
                     <div className="text-center">
                         <h3 className="text-2xl font-sans font-bold text-brand-dark mb-4">
-                            Le résultat ? Une agence démultipliée
+                            Le résultat : de la clarté.
                         </h3>
                         <div className="grid md:grid-cols-3 gap-8 mt-8">
                             <div className="text-center">
-                                <div className="text-4xl font-bold text-brand-blue mb-2">+150%</div>
-                                <p className="text-gray-600">Capacité de production</p>
+                                <div className="text-4xl font-bold text-brand-blue mb-2">Plus</div>
+                                <p className="text-gray-600">de visibilité</p>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl font-bold text-brand-blue mb-2">+40%</div>
-                                <p className="text-gray-600">Marges sur projets</p>
+                                <div className="text-4xl font-bold text-brand-blue mb-2">Plus</div>
+                                <p className="text-gray-600">de confiance</p>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl font-bold text-brand-blue mb-2">0</div>
-                                <p className="text-gray-600">Stress de recrutement</p>
+                                <div className="text-4xl font-bold text-brand-blue mb-2">Moins</div>
+                                <p className="text-gray-600">de confusion</p>
                             </div>
                         </div>
                     </div>

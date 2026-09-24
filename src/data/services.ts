@@ -9,87 +9,87 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "marketing",
-    title: "Marketing digital",
-    description: "Stratégies marketing performantes pour augmenter votre visibilité, votre trafic et vos conversions.",
-    icon: "TrendingUp",
+    id: "cm",
+    title: "Community Manager",
+    description: "Gestion des publications sur les réseaux sociaux pour maintenir une présence active, cohérente et crédible.",
+    icon: "Users",
     features: [
-      "SEO & référencement naturel",
-      "Publicité en ligne (Ads)",
-      "Stratégie de contenu",
-      "Analyse de performance",
-      "Optimisation des conversions"
+      "Planification des publications",
+      "Création visuelle et rédaction",
+      "Gestion quotidienne des réseaux",
+      "Cohérence de marque",
+      "Suivi d'engagement"
     ],
     duration: "Mensuel"
   },
   {
-    id: "community",
-    title: "Community management",
-    description: "Gestion professionnelle de vos réseaux sociaux pour engager votre audience et transformer l’intérêt en clients.",
-    icon: "Users",
+    id: "smm",
+    title: "Social Media Manager",
+    description: "Gestion stratégique de la présence sur les réseaux sociaux pour attirer, engager et convertir votre audience.",
+    icon: "TrendingUp",
     features: [
-      "Gestion des réseaux sociaux",
-      "Création de contenu",
-      "Planning éditorial",
-      "Engagement communautaire",
-      "Reporting mensuel"
+      "Stratégie social media",
+      "Positionnement de marque",
+      "Pilotage de contenus",
+      "Ciblage et performance",
+      "Optimisation continue"
     ],
     duration: "Mensuel"
   },
   {
     id: "creation-web",
-    title: "Création de sites web",
-    description: "Sites vitrine et landing pages orientés acquisition pour convertir plus efficacement les visiteurs.",
+    title: "Création de site web",
+    description: "Création de sites web modernes et orientés conversion pour donner à votre business une présence digitale crédible.",
     icon: "Code",
     features: [
-      "Sites vitrine professionnels",
-      "Boutiques e-commerce",
-      "Applications web sur mesure",
-      "Landing pages optimisées",
-      "Design responsive"
+      "Sites vitrine premium",
+      "Landing pages de conversion",
+      "Design responsive",
+      "UX pensée pour les visiteurs",
+      "Mise en ligne et suivi"
     ],
     duration: "2-4 semaines"
   },
   {
-    id: "branding",
-    title: "Branding & Identité visuelle",
-    description: "Construction d'une identité de marque forte et cohérente qui reflète vos valeurs.",
+    id: "refonte-web",
+    title: "Refonte de site web",
+    description: "Refonte de votre site pour améliorer son image, son message et son efficacité commerciale.",
     icon: "Palette",
     features: [
-      "Création de logo",
-      "Charte graphique complète",
-      "Identité visuelle",
-      "Guide de style",
-      "Supports de communication"
+      "Audit du site actuel",
+      "Refonte structurelle",
+      "Amélioration du parcours client",
+      "Mise à jour visuelle",
+      "Optimisation des conversions"
     ],
-    duration: "1-2 semaines"
+    duration: "2-6 semaines"
   },
   {
-    id: "maintenance",
-    title: "Maintenance & Support",
-    description: "Accompagnement continu pour assurer la performance et la sécurité de vos outils digitaux.",
-    icon: "Shield",
-    features: [
-      "Maintenance technique",
-      "Mises à jour régulières",
-      "Support réactif",
-      "Surveillance 24/7",
-      "Sauvegardes automatiques"
-    ],
-    duration: "Mensuel"
-  },
-  {
-    id: "audit",
-    title: "Audit & Accompagnement",
-    description: "Expertise et conseils stratégiques pour optimiser votre présence digitale.",
+    id: "accompagnement-digital",
+    title: "Accompagnement digital",
+    description: "Un accompagnement stratégique pour éclairer vos décisions, faire grandir votre visibilité et exploiter le digital à bon escient.",
     icon: "Search",
     features: [
-      "Audit digital complet",
       "Conseil stratégique",
-      "Formation équipes",
-      "Accompagnement personnalisé",
-      "Roadmap digitale"
+      "Diagnostic digital",
+      "Plan d’action sur mesure",
+      "Suivi de performance",
+      "Accompagnement personnalisé"
     ],
-    duration: "1 semaine"
+    duration: "Selon le besoin"
+  },
+  {
+    id: "contenus",
+    title: "Services annexes : création de contenus",
+    description: "Prise de photo et de vidéos, avec ou sans publication, pour donner vie à votre marque et soutenir votre présence digitale.",
+    icon: "Camera",
+    features: [
+      "Prise de photos",
+      "Création de vidéos",
+      "Contenus pour les réseaux",
+      "Publication ou livraison à part",
+      "Supports visuels sur mesure"
+    ],
+    duration: "Selon le projet"
   }
 ];

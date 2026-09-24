@@ -116,10 +116,10 @@ export default function Page() {
 
       {/* Services with luxury card effects */}
       <HomeServices />
-      
+
       {/* Portfolio preview */}
       <Reveal><PortfolioPreview /></Reveal>
-      
+
       {/* B2B Preview - Luxury version */}
       <B2BPreview />
 

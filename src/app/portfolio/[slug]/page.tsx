@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = portfolioData.find((p) => p.slug === slug);
-  
+
   if (!project) {
     return {
       title: "Projet non trouvé",

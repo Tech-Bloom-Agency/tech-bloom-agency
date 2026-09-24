@@ -81,9 +81,9 @@ export default function ServicesPage() {
       {/* Luxury Hero */}
       <PageHero
         badge="Expertises"
-        title="Nos services"
-        subtitle="digitaux."
-        description="Du cadrage à la mise en ligne, nous combinons développement web, identité de marque, marketing digital et accompagnement pour faire avancer vos projets."
+        title="Nos prestations"
+        subtitle="digitales."
+        description="Des solutions pensées pour votre présence, votre visibilité et votre croissance : community management, SMM, création de sites web, refonte, accompagnement et contenus visuels."
       />
 
       {/* Sticky Navigation Pills */}
@@ -102,21 +102,21 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-end">
           <div>
             <span className="mb-4 inline-block text-xs font-bold uppercase tracking-[0.3em] text-teal">
-              E-commerce sur mesure
+              Présence en ligne
             </span>
             <h2 className="max-w-3xl font-heading text-4xl font-black leading-tight text-white md:text-5xl">
-              Un e-commerce conçu pour votre réalité.
+              Une présence digitale conçue pour être vue, crédible et mémorable.
             </h2>
           </div>
           <div className="space-y-8">
             <p className="text-lg leading-relaxed text-white/75">
-              Chaque projet e-commerce est différent : catalogue, paiements, parcours client, gestion des commandes, automatisations et niveau d’administration. Après un appel découverte, nous proposons un périmètre clair, des livrables définis et un devis adapté au besoin réel.
+              Vous ne savez pas quelle prestation est idéale pour votre situation ? Discutons ensemble et trouvons la meilleure manière de faire éclore vos idées sur le digital. Nous identifions le bon levier, la bonne offre et le bon plan pour renforcer votre présence en ligne avec plus de clarté et de confiance.
             </p>
             <Link
-              href="/contact?service=creation-web"
+              href="/contact?service=accompagnement-digital"
               className="inline-flex bg-red px-8 py-4 text-sm font-bold uppercase tracking-[0.15em] text-white transition-colors hover:bg-red-hover"
             >
-              Demander un appel découverte
+              Discutons de votre projet
             </Link>
           </div>
         </div>

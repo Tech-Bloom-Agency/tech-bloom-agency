@@ -3,51 +3,48 @@
 export default function B2BPricing() {
     const packages = [
         {
-            name: "Starter",
-            description: "Par projet web",
+            name: "Positionnement",
+            description: "Pour clarifier votre marque",
             features: [
-                "Site vitrine responsive",
-                "Jusqu'à 5 pages",
-                "Intégration CMS basique",
-                "Optimisation SEO de base",
-                "Hébergement 1 an inclus",
-                "Support 2 semaines"
+                "Audit de votre présence",
+                "Message plus fort",
+                "Direction stratégique",
+                "Image plus cohérente",
+                "Premiers leviers"
             ],
             bestValue: false
         },
         {
-            name: "Business",
-            description: "Par projet web",
+            name: "Visibilité",
+            description: "Pour être vu et mémorisé",
             features: [
-                "Site e-commerce complet",
-                "Jusqu'à 20 pages",
-                "Fonctionnalités avancées",
-                "Intégration paiements",
-                "Optimisation SEO complète",
-                "Support 1 mois"
+                "Gestion CM / SMM",
+                "Contenus premium",
+                "Planning éditorial",
+                "Pilotage des réseaux",
+                "Suivi et optimisation"
             ],
             bestValue: true
         },
         {
-            name: "Enterprise",
-            description: "Solutions complexes",
+            name: "Accompagnement",
+            description: "Pour avancer sans hésitation",
             features: [
-                "Applications web sur mesure",
-                "Intégrations API complexes",
-                "Solutions multi-plateformes",
-                "Déploiement automatisé",
-                "Monitoring & analytics",
-                "Support illimité"
+                "Conseil digital",
+                "Diagnostic clair",
+                "Plan d’action sur mesure",
+                "Refonte de la communication",
+                "Suivi stratégique"
             ],
             bestValue: false
         }
     ];
 
     const additionalServices = [
-        { name: "Maintenance mensuelle" },
-        { name: "Refonte complète" },
-        { name: "Développement spécifique" },
-        { name: "Formation technique" }
+        { name: "Création de contenus" },
+        { name: "Refonte de site" },
+        { name: "Prise de photos / vidéos" },
+        { name: "Conseil digital" }
     ];
 
     return (
@@ -55,13 +52,13 @@ export default function B2BPricing() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
-                        COLLABORATION SUR MESURE
+                        AU BON NIVEAU
                     </div>
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Un cadre clair, adapté à votre projet
+                        Le bon accompagnement pour votre niveau.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Chaque projet est cadré selon son périmètre, ses livrables et ses contraintes réelles.
+                        On choisit l’option qui correspond réellement à votre situation, votre image et votre croissance.
                     </p>
                 </div>
 
@@ -127,23 +124,23 @@ export default function B2BPricing() {
                 <div className="mt-12 text-center">
                     <div className="bg-brand-dark/5 rounded-agency p-8 border border-brand-dark/10">
                         <h3 className="text-xl font-sans font-bold text-brand-dark mb-4">
-                            Une collaboration qui évolue avec vos besoins
+                            On adapte le niveau. Pas le message.
                         </h3>
                         <p className="text-gray-600 mb-4">
-                            Le périmètre et le rythme de collaboration sont définis ensemble après l’appel découverte.
+                            Le bon accompagnement dépend de votre réalité. Pas d’un schéma figé.
                         </p>
                         <div className="grid md:grid-cols-3 gap-4 text-sm">
                             <div>
-                                <span className="font-bold text-brand-blue">Rythme ponctuel</span>
-                                <span className="text-gray-600 ml-2">À définir ensemble</span>
+                                <span className="font-bold text-brand-blue">Lancer</span>
+                                <span className="text-gray-600 ml-2">sans confusion</span>
                             </div>
                             <div>
-                                <span className="font-bold text-brand-blue">Rythme régulier</span>
-                                <span className="text-gray-600 ml-2">À définir ensemble</span>
+                                <span className="font-bold text-brand-blue">Renforcer</span>
+                                <span className="text-gray-600 ml-2">sa présence</span>
                             </div>
                             <div>
-                                <span className="font-bold text-brand-blue">Partenariat continu</span>
-                                <span className="text-gray-600 ml-2">À définir ensemble</span>
+                                <span className="font-bold text-brand-blue">Croître</span>
+                                <span className="text-gray-600 ml-2">avec vision</span>
                             </div>
                         </div>
                     </div>

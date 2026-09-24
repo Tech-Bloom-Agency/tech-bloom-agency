@@ -3,24 +3,24 @@
 export default function B2BChallenges() {
     const challenges = [
         {
-            title: "Délais serrés impossibles à tenir",
-            description: "Projets urgents, clients pressés, équipes saturées - vous sacrifiez la qualité ou perdez des clients.",
-            icon: "⏱️"
+            title: "On ne vous voit pas assez",
+            description: "Votre marque a du potentiel, mais elle passe inaperçue dans un environnement trop bruyant.",
+            icon: "🧭"
         },
         {
-            title: "Marges en compression constante",
-            description: "Prix au plus bas, concurrents agressifs, coûts de recrutement élevés - votre rentabilité s'effondre.",
-            icon: "📉"
+            title: "Le message manque de punch",
+            description: "Le public ne comprend pas vite votre valeur. Et sans clarté, il ne prend pas action.",
+            icon: "💬"
         },
         {
-            title: "Difficultés de recrutement",
-            description: "Talent rare, salaires élevés, intégration longue - votre équipe manque de compétences clés.",
-            icon: "👥"
+            title: "Les réseaux ne servent pas votre image",
+            description: "Du contenu existe, mais il n’aide ni votre crédibilité ni votre croissance. Il manque de cohérence.",
+            icon: "📲"
         },
         {
-            title: "Pertes de compétitivité",
-            description: "Technos émergentes, nouvelles méthodes, formation continue - vous peinez à suivre l'évolution.",
-            icon: "🚀"
+            title: "Le site n’aide pas",
+            description: "Le site donne une impression trop faible pour le niveau réel de votre entreprise.",
+            icon: "🏢"
         }
     ];
 
@@ -29,11 +29,10 @@ export default function B2BChallenges() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Les défis que connaissent toutes les agences web
+                        Le problème n’est pas votre ambition.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Vous n'êtes pas seul dans cette galère. Ces problématiques impactent la croissance 
-                        et la pérennité de votre activité.
+                        C’est le manque de clarté. Et sans clarté, la croissance s’arrête.
                     </p>
                 </div>
 
@@ -57,11 +56,10 @@ export default function B2BChallenges() {
                 <div className="mt-16 text-center">
                     <div className="bg-red-50 border border-red-200 rounded-agency p-8 max-w-4xl mx-auto">
                         <h3 className="text-2xl font-sans font-bold text-red-800 mb-4">
-                            Résultat : Une activité bloquée
+                            Résultat : du potentiel perdu.
                         </h3>
                         <p className="text-red-700 text-lg">
-                            Vous refusez des projets lucratifs, vos clients sont mécontents, 
-                            votre équipe est stressée, et votre réputation en prend un coup.
+                            Les bonnes idées existent. Le problème, c’est qu’elles ne se voient pas assez. Et quand on ne se voit pas, on ne se choisit pas.
                         </p>
                     </div>
                 </div>
