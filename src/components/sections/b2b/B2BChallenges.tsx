@@ -38,7 +38,7 @@ export default function B2BChallenges() {
 
                 <div className="grid md:grid-cols-2 gap-8">
                     {challenges.map((challenge, index) => (
-                        <div 
+                        <div
                             key={index}
                             className="bg-brand-light p-8 rounded-agency border border-gray-100 hover:shadow-lg transition-all duration-300"
                         >

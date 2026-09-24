@@ -54,7 +54,7 @@ export default function B2BSolution() {
 
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
                     {solutions.map((solution, index) => (
-                        <div 
+                        <div
                             key={index}
                             className="bg-white p-8 rounded-agency border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                         >

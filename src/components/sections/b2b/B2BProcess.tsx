@@ -49,10 +49,10 @@ export default function B2BProcess() {
                 <div className="relative">
                     {/* Ligne de progression */}
                     <div className="absolute left-8 top-16 bottom-16 w-1 bg-gray-200 md:left-1/2 md:-translate-x-1/2"></div>
-                    
+
                     <div className="space-y-12">
                         {steps.map((step, index) => (
-                            <div 
+                            <div
                                 key={index}
                                 className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                             >
@@ -60,7 +60,7 @@ export default function B2BProcess() {
                                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center text-xl font-bold z-10">
                                     {step.number}
                                 </div>
-                                
+
                                 {/* Contenu */}
                                 <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
                                     <div className="bg-brand-light p-8 rounded-agency border border-gray-200 hover:shadow-lg transition-all duration-300">

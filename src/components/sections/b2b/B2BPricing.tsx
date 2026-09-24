@@ -65,11 +65,11 @@ export default function B2BPricing() {
                 {/* Packages */}
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
                     {packages.map((pkg, index) => (
-                        <div 
+                        <div
                             key={index}
                             className={`relative bg-white rounded-agency border-2 p-8 hover:shadow-xl transition-all duration-300 ${
-                                pkg.bestValue 
-                                    ? 'border-brand-blue shadow-lg scale-105' 
+                                pkg.bestValue
+                                    ? 'border-brand-blue shadow-lg scale-105'
                                     : 'border-gray-200'
                             }`}
                         >
@@ -78,14 +78,14 @@ export default function B2BPricing() {
                                     LE PLUS POPULAIRE
                                 </div>
                             )}
-                            
+
                             <div className="text-center mb-8">
                                 <h3 className="text-2xl font-sans font-bold text-brand-dark mb-2">
                                     {pkg.name}
                                 </h3>
                                 <p className="text-gray-600">{pkg.description}</p>
                             </div>
-                            
+
                             <ul className="space-y-4 mb-8">
                                 {pkg.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
@@ -94,7 +94,7 @@ export default function B2BPricing() {
                                     </li>
                                 ))}
                             </ul>
-                            
+
                             <button className={`w-full py-3 rounded-full font-medium transition-all duration-300 ${
                                 pkg.bestValue
                                     ? 'bg-brand-blue text-white hover:opacity-90'
