@@ -50,7 +50,7 @@ export default function Hero() {
     }),
   };
 
-  const subtitleWords = ["Stratégie", "•", "Création", "•", "Croissance"];
+  const subtitleWords = ["Marketing", "•", "SEO", "•", "Croissance"];
 
   return (
     <section

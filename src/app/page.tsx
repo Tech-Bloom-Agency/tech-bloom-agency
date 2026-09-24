@@ -10,19 +10,19 @@ import { Reveal } from "@/components/ui/Reveal";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tech Bloom Agency — Agence Digitale Madagascar | Sites Web, Branding, Marketing",
-  description: "Agence digitale à Madagascar. Création de sites web, branding, community management et marketing digital pour PME et entrepreneurs.",
+  title: "Tech Bloom Agency — Marketing Digital Madagascar | SEO, Social Media, Sites Web",
+  description: "Agence marketing digital à Madagascar. SEO, community management, publicité, branding et création de sites web orientés conversion.",
   keywords: [
-    "agence digitale Madagascar",
-    "création site web ",
-    "community manager Madagascar",
     "marketing digital Madagascar",
-    "branding Madagascar",
-    "agence web Madagascar",
+    "community manager Madagascar",
+    "agence SEO Madagascar",
+    "création site web Madagascar",
+    "publicité Facebook Madagascar",
+    "agence digitale Madagascar",
   ],
   openGraph: {
-    title: "Tech Bloom Agency — Agence Digitale Madagascar",
-    description: "Création web, branding, marketing digital à Madagascar.",
+    title: "Tech Bloom Agency — Marketing Digital Madagascar",
+    description: "SEO, community management, publicité et création de sites web orientés vente à Madagascar.",
     url: "/",
     siteName: "Tech Bloom Agency",
     images: [{ url: "/og/og-home.jpg", width: 1200, height: 630, alt: "Tech Bloom Agency" }],
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tech Bloom Agency — Agence Digitale Madagascar",
-    description: "Création web, branding, marketing digital à Madagascar.",
+    title: "Tech Bloom Agency — Marketing Digital Madagascar",
+    description: "SEO, social media, publicité et sites web orientés conversion à Madagascar.",
     images: ["/og/og-home.jpg"],
   },
   alternates: { canonical: "/" },

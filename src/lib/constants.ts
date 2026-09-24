@@ -1,9 +1,9 @@
 export const SITE_CONFIG = {
     name: "Tech Bloom Agency",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://tech-bloom-agency.vercel.app",
-    taglineFr: "De la stratégie à l'éclosion digitale",
-    taglineEn: "From Strategy to Digital Growth",
-    description: "Agence digitale basée à Madagascar. Spécialisée dans la création de sites web, le branding, le marketing digital et l'accompagnement tech personnalisé.",
+    taglineFr: "Marketing digital & croissance locale",
+    taglineEn: "Digital Marketing & Local Growth",
+    description: "Agence de marketing digital à Madagascar. Stratégie, community management, SEO, publicité et création de sites orientés conversion.",
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "sullivanjoro3@gmail.com",
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+261 34 10 608 02",
     calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/sullivan_techbloomagency",

@@ -9,9 +9,37 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    id: "marketing",
+    title: "Marketing digital",
+    description: "Stratégies marketing performantes pour augmenter votre visibilité, votre trafic et vos conversions.",
+    icon: "TrendingUp",
+    features: [
+      "SEO & référencement naturel",
+      "Publicité en ligne (Ads)",
+      "Stratégie de contenu",
+      "Analyse de performance",
+      "Optimisation des conversions"
+    ],
+    duration: "Mensuel"
+  },
+  {
+    id: "community",
+    title: "Community management",
+    description: "Gestion professionnelle de vos réseaux sociaux pour engager votre audience et transformer l’intérêt en clients.",
+    icon: "Users",
+    features: [
+      "Gestion des réseaux sociaux",
+      "Création de contenu",
+      "Planning éditorial",
+      "Engagement communautaire",
+      "Reporting mensuel"
+    ],
+    duration: "Mensuel"
+  },
+  {
     id: "creation-web",
     title: "Création de sites web",
-    description: "Sites vitrine, e-commerce, applications web et landing pages performantes adaptées à vos besoins.",
+    description: "Sites vitrine et landing pages orientés acquisition pour convertir plus efficacement les visiteurs.",
     icon: "Code",
     features: [
       "Sites vitrine professionnels",
@@ -35,34 +63,6 @@ export const services: Service[] = [
       "Supports de communication"
     ],
     duration: "1-2 semaines"
-  },
-  {
-    id: "marketing",
-    title: "Marketing digital",
-    description: "Stratégies marketing performantes pour augmenter votre visibilité et vos conversions.",
-    icon: "TrendingUp",
-    features: [
-      "SEO & référencement naturel",
-      "Publicité en ligne (Ads)",
-      "Stratégie de contenu",
-      "Analyse de performance",
-      "Optimisation des conversions"
-    ],
-    duration: "Mensuel"
-  },
-  {
-    id: "community",
-    title: "Community management",
-    description: "Gestion professionnelle de vos réseaux sociaux pour engager votre audience.",
-    icon: "Users",
-    features: [
-      "Gestion des réseaux sociaux",
-      "Création de contenu",
-      "Planning éditorial",
-      "Engagement communautaire",
-      "Reporting mensuel"
-    ],
-    duration: "Mensuel"
   },
   {
     id: "maintenance",

@@ -115,13 +115,13 @@ export default function HomeServices() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-red mb-4">
-              Nos Services
+              Nos services
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-black text-navy leading-[0.9] tracking-tight">
-              L&apos;excellence
+              Marketing digital
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue to-teal">
-                à chaque pixel
+                qui convertit
               </span>
             </h2>
           </motion.div>
@@ -133,8 +133,7 @@ export default function HomeServices() {
             className="flex items-end"
           >
             <p className="text-lg text-gray font-body leading-relaxed max-w-md">
-              De la stratégie à l&apos;exécution, nous créons des expériences digitales
-              qui marquent les esprits et génèrent des résultats mesurables.
+              Nous aidons les marques à gagner en visibilité, générer plus de leads et transformer l&apos;attention en ventes grâce à une stratégie digitale claire et mesurable.
             </p>
           </motion.div>
         </div>
