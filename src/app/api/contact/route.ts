@@ -173,6 +173,9 @@ async function sendFallbackEmail(data: ContactData): Promise<boolean> {
   }
 
   const notifyTo = process.env.CONTACT_NOTIFY_EMAIL || SITE_CONFIG.email;
+  // Tant qu'aucun domaine n'est vérifié chez Resend, l'expéditeur partagé onboarding@resend.dev
+  // est le seul qui passe. À basculer via RESEND_FROM_EMAIL une fois le domaine en place.
+  const from = process.env.RESEND_FROM_EMAIL || "Tech Bloom Agency <onboarding@resend.dev>";
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
@@ -182,7 +185,7 @@ async function sendFallbackEmail(data: ContactData): Promise<boolean> {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: "Tech Bloom Agency <contact@techbloomagency.com>",
+        from,
         to: [notifyTo],
         reply_to: data.email,
         subject: `Nouvelle demande de contact — ${data.service.slice(0, 60)}`,
