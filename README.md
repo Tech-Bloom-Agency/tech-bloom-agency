@@ -46,9 +46,23 @@ npm start
 
 ## Charte graphique
 
+Charte complète (logo v2.0, palette, typographie, règles d'usage) : [docs/CHARTE_GRAPHIQUE.md](docs/CHARTE_GRAPHIQUE.md).
+
+### Logo
+
+Kit officiel v2.0 dans `public/logo/` (losange contour + pousse à trois feuilles). Toujours
+l'afficher via le composant `src/components/ui/Logo.tsx` :
+
+```tsx
+import Logo from "@/components/ui/Logo";
+
+<Logo variant="horizontal" width={180} />        // marine, fonds clairs
+<Logo variant="horizontal-blanc" width={180} /> // fonds sombres ou dégradés
+```
+
 ### Couleurs principales
 
-- **Bleu Marine**: `#0D2A40` (Logo V1, corporate)
+- **Bleu Marine**: `#0D2A40` (logo principal, corporate)
 - **Bleu Profond**: `#384B70` (Titres, structure)
 - **Bleu Pétrole**: `#507687` (Accents, éléments secondaires)
 - **Beige Clair**: `#FCFAEE` (Arrière-plans clairs)
@@ -57,8 +71,8 @@ npm start
 
 ### Typographie
 
-- **Headings**: Montserrat (sans-serif)
-- **Body**: Bitter (serif)
+- **Headings**: Bitter 700/600 (serif)
+- **Body**: Montserrat 400/500/600 (sans-serif)
 
 ## Ajouter du contenu
 

@@ -8,6 +8,7 @@ import B2BPreview from "@/components/sections/home/B2BPreview";
 import PageWrapper from "@/components/layout/PageWrapper";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Metadata } from "next";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Tech Bloom Agency — Marketing Digital Madagascar | SEO, Social Media, Sites Web",
@@ -46,9 +47,9 @@ const localBusinessSchema = {
   "name": "Tech Bloom Agency",
   "alternateName": "TBA",
   "description": "Agence digitale à Madagascar : création de sites web, branding, marketing digital et community management.",
-  "url": "https://tech-bloom-agency.vercel.app",
-  "logo": "https://tech-bloom-agency.vercel.app/images/logo-tba.png",
-  "image": "https://tech-bloom-agency.vercel.app/og/og-home.jpg",
+  "url": SITE_CONFIG.url,
+  "logo": `${SITE_CONFIG.url}/logo/TBA-logo-horizontal.png`,
+  "image": `${SITE_CONFIG.url}/og/og-home.jpg`,
   "telephone": "+261341060802",
   "email": "sullivanjoro3@gmail.com",
   "founder": {
