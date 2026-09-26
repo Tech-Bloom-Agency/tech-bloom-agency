@@ -26,6 +26,7 @@ export function ContactForm() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   const {
@@ -54,7 +55,8 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
+    setSubmitError(null);
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -62,23 +64,31 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error("Erreur lors de l'envoi");
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          response.status === 429
+            ? "Trop de tentatives. Veuillez réessayer dans une heure."
+            : "Le message n'a pas pu être envoyé. Veuillez réessayer ou nous contacter directement par email ou WhatsApp."
+        );
       }
 
-      const result = await response.json();
-      
-      if (result.success) {
-        setSubmitSuccess(true);
-        reset();
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setSubmitSuccess(false);
-        }, 5000);
-      }
+      setSubmitSuccess(true);
+      reset();
+      window.trackFormSubmit?.(data.service);
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 5000);
     } catch (error) {
-      console.error("Erreur:", error);
+      // fetch() rejette avec un TypeError en cas de problème réseau
+      setSubmitError(
+        error instanceof TypeError || !(error instanceof Error)
+          ? "Erreur réseau. Vérifiez votre connexion et réessayez."
+          : error.message
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -96,6 +106,12 @@ export function ContactForm() {
           <p className="text-green font-medium">
             Message envoyé avec succès ! Nous vous répondrons sous 24h.
           </p>
+        </div>
+      )}
+
+      {submitError && (
+        <div role="alert" className="mb-6 p-4 bg-red/10 border border-red/30 rounded-md">
+          <p className="text-red font-medium">{submitError}</p>
         </div>
       )}
 

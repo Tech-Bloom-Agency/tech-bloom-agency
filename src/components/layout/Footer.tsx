@@ -1,6 +1,7 @@
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -37,13 +38,13 @@ export default function Footer() {
                 <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-20">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
                         <div className="space-y-8 col-span-1 md:col-span-1">
-                             <Link href="/" className="flex items-center space-x-2">
-                                <div className="w-8 h-8 bg-brand-primary rounded-agency-xs flex items-center justify-center">
-                                    <span className="text-white text-[10px] font-bold">TBA</span>
-                                </div>
-                                <span className="font-serif font-bold text-brand-primary tracking-tight">
-                                    {SITE_CONFIG.name}
-                                </span>
+                             <Link
+                                href="/"
+                                className="flex items-center"
+                                aria-label={`${SITE_CONFIG.name} — retour à l'accueil`}
+                            >
+                                {/* Logo officiel TBA — version horizontale marine sur fond clair */}
+                                <Logo variant="horizontal" width={160} className="h-9 w-auto" />
                             </Link>
                             <p className="text-xs leading-relaxed max-w-xs font-medium uppercase tracking-wider">
                                 Agence digitale haute-performance. <br />

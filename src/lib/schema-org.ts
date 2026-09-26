@@ -14,7 +14,7 @@ export const LocalBusinessSchema = {
   "alternateName": "TBA",
   "description": "Agence digitale à Madagascar : création de sites web, branding, marketing digital et community management.",
   "url": SITE_CONFIG.url || "https://tech-bloom-agency.vercel.app",
-  "logo": `${SITE_CONFIG.url}/images/logo-tba.png`,
+  "logo": `${SITE_CONFIG.url}/logo/TBA-logo-horizontal.png`,
   "image": `${SITE_CONFIG.url}/og/og-home.jpg`,
   "telephone": "+261341060802",
   "email": "sullivanjoro3@gmail.com",
@@ -138,7 +138,9 @@ export const BlogPostingSchema = (article: {
     "name": "Tech Bloom Agency",
     "logo": {
       "@type": "ImageObject",
-      "url": `${SITE_CONFIG.url}/images/logo-tba.png`
+      "url": `${SITE_CONFIG.url}/logo/TBA-logo-horizontal.png`,
+      "width": 2400,
+      "height": 544
     }
   },
   "datePublished": article.datePublished,

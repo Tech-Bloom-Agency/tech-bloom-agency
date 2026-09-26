@@ -40,9 +40,6 @@ export const metadata: Metadata = {
     verification: {
         google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
     },
-    icons: {
-        icon: "/favicon.ico",
-    },
     openGraph: {
         type: "website",
         locale: "fr_FR",
