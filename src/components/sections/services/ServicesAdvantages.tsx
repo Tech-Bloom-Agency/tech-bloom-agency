@@ -28,7 +28,7 @@ export default function ServicesAdvantages() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-5xl font-sans font-bold text-brand-dark mb-6">Pourquoi choisir Tech Bloom Agency ?</h2>
                     <p className="text-lg text-brand-gray max-w-2xl mx-auto">
-                        Les bénéfices concrets d'une collaboration avec une agence digitale moderne et humaine.
+                        Les bénéfices concrets d&apos;une collaboration avec une agence digitale moderne et humaine.
                     </p>
                 </div>
 

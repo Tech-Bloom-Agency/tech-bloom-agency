@@ -60,7 +60,7 @@ export default function B2BPortfolio() {
                         NOS RÉALISATIONS
                     </div>
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Des projets qui parlent d'eux-mêmes
+                        Des projets qui parlent d&apos;eux-mêmes
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         Voici quelques exemples de collaborations réussies avec des agences partenaires. 

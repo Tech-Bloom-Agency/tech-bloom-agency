@@ -9,6 +9,8 @@ export function CalendlyEmbed() {
   useEffect(() => {
     // Charger le script Calendly au montage
     if (document.getElementById("calendly-script")) {
+      // Le script peut déjà être dans le DOM (navigation client) : état non dérivable du rendu.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsLoaded(true);
       return;
     }

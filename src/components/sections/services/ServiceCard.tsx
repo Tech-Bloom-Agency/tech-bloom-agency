@@ -13,8 +13,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service }: ServiceCardProps) {
   const IconComponent = LucideIcons[service.icon as keyof typeof LucideIcons] as React.ElementType;
 
-  // @ts-ignore
-    return (
+  return (
     <Card hover className="h-full flex flex-col" id={service.id}>
       {/* Icône */}
       <div className="w-16 h-16 bg-gradient-to-br from-blue to-teal rounded-md flex items-center justify-center mb-6 shadow-sm">

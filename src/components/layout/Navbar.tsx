@@ -27,9 +27,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
   // Calendly integration
   const openCalendly = () => {
     const calendlyUrl = SITE_CONFIG.calendlyUrl;
-    // @ts-ignore - Calendly widget
     if (window.Calendly) {
-      // @ts-ignore
       window.Calendly.initPopupWidget({ url: calendlyUrl });
     } else {
       window.open(calendlyUrl, "_blank");

@@ -1,5 +1,14 @@
 // @ts-check
 
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+/**
+ * Analyse du bundle : `npm run build:analyze` (ANALYZE=true)
+ */
+const withBundleAnalyzer = bundleAnalyzer({
+    enabled: process.env.ANALYZE === "true",
+});
+
 /**
  * @type {import('next').NextConfig}
  */
@@ -30,4 +39,4 @@ const nextConfig = {
     },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

@@ -30,9 +30,7 @@ export const openCalendlyPopup = (url?: string) => {
 };
 
 const initAndOpen = (url: string) => {
-  // @ts-ignore
   if (window.Calendly) {
-    // @ts-ignore
     window.Calendly.initPopupWidget({ url });
     
     // Dispatch event pour tracking GA4
@@ -66,13 +64,3 @@ export const getCustomizedCalendlyUrl = (options?: {
   const queryString = params.toString();
   return queryString ? `${baseUrl}?${queryString}` : baseUrl;
 };
-
-// Déclarations TypeScript
-declare global {
-  interface Window {
-    Calendly?: {
-      initPopupWidget: (options: { url: string }) => void;
-      initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
-    };
-  }
-}

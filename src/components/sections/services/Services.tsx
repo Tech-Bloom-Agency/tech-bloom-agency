@@ -32,10 +32,10 @@ export default function Services() {
                     </span>
                     <h1 className="text-[clamp(3rem,10vw,6rem)] font-serif font-bold text-brand-primary leading-[0.9] tracking-tighter mb-12">
                         Nos piliers <br />
-                        <span className="text-brand-dark-blue opacity-50">d'excellence.</span>
+                        <span className="text-brand-dark-blue opacity-50">d&apos;excellence.</span>
                     </h1>
                     <p className="text-lg lg:text-xl text-brand-gray max-w-3xl font-medium leading-relaxed uppercase tracking-wide">
-                        De la vision à l'exécution technique, nous activons les leviers 
+                        De la vision à l&apos;exécution technique, nous activons les leviers 
                         digitaux pour transformer vos idées en produits performants.
                     </p>
                 </div>

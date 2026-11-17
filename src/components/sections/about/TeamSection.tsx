@@ -26,9 +26,9 @@ export default function TeamSection() {
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl lg:text-5xl font-sans font-bold text-brand-dark mb-6">L'Équipe Tech Bloom</h2>
+                    <h2 className="text-3xl lg:text-5xl font-sans font-bold text-brand-dark mb-6">L&apos;Équipe Tech Bloom</h2>
                     <p className="text-lg text-brand-gray max-w-2xl mx-auto">
-                        Des experts passionnés par l'innovation et la réussite de vos projets digitaux.
+                        Des experts passionnés par l&apos;innovation et la réussite de vos projets digitaux.
                     </p>
                 </div>
 

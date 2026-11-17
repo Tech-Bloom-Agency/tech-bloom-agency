@@ -35,7 +35,7 @@ export default function Portfolio() {
                                         {project.title}
                                     </h2>
                                     <p className="text-xl text-gray-700 leading-relaxed mb-8 italic">
-                                        "{project.summary}"
+                                        &quot;{project.summary}&quot;
                                     </p>
                                     <div className="flex flex-wrap gap-3">
                                         {project.tags.map((tag, idx) => (
@@ -106,7 +106,7 @@ export default function Portfolio() {
                             {project.testimonial && (
                                 <div className="mt-12 p-8 bg-brand-dark rounded-agency text-white relative overflow-hidden group">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors" />
-                                    <p className="text-xl italic mb-4 leading-relaxed relative z-10">"{project.testimonial.quote}"</p>
+                                    <p className="text-xl italic mb-4 leading-relaxed relative z-10">&quot;{project.testimonial.quote}&quot;</p>
                                     <p className="font-bold text-brand-blue relative z-10">— {project.testimonial.author}</p>
                                 </div>
                             )}

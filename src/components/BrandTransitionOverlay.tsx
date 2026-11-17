@@ -14,6 +14,8 @@ export default function BrandTransitionOverlay() {
     const hasSeenIntro = window.localStorage.getItem(STORAGE_KEY) === "true";
 
     if (forceIntro || !hasSeenIntro) {
+      // Dépend de localStorage / URL : non calculable au premier rendu serveur.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsVisible(true);
 
       const startExit = window.setTimeout(() => {
