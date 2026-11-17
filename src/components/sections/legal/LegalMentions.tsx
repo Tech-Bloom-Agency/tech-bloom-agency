@@ -54,28 +54,28 @@ export default function LegalMentions() {
                         <div>
                             <h2 className="text-3xl font-sans font-bold text-brand-dark mb-6">4. Propriété intellectuelle</h2>
                             <p className="text-gray-700 leading-relaxed">
-                                L'ensemble des contenus présents sur ce site (textes, images, logos, vidéos) est la propriété exclusive de Tech Bloom Agency, sauf mention contraire. Toute reproduction, même partielle, est interdite sans autorisation préalable.
+                                L&apos;ensemble des contenus présents sur ce site (textes, images, logos, vidéos) est la propriété exclusive de Tech Bloom Agency, sauf mention contraire. Toute reproduction, même partielle, est interdite sans autorisation préalable.
                             </p>
                         </div>
 
                         <div>
                             <h2 className="text-3xl font-sans font-bold text-brand-dark mb-6">5. Protection des données (RGPD)</h2>
                             <p className="text-gray-700 leading-relaxed">
-                                Les données collectées via le formulaire de contact (nom, email, téléphone) sont utilisées exclusivement pour répondre à vos demandes de devis ou d'informations. Elles ne sont jamais transmises à des tiers sans votre consentement. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en nous contactant par email.
+                                Les données collectées via le formulaire de contact (nom, email, téléphone) sont utilisées exclusivement pour répondre à vos demandes de devis ou d&apos;informations. Elles ne sont jamais transmises à des tiers sans votre consentement. Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données en nous contactant par email.
                             </p>
                         </div>
 
                         <div>
                             <h2 className="text-3xl font-sans font-bold text-brand-dark mb-6">6. Cookies</h2>
                             <p className="text-gray-700 leading-relaxed">
-                                Ce site peut utiliser des cookies pour améliorer l'expérience utilisateur et analyser le trafic via Google Analytics. Vous pouvez désactiver les cookies dans les réglages de votre navigateur.
+                                Ce site peut utiliser des cookies pour améliorer l&apos;expérience utilisateur et analyser le trafic via Google Analytics. Vous pouvez désactiver les cookies dans les réglages de votre navigateur.
                             </p>
                         </div>
 
                         <div>
                             <h2 className="text-3xl font-sans font-bold text-brand-dark mb-6">7. Responsabilité</h2>
                             <p className="text-gray-700 leading-relaxed">
-                                Tech Bloom Agency s'efforce de fournir des informations précises, mais ne saurait être tenue responsable d'éventuelles erreurs ou omissions dans le contenu du site. L'utilisation des informations fournies se fait sous votre propre responsabilité.
+                                Tech Bloom Agency s&apos;efforce de fournir des informations précises, mais ne saurait être tenue responsable d&apos;éventuelles erreurs ou omissions dans le contenu du site. L&apos;utilisation des informations fournies se fait sous votre propre responsabilité.
                             </p>
                         </div>
 

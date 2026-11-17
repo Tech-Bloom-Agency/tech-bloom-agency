@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Send } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function B2BContactForm() {
     const [formData, setFormData] = useState({
@@ -42,36 +43,34 @@ export default function B2BContactForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
-        // Validation
+
         if (!formData.company || !formData.name || !formData.email || !formData.message) {
             alert("Veuillez remplir tous les champs obligatoires.");
             return;
         }
-        
+
         if (formData.servicesNeeded.length === 0) {
             alert("Veuillez sélectionner au moins un service.");
             return;
         }
-        
+
         try {
-            // Envoi par email
             const emailBody = `
 Entreprise: ${formData.company}
 Nom: ${formData.name}
 Email: ${formData.email}
-Téléphone: ${formData.phone}
-Taille de l'agence: ${formData.agencySize}
-Projets par mois: ${formData.projectsPerMonth}
+Téléphone: ${formData.phone || "Non renseigné"}
+Taille de l'agence: ${formData.agencySize || "Non renseignée"}
+Projets par mois: ${formData.projectsPerMonth || "Non renseigné"}
 Services recherchés: ${formData.servicesNeeded.join(', ')}
 
 Message:
 ${formData.message}
             `;
-            
-            window.location.href = `mailto:b2b@tech-bloom-agency.com?subject=Demande de partenariat B2B&body=${encodeURIComponent(emailBody)}`;
-            
-            // Reset du formulaire
+
+            const mailtoLink = `mailto:${SITE_CONFIG.b2bEmail}?subject=${encodeURIComponent("Demande de partenariat B2B")}&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
+
             setFormData({
                 company: "",
                 name: "",
@@ -82,11 +81,11 @@ ${formData.message}
                 servicesNeeded: [],
                 message: ""
             });
-            
-            alert("Demande envoyée avec succès ! Notre équipe B2B vous contactera rapidement.");
+
+            alert("Votre client email s'ouvre avec votre demande prête à envoyer. Vérifiez le destinataire avant d'envoyer.");
         } catch (error) {
             console.error("Erreur lors de l'envoi:", error);
-            alert("Une erreur est survenue lors de l'envoi de votre demande.");
+            alert("Une erreur est survenue lors de la préparation de votre demande.");
         }
     };
 
@@ -101,7 +100,7 @@ ${formData.message}
                         Discutons de votre projet
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Remplissez ce formulaire pour recevoir un devis personnalisé 
+                        Remplissez ce formulaire pour recevoir un devis personnalisé
                         et découvrir comment nous pouvons collaborer.
                     </p>
                 </div>
@@ -124,7 +123,7 @@ ${formData.message}
                                     placeholder="Nom de votre agence"
                                 />
                             </div>
-                            
+
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                                     Votre nom *
@@ -158,7 +157,7 @@ ${formData.message}
                                     placeholder="contact@votre-agence.fr"
                                 />
                             </div>
-                            
+
                             <div>
                                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                                     Téléphone
@@ -170,7 +169,7 @@ ${formData.message}
                                     value={formData.phone}
                                     onChange={handleInputChange}
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                                    placeholder="01 23 45 67 89"
+                                    placeholder="+261 34 10 608 02"
                                 />
                             </div>
                         </div>
@@ -194,7 +193,7 @@ ${formData.message}
                                     <option value="10+">10+ personnes</option>
                                 </select>
                             </div>
-                            
+
                             <div>
                                 <label htmlFor="projectsPerMonth" className="block text-sm font-medium text-gray-700 mb-2">
                                     Projets par mois
@@ -221,7 +220,7 @@ ${formData.message}
                             </label>
                             <div className="grid md:grid-cols-2 gap-3">
                                 {services.map((service) => (
-                                    <label 
+                                    <label
                                         key={service}
                                         className="flex items-center gap-3 p-3 border border-gray-300 rounded-lg hover:bg-brand-light cursor-pointer transition-colors"
                                     >
@@ -272,11 +271,11 @@ ${formData.message}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <div className="flex items-center gap-2 text-gray-600">
                                     <span>📧</span>
-                                    <span>contact@techbloom-agency.fr</span>
+                                    <a href={`mailto:${SITE_CONFIG.b2bEmail}`} className="hover:text-brand-primary transition-colors">{SITE_CONFIG.b2bEmail}</a>
                                 </div>
                                 <div className="flex items-center gap-2 text-gray-600">
                                     <span>📱</span>
-                                    <span>01 23 45 67 89</span>
+                                    <span>{SITE_CONFIG.b2bPhone}</span>
                                 </div>
                             </div>
                         </div>

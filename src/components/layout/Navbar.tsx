@@ -26,12 +26,11 @@ export default function Navbar({ scrolled }: NavbarProps) {
 
   // Calendly integration
   const openCalendly = () => {
-    // @ts-ignore - Calendly widget
+    const calendlyUrl = SITE_CONFIG.calendlyUrl;
     if (window.Calendly) {
-      // @ts-ignore
-      window.Calendly.initPopupWidget({ url: "https://calendly.com/techbloomagency/appel-decouverte" });
+      window.Calendly.initPopupWidget({ url: calendlyUrl });
     } else {
-      window.open("https://calendly.com/techbloomagency/appel-decouverte", "_blank");
+      window.open(calendlyUrl, "_blank");
     }
   };
 
@@ -128,7 +127,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                 {link.label}
               </Link>
             ))}
-            
+
             <div className="pt-8 mt-auto border-t border-gray-100">
                <button
                 onClick={() => {
@@ -146,4 +145,3 @@ export default function Navbar({ scrolled }: NavbarProps) {
     </nav>
   );
 }
-

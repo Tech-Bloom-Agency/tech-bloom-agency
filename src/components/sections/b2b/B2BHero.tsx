@@ -73,7 +73,7 @@ export default function B2BHero() {
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-red bg-white/5 backdrop-blur-xl px-6 py-3 rounded-full border border-white/10">
-            Partenariat B2B • White Label & Sous-traitance
+            Votre présence digitale mérite mieux
           </span>
         </motion.div>
 
@@ -84,9 +84,9 @@ export default function B2BHero() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-[clamp(2.5rem,8vw,5.5rem)] font-heading font-black leading-[0.9] tracking-tight text-white mb-8"
         >
-          Déléguez en toute <br className="hidden md:block" />
+          Votre image.<br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal to-blue">
-            confiance.
+            Votre voix. Votre croissance.
           </span>
         </motion.h1>
 
@@ -97,8 +97,7 @@ export default function B2BHero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="text-lg lg:text-xl text-white/70 max-w-3xl mx-auto font-body font-medium leading-relaxed"
         >
-          Augmentez votre capacité de production, respectez vos délais et maintenez 
-          vos marges grâce à notre expertise en white-label et développement sur mesure.
+          On clarifie votre message. On structure votre présence. On donne à votre marque le niveau qu’elle mérite.
         </motion.p>
 
         {/* CTAs */}
@@ -109,7 +108,7 @@ export default function B2BHero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
         >
           <button className="group relative px-10 py-5 bg-red text-white font-heading font-bold text-sm tracking-[0.15em] uppercase overflow-hidden rounded-sm">
-            <span className="relative z-10">Découvrir nos solutions</span>
+            <span className="relative z-10">Parler de votre projet</span>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-red-hover to-red"
               initial={{ x: "-100%" }}
@@ -118,7 +117,7 @@ export default function B2BHero() {
             />
           </button>
           <button className="group px-10 py-5 border border-white/30 text-white font-heading font-semibold text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:border-teal/50 hover:text-teal">
-            Voir nos réalisations
+            Nos réalisations
           </button>
         </motion.div>
       </motion.div>

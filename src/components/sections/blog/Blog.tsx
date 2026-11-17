@@ -61,7 +61,7 @@ export default function Blog() {
                                             href={`/blog/${post.id}`} 
                                             className="inline-flex items-center gap-2 text-brand-blue font-bold group-hover:gap-4 transition-all uppercase text-sm tracking-widest"
                                         >
-                                            Lire l'article
+                                            Lire l&apos;article
                                             <ArrowRight size={18} />
                                         </Link>
                                     </div>

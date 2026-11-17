@@ -79,7 +79,6 @@ export interface B2BProject {
 export interface PricingPlan {
     id: string;
     title: string;
-    price: string;
     period: string;
     description: string;
     features: string[];

@@ -3,54 +3,48 @@
 export default function B2BPricing() {
     const packages = [
         {
-            name: "Starter",
-            price: "1 200€",
-            description: "Par projet web",
+            name: "Positionnement",
+            description: "Pour clarifier votre marque",
             features: [
-                "Site vitrine responsive",
-                "Jusqu'à 5 pages",
-                "Intégration CMS basique",
-                "Optimisation SEO de base",
-                "Hébergement 1 an inclus",
-                "Support 2 semaines"
+                "Audit de votre présence",
+                "Message plus fort",
+                "Direction stratégique",
+                "Image plus cohérente",
+                "Premiers leviers"
             ],
             bestValue: false
         },
         {
-            name: "Business",
-            price: "2 800€",
-            description: "Par projet web",
+            name: "Visibilité",
+            description: "Pour être vu et mémorisé",
             features: [
-                "Site e-commerce complet",
-                "Jusqu'à 20 pages",
-                "Fonctionnalités avancées",
-                "Intégration paiements",
-                "Optimisation SEO complète",
-                "Support 1 mois"
+                "Gestion CM / SMM",
+                "Contenus premium",
+                "Planning éditorial",
+                "Pilotage des réseaux",
+                "Suivi et optimisation"
             ],
             bestValue: true
         },
         {
-            name: "Enterprise",
-            price: "Sur mesure",
-            description: "Solutions complexes",
+            name: "Accompagnement",
+            description: "Pour avancer sans hésitation",
             features: [
-                "Applications web sur mesure",
-                "Intégrations API complexes",
-                "Solutions multi-plateformes",
-                "Déploiement automatisé",
-                "Monitoring & analytics",
-                "Support illimité"
+                "Conseil digital",
+                "Diagnostic clair",
+                "Plan d’action sur mesure",
+                "Refonte de la communication",
+                "Suivi stratégique"
             ],
             bestValue: false
         }
     ];
 
     const additionalServices = [
-        { name: "Maintenance mensuelle", price: "300€/mois" },
-        { name: "Refonte complète", price: "À partir de 4 000€" },
-        { name: "Développement spécifique", price: "120€/heure" },
-        { name: "Formation technique", price: "800€/jour" }
+        { name: "Création de contenus" },
+        { name: "Refonte de site" },
+        { name: "Prise de photos / vidéos" },
+        { name: "Conseil digital" }
     ];
 
     return (
@@ -58,25 +52,24 @@ export default function B2BPricing() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
-                        TARIFS TRANSPARENTS
+                        AU BON NIVEAU
                     </div>
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Des prix clairs, sans surprise
+                        Le bon accompagnement pour votre niveau.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Nos tarifs sont indicatifs et s'adaptent à vos besoins spécifiques. 
-                        Contactez-nous pour un devis personnalisé.
+                        On choisit l’option qui correspond réellement à votre situation, votre image et votre croissance.
                     </p>
                 </div>
 
                 {/* Packages */}
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
                     {packages.map((pkg, index) => (
-                        <div 
+                        <div
                             key={index}
                             className={`relative bg-white rounded-agency border-2 p-8 hover:shadow-xl transition-all duration-300 ${
-                                pkg.bestValue 
-                                    ? 'border-brand-blue shadow-lg scale-105' 
+                                pkg.bestValue
+                                    ? 'border-brand-blue shadow-lg scale-105'
                                     : 'border-gray-200'
                             }`}
                         >
@@ -85,22 +78,14 @@ export default function B2BPricing() {
                                     LE PLUS POPULAIRE
                                 </div>
                             )}
-                            
+
                             <div className="text-center mb-8">
                                 <h3 className="text-2xl font-sans font-bold text-brand-dark mb-2">
                                     {pkg.name}
                                 </h3>
-                                <div className="mb-2">
-                                    <span className="text-4xl font-bold text-brand-blue">{pkg.price}</span>
-                                    {pkg.price !== "Sur mesure" && (
-                                        <span className="text-gray-500 ml-2">{pkg.description}</span>
-                                    )}
-                                </div>
-                                {pkg.price === "Sur mesure" && (
-                                    <p className="text-gray-600">{pkg.description}</p>
-                                )}
+                                <p className="text-gray-600">{pkg.description}</p>
                             </div>
-                            
+
                             <ul className="space-y-4 mb-8">
                                 {pkg.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
@@ -109,13 +94,13 @@ export default function B2BPricing() {
                                     </li>
                                 ))}
                             </ul>
-                            
+
                             <button className={`w-full py-3 rounded-full font-medium transition-all duration-300 ${
                                 pkg.bestValue
                                     ? 'bg-brand-blue text-white hover:opacity-90'
                                     : 'border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white'
                             }`}>
-                                Demander un devis
+                                Parler de votre projet
                             </button>
                         </div>
                     ))}
@@ -130,7 +115,7 @@ export default function B2BPricing() {
                         {additionalServices.map((service, index) => (
                             <div key={index} className="text-center p-4 bg-brand-light rounded-agency">
                                 <h4 className="font-bold text-gray-800 mb-2">{service.name}</h4>
-                                <p className="text-brand-blue font-bold">{service.price}</p>
+                                <p className="text-gray-600 text-sm">Selon le périmètre</p>
                             </div>
                         ))}
                     </div>
@@ -139,23 +124,23 @@ export default function B2BPricing() {
                 <div className="mt-12 text-center">
                     <div className="bg-brand-dark/5 rounded-agency p-8 border border-brand-dark/10">
                         <h3 className="text-xl font-sans font-bold text-brand-dark mb-4">
-                            Volume = Réduction
+                            On adapte le niveau. Pas le message.
                         </h3>
                         <p className="text-gray-600 mb-4">
-                            Plus vous commandez de projets, plus vous bénéficiez de tarifs préférentiels.
+                            Le bon accompagnement dépend de votre réalité. Pas d’un schéma figé.
                         </p>
                         <div className="grid md:grid-cols-3 gap-4 text-sm">
                             <div>
-                                <span className="font-bold text-brand-blue">5+ projets/mois</span>
-                                <span className="text-gray-600 ml-2">-10%</span>
+                                <span className="font-bold text-brand-blue">Lancer</span>
+                                <span className="text-gray-600 ml-2">sans confusion</span>
                             </div>
                             <div>
-                                <span className="font-bold text-brand-blue">10+ projets/mois</span>
-                                <span className="text-gray-600 ml-2">-20%</span>
+                                <span className="font-bold text-brand-blue">Renforcer</span>
+                                <span className="text-gray-600 ml-2">sa présence</span>
                             </div>
                             <div>
-                                <span className="font-bold text-brand-blue">20+ projets/mois</span>
-                                <span className="text-gray-600 ml-2">-30%</span>
+                                <span className="font-bold text-brand-blue">Croître</span>
+                                <span className="text-gray-600 ml-2">avec vision</span>
                             </div>
                         </div>
                     </div>

@@ -32,7 +32,16 @@ dist-ssr
 build
 .vercel
 
-.idea
+# Generated / non-source assets
+public/robots.txt
+public/sitemap*.xml
 .next
 .next/*
 *.tsbuildinfo
+
+# Tests
+coverage
+# Skills d'agents installés localement (npx skills add) : volumineux, non versionnés
+.agents/
+.claude/skills/
+skills-lock.json

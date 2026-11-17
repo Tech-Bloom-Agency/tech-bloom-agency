@@ -1,6 +1,6 @@
 /**
  * Configuration Sitemap & Robots.txt
- * 
+ *
  * Usage:
  *   1. Installer: npm install next-sitemap
  *   2. Ajouter au package.json: "postbuild": "next-sitemap"
@@ -9,12 +9,12 @@
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://tech-bloom-agency.vercel.app",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://tech-bloom-agency.vercel.app",
   generateRobotsTxt: true,
   changefreq: "weekly",
   priority: 0.7,
   sitemapSize: 5000,
-  
+
   // Pages à exclure du sitemap
   exclude: [
     "/merci",
@@ -22,7 +22,7 @@ module.exports = {
     "/politique-confidentialite",
     "/admin/*",
   ],
-  
+
   // Transformation des URLs
   transform: async (config, path) => {
     return {
@@ -32,7 +32,7 @@ module.exports = {
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
     };
   },
-  
+
   // Configuration robots.txt
   robotsTxtOptions: {
     policies: [
@@ -49,7 +49,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      `${process.env.SITE_URL || "https://tech-bloom-agency.vercel.app"}/sitemap.xml`,
+      `${process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://tech-bloom-agency.vercel.app"}/sitemap.xml`,
     ],
   },
 };

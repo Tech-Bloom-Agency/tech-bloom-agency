@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,7 +21,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = portfolioData.find((p) => p.slug === slug);
-  
+
   if (!project) {
     return {
       title: "Projet non trouvé",
@@ -64,19 +65,19 @@ export default async function ProjectPage({ params }: PageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Accueil",
-        item: "https://techbloomagency.com",
+        item: SITE_CONFIG.url,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Portfolio",
-        item: "https://techbloomagency.com/portfolio",
+        item: `${SITE_CONFIG.url}/portfolio`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: project.title,
-        item: `https://techbloomagency.com/portfolio/${project.slug}`,
+        item: `${SITE_CONFIG.url}/portfolio/${project.slug}`,
       },
     ],
   };
@@ -234,7 +235,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 <h3 className="text-xl font-bold mb-3">Un projet similaire ?</h3>
                 <p className="text-sm opacity-90 mb-4">Discutons de vos besoins</p>
                 <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest group-hover:gap-2 transition-all">
-                  Demander un devis
+                  Parler de votre projet
                   <ExternalLink size={14} className="ml-2" />
                 </span>
               </Link>
@@ -249,7 +250,7 @@ export default async function ProjectPage({ params }: PageProps) {
           <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
             <blockquote className="max-w-4xl mx-auto text-center space-y-8">
               <p className="text-2xl lg:text-3xl font-heading font-medium leading-relaxed italic">
-                "{project.testimonial.quote}"
+                &quot;{project.testimonial.quote}&quot;
               </p>
               <footer className="space-y-2">
                 <p className="font-bold text-lg">{project.testimonial.author}</p>

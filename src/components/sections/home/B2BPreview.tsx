@@ -18,7 +18,7 @@ const PARTNERSHIP_PERKS = [
   },
   {
     title: "Marges Préservées",
-    description: "Des tarifs optimisés pour vous permettre de rester compétitif.",
+    description: "Une organisation optimisée pour vous permettre de rester compétitif.",
     icon: Target,
   },
 ];
@@ -108,7 +108,7 @@ export default function B2BPreview() {
                 href="/contact"
                 className="group px-10 py-5 border border-white/30 text-white font-heading font-semibold text-sm tracking-[0.15em] uppercase transition-colors duration-300 hover:border-teal/50 hover:text-teal inline-flex items-center justify-center"
               >
-                Demander un devis
+                Parler de votre projet
               </Link>
             </motion.div>
           </motion.div>

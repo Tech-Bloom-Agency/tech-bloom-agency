@@ -83,7 +83,7 @@ export const portfolioData: PortfolioProject[] = [
       author: "Sarah",
       role: "CTO de Cyber-Guard"
     },
-    results: ["Levée de fonds 2M€", "Cohérence 100%", "Reconnaissance marque +60%"],
+    results: ["Levée de fonds réussie", "Cohérence 100%", "Reconnaissance marque +60%"],
     year: 2024
   },
   {

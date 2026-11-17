@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,17 +20,13 @@ export default function Hero() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
   const openCalendly = () => {
-    // @ts-ignore
+    const calendlyUrl = SITE_CONFIG.calendlyUrl;
     if (window.Calendly) {
-      // @ts-ignore
       window.Calendly.initPopupWidget({
-        url: "https://calendly.com/techbloomagency/appel-decouverte",
+        url: calendlyUrl,
       });
     } else {
-      window.open(
-        "https://calendly.com/techbloomagency/appel-decouverte",
-        "_blank"
-      );
+      window.open(calendlyUrl, "_blank");
     }
   };
 
@@ -51,7 +48,7 @@ export default function Hero() {
     }),
   };
 
-  const subtitleWords = ["Stratégie", "•", "Création", "•", "Croissance"];
+  const subtitleWords = ["Marketing", "•", "SEO", "•", "Croissance"];
 
   return (
     <section

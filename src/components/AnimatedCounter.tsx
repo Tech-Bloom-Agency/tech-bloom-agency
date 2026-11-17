@@ -26,6 +26,8 @@ export default function AnimatedCounter({
     // Extraire la valeur numérique (enlève les %, +, etc.)
     const numericValue = parseFloat(value.toString().replace(/[^0-9.]/g, ""));
     if (isNaN(numericValue)) {
+      // Remise à zéro si la prop `value` passe à une valeur non numérique.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDisplayValue(0);
       return;
     }

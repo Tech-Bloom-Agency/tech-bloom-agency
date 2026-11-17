@@ -34,8 +34,8 @@ export default function About() {
                                 Notre Histoire
                             </h2>
                             <p className="text-brand-gray font-medium leading-relaxed mb-6 uppercase tracking-wide">
-                                Tech Bloom Agency est née d'une vision simple : rendre le digital accessible
-                                aux PME et entrepreneurs de Madagascar et d'Afrique francophone. Notre nom évoque
+                                Tech Bloom Agency est née d&apos;une vision simple : rendre le digital accessible
+                                aux PME et entrepreneurs de Madagascar et d&apos;Afrique francophone. Notre nom évoque
                                 la floraison des idées grâce à la technologie, symbolisant la croissance et le
                                 développement de nos clients.
                             </p>
@@ -55,7 +55,7 @@ export default function About() {
                             </h2>
                             <p className="text-brand-gray font-medium leading-relaxed mb-12 uppercase tracking-wide">
                                 Devenir une référence en solutions digitales pour les PME à Madagascar et en
-                                Afrique francophone, en utilisant l'IA et les technologies modernes comme leviers
+                                Afrique francophone, en utilisant l&apos;IA et les technologies modernes comme leviers
                                 de croissance. Nous voulons être le partenaire de confiance qui propulse votre
                                 entreprise vers le succès digital.
                             </p>
