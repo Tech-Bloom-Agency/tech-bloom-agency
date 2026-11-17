@@ -67,32 +67,6 @@ const organizationSchema = {
   ]
 };
 
-const aggregateRatingSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Tech Bloom Agency",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.6",
-    "reviewCount": "3",
-    "bestRating": "5"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Longin — Runrobe" },
-      "reviewBody": "L'efficacité du travail fourni par Tech Bloom Agency est satisfaisante.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Erica — Girl's Touch" },
-      "reviewBody": "C'était d'une facilité et fluidité optimalement parfait.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }
-  ]
-};
-
 export default function Page() {
   return (
     <PageWrapper>
@@ -100,10 +74,6 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
       />
 
       {/* Luxury Hero with 3D animations and parallax */}

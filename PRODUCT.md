@@ -125,11 +125,17 @@ Affichables, confirmés par Sullivan le 17 novembre 2026 :
   par dossier** ; la signature TBA interdit tout nom de client dans un contenu
   public sans accord.
 
+**Ancienneté, confirmée par Sullivan le 17 novembre 2026** : Tech Bloom Agency
+a plus d'un an ; les activités entrent dans leur troisième année. Les deux faits
+sont distincts et doivent rester distincts. Le site annonçait « plus de 3 ans »,
+c'était faux.
+
 **P5 — la fiche Google est au nom de Sullivan, pas de Tech Bloom Agency.**
-Conséquence directe : aucune fiche d'établissement vérifiée n'existe pour TBA.
-Les données structurées de type `LocalBusiness` et l'`aggregateRating` de
-l'accueil n'ont donc aucune source vérifiable derrière elles. Le type a été
-ramené à `Organization` ; le sort de l'`aggregateRating` reste à trancher.
+Aucune fiche d'établissement vérifiée n'existe donc pour TBA. Conséquences déjà
+tirées : le type `LocalBusiness` a été ramené à `Organization`, et
+l'`aggregateRating` de l'accueil (4,6 sur 3 avis) a été retiré sur décision de
+Sullivan — aucune source vérifiable ne pouvait l'étayer. Reste ouvert : créer ou
+non une fiche au nom de l'agence.
 
 Absences que le travail futur ne doit pas combler par invention :
 
@@ -138,6 +144,11 @@ Absences que le travail futur ne doit pas combler par invention :
   du travail livré à un client.
 - **« 97 % Engagement » est retiré** : la mesure n'existe pas et n'est pas
   défendable devant un prospect.
+- **Aucune note moyenne.** Quatre jeux de chiffres contradictoires ont été
+  trouvés et supprimés dans le code (`data/stats.ts`, `StatsSection`,
+  `constants.ts`, et l'`aggregateRating` JSON-LD), annonçant selon les cas 20+
+  projets, 90 % ou 97 % de satisfaction, 1, 2 ou 3 ans d'ancienneté. Les seuls
+  chiffres affichables sont ceux listés ci-dessus.
 - Pas de prix publics, pas de références presse, pas de benchmark.
 
 ## Product Principles

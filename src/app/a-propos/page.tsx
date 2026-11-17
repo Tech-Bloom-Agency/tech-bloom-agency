@@ -13,7 +13,7 @@ export default function AboutPage() {
                 badge="À Propos"
                 title="Notre Agence"
                 subtitle="Tech Bloom."
-                description="Une équipe passionnée transformant vos visions en réalités digitales depuis plus de 3 ans à Madagascar."
+                description="Tech Bloom Agency a plus d'un an. Nos activités, elles, entrent dans leur troisième année, à Madagascar."
             />
             <About />
             <TeamSection />
