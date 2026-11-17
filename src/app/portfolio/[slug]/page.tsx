@@ -250,7 +250,7 @@ export default async function ProjectPage({ params }: PageProps) {
           <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
             <blockquote className="max-w-4xl mx-auto text-center space-y-8">
               <p className="text-2xl lg:text-3xl font-heading font-medium leading-relaxed italic">
-                "{project.testimonial.quote}"
+                &quot;{project.testimonial.quote}&quot;
               </p>
               <footer className="space-y-2">
                 <p className="font-bold text-lg">{project.testimonial.author}</p>

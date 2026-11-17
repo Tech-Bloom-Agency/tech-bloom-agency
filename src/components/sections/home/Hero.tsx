@@ -21,9 +21,7 @@ export default function Hero() {
 
   const openCalendly = () => {
     const calendlyUrl = SITE_CONFIG.calendlyUrl;
-    // @ts-ignore
     if (window.Calendly) {
-      // @ts-ignore
       window.Calendly.initPopupWidget({
         url: calendlyUrl,
       });

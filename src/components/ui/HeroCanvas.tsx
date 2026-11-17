@@ -34,6 +34,8 @@ export default function HeroCanvas() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Garde anti-hydratation : le canvas WebGL ne doit pas être rendu côté serveur.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

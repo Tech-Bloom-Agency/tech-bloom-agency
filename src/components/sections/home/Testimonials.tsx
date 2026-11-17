@@ -112,7 +112,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; ind
         
         {/* Citation */}
         <p className="text-2xl md:text-3xl font-heading font-medium leading-relaxed italic relative z-10">
-          "{testimonial.quote}"
+          &quot;{testimonial.quote}&quot;
         </p>
 
         {/* Auteur */}

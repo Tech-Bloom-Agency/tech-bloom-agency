@@ -1,0 +1,83 @@
+name: CI
+
+# Garde-fou qualité : tout ce qui arrive sur preprod/prod doit passer
+# lint + typecheck + build avant que Vercel ne déploie.
+on:
+  pull_request:
+    branches: [prod, preprod]
+  push:
+    branches: [prod, preprod]
+  workflow_dispatch:
+
+# Une seule exécution par branche/PR : les pushes successifs annulent les runs obsolètes.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+
+jobs:
+  quality:
+    name: Lint · Typecheck · Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint -- --max-warnings=0
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # Cache du compilateur Next pour accélérer les builds successifs.
+      - name: Restore Next.js build cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: nextjs-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('src/**/*.[jt]s', 'src/**/*.[jt]sx') }}
+          restore-keys: |
+            nextjs-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-
+            nextjs-${{ runner.os }}-
+
+      - name: Build
+        run: npm run build
+
+  audit:
+    name: Audit dépendances
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Informatif : l'endpoint npm audit est parfois indisponible,
+    # on ne bloque pas une PR pour autant.
+    continue-on-error: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: npm audit
+        run: npm audit --audit-level=high

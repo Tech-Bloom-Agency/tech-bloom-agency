@@ -9,7 +9,9 @@
     "build:analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
