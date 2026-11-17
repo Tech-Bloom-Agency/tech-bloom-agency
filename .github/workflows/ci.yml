@@ -22,7 +22,7 @@ env:
 
 jobs:
   quality:
-    name: Lint · Typecheck · Build
+    name: Lint · Typecheck · Tests · Build
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -44,6 +44,9 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      - name: Tests
+        run: npm test
 
       # Cache du compilateur Next pour accélérer les builds successifs.
       - name: Restore Next.js build cache
