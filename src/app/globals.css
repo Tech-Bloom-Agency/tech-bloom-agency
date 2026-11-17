@@ -344,7 +344,7 @@
     border-radius: inherit;
     transform-origin: left center;
     background: linear-gradient(90deg, rgba(184, 0, 31, 0.95), rgba(80, 118, 135, 0.95), rgba(255, 255, 255, 0.95));
-    animation: intro-progress 10s ease-in-out forwards;
+    animation: intro-progress 1.3s ease-in-out forwards;
   }
 
   @keyframes intro-drift {
@@ -388,4 +388,19 @@
 h1, h2, h3 {
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Réglage système « réduire les animations ».
+   Les animations framer-motion sont traitées par MotionProvider ; il ne reste
+   ici que le CSS. On coupe les boucles décoratives et on garde animate-spin et
+   animate-pulse, qui signalent un chargement en cours. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-gradient,
+  .animate-ping {
+    animation: none;
+  }
 }

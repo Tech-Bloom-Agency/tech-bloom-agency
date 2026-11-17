@@ -11,8 +11,12 @@ const config = [
             "node_modules/**",
             "public/**",
             "next-env.d.ts",
-            // Config de référence (bundle analyzer) non chargée par le build
-            "next.config.analyzer.js",
+            // Skills d'agents installés en local (voir docs/SKILLS_AGENTS.md) :
+            // code tiers, non versionné, hors périmètre du lint du projet
+            ".agents/**",
+            ".claude/**",
+            ".impeccable/**",
+            ".taste-skill/**",
         ],
     },
     ...nextCoreWebVitals,
