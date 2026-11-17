@@ -55,7 +55,11 @@ des chiffres. À trancher avant d'écrire une promesse en page d'accueil.
 - **Chaîne de contact** : formulaire → webhook n8n (notification, Telegram,
   Google Sheets) → repli courriel Resend si n8n ne répond pas. La notification
   part vers l'agence, jamais vers l'adresse saisie par le visiteur.
-- **Rendez-vous** : Calendly, appel découverte.
+- **Rendez-vous** : page de réservation Google Agenda
+  (`calendar.app.google/CNDmBAwBJGos824k6`), appel découverte. Calendly n'est
+  plus utilisé.
+- **Adresse publiée** : « Madagascar », sans ville. Décision de Sullivan du
+  17 novembre 2026 : aucune adresse postale précise n'est affichée.
 - **Hébergement** : Vercel, intégration Git, branches `preprod` puis `prod`.
 
 ## Capabilities and Constraints
@@ -73,6 +77,16 @@ des chiffres. À trancher avant d'écrire une promesse en page d'accueil.
   jour à la main. **P2 — à fusionner.**
 - CI GitHub Actions bloquant (lint, typecheck, tests Vitest, build) ; `prod` et
   `preprod` protégées, le déploiement ne part pas sur un CI rouge.
+
+**Technologies et outils réellement utilisés par l'agence** (liste fournie par
+Sullivan le 17 novembre 2026, c'est elle qui fait foi sur le site) : Next.js,
+React, Node.js, Supabase, PostgreSQL, Docker, Vercel, Claude Code, Codex,
+Google, Meta Business Suite, Canva, CapCut.
+
+TypeScript et Tailwind CSS sont également utilisés — le dépôt en est la preuve —
+mais ne figurent pas dans la liste de Sullivan et ne sont donc pas affichés.
+WordPress, Figma et « IA » étaient annoncés sur le site sans être étayés : ils
+sont retirés.
 
 ## Brand Commitments
 
@@ -110,6 +124,12 @@ Affichables, confirmés par Sullivan le 17 novembre 2026 :
   `src/data/testimonials.ts`. **P4 : l'accord écrit doit être confirmé dossier
   par dossier** ; la signature TBA interdit tout nom de client dans un contenu
   public sans accord.
+
+**P5 — la fiche Google est au nom de Sullivan, pas de Tech Bloom Agency.**
+Conséquence directe : aucune fiche d'établissement vérifiée n'existe pour TBA.
+Les données structurées de type `LocalBusiness` et l'`aggregateRating` de
+l'accueil n'ont donc aucune source vérifiable derrière elles. Le type a été
+ramené à `Organization` ; le sort de l'`aggregateRating` reste à trancher.
 
 Absences que le travail futur ne doit pas combler par invention :
 
