@@ -45,5 +45,7 @@ coverage
 .agents/
 .claude/skills/
 skills-lock.json
-.impeccable/
 .taste-skill/
+# Rapports d'audit impeccable (les autres fichiers .impeccable/ sont versionnés :
+# config.json, surfaces/, design.json — ils documentent le système de design)
+.impeccable/audit/
