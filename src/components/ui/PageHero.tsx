@@ -116,7 +116,7 @@ export default function PageHero({
             className="mb-8"
           >
             <span
-              className="text-[clamp(2rem,8vw,4rem)] font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal to-blue leading-[0.9]"
+              className="text-[clamp(2rem,8vw,4rem)] font-heading font-bold text-beige leading-[0.9]"
             >
               {subtitle}
             </span>

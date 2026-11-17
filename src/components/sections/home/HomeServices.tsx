@@ -120,9 +120,7 @@ export default function HomeServices() {
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-black text-navy leading-[0.9] tracking-tight">
               Marketing digital
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue to-teal">
-                qui convertit
-              </span>
+              <span className="text-red">qui convertit</span>
             </h2>
           </motion.div>
 

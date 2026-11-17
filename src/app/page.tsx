@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/home/Hero";
-import StatsSection from "@/components/sections/home/StatsSection";
 import HomeServices from "@/components/sections/home/HomeServices";
 import PortfolioPreview from "@/components/sections/home/PortfolioPreview";
 import Testimonials from "@/components/sections/home/Testimonials";
@@ -111,9 +110,6 @@ export default function Page() {
 
       {/* Luxury Hero with 3D animations and parallax */}
       <Hero />
-
-      {/* Animated stats with counters */}
-      <StatsSection />
 
       {/* Services with luxury card effects */}
       <HomeServices />

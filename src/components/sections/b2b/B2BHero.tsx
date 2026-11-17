@@ -85,9 +85,7 @@ export default function B2BHero() {
           className="text-[clamp(2.5rem,8vw,5.5rem)] font-heading font-black leading-[0.9] tracking-tight text-white mb-8"
         >
           Votre image.<br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal to-blue">
-            Votre voix. Votre croissance.
-          </span>
+          <span className="text-beige">Votre voix. Votre croissance.</span>
         </motion.h1>
 
         {/* Description */}

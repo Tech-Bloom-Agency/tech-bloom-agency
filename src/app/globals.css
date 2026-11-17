@@ -32,6 +32,24 @@
 }
 
 @layer base {
+  /* Surfaces que l'on ne dessine pas mais qui portent quand même la charte :
+     sélection, caret et anneau de focus viennent de la palette v2.0 et non des
+     valeurs par défaut du navigateur. Dans @layer base, donc surchargeables
+     par un utilitaire Tailwind sur un fond sombre. */
+  ::selection {
+    background-color: var(--color-teal);
+    color: var(--color-white);
+  }
+
+  html {
+    caret-color: var(--color-red);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-red);
+    outline-offset: 3px;
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -78,10 +96,6 @@
 }
 
 @layer utilities {
-  .text-brand-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-blue)] to-[var(--color-red)];
-  }
-
   .section-padding {
     @apply py-20 md:py-32;
   }
@@ -105,18 +119,6 @@
 
   .preserve-3d {
     transform-style: preserve-3d;
-  }
-
-  /* Gradient text animation */
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite;
-  }
-
-  @keyframes gradient-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
   }
 
   /* Text glow effect */
@@ -159,7 +161,6 @@ h1, h2, h3 {
     scroll-behavior: auto;
   }
 
-  .animate-gradient,
   .animate-ping {
     animation: none;
   }

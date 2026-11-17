@@ -1,5 +1,4 @@
 import About from "@/components/sections/about/About";
-import StatsSection from "@/components/sections/home/StatsSection";
 import TeamSection from "@/components/sections/about/TeamSection";
 import Testimonials from "@/components/sections/home/Testimonials";
 import CTASection from "@/components/sections/shared/CTASection";
@@ -17,7 +16,6 @@ export default function AboutPage() {
                 description="Une équipe passionnée transformant vos visions en réalités digitales depuis plus de 3 ans à Madagascar."
             />
             <About />
-            <StatsSection />
             <TeamSection />
             <Testimonials />
             <CTASection />
