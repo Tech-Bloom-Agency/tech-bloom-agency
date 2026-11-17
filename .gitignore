@@ -41,3 +41,7 @@ public/sitemap*.xml
 
 # Tests
 coverage
+# Skills d'agents installés localement (npx skills add) : volumineux, non versionnés
+.agents/
+.claude/skills/
+skills-lock.json

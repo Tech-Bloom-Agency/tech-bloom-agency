@@ -65,9 +65,6 @@ jobs:
     name: Audit dépendances
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    # Informatif : l'endpoint npm audit est parfois indisponible,
-    # on ne bloque pas une PR pour autant.
-    continue-on-error: true
 
     steps:
       - name: Checkout
@@ -82,5 +79,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Informatif : l'endpoint npm audit est parfois indisponible et des avis
+      # apparaissent sans correctif. Le step signale sans faire échouer le job.
       - name: npm audit
+        continue-on-error: true
         run: npm audit --audit-level=high
