@@ -42,12 +42,11 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Services digitaux",
   "provider": {
-    "@type": "LocalBusiness",
+    "@type": "Organization",
     "name": "Tech Bloom Agency",
     "url": process.env.NEXT_PUBLIC_SITE_URL || "https://tech-bloom-agency.vercel.app",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Toamasina",
       "addressCountry": "MG"
     }
   },

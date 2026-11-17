@@ -40,9 +40,9 @@ export const metadata: Metadata = {
 };
 
 // Schema.org JSON-LD
-const localBusinessSchema = {
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Organization",
   "name": "Tech Bloom Agency",
   "alternateName": "TBA",
   "description": "Agence digitale à Madagascar : création de sites web, branding, marketing digital et community management.",
@@ -58,11 +58,9 @@ const localBusinessSchema = {
   },
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Toamasina",
     "addressCountry": "MG"
   },
   "areaServed": ["Madagascar","France","Belgique","Suisse","Afrique francophone"],
-  "openingHours": "Mo-Fr 08:00-18:00",
   "sameAs": [
     "https://facebook.com/techbloomagency",
     "https://linkedin.com/company/tech-bloom-agency"
@@ -101,7 +99,7 @@ export default function Page() {
       {/* JSON-LD Scripts */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <script
         type="application/ld+json"

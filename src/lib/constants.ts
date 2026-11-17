@@ -6,10 +6,11 @@ export const SITE_CONFIG = {
     description: "Agence de marketing digital à Madagascar. Stratégie, community management, SEO, publicité et création de sites orientés conversion.",
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "sullivanjoro3@gmail.com",
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+261 34 10 608 02",
-    calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/sullivan_techbloomagency",
+    // Prise de rendez-vous : page de réservation Google Agenda
+    bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "https://calendar.app.google/CNDmBAwBJGos824k6",
     b2bEmail: process.env.NEXT_PUBLIC_B2B_EMAIL || "sullivanjoro3@gmail.com",
     b2bPhone: process.env.NEXT_PUBLIC_B2B_PHONE || "+261 34 10 608 02",
-    address: "Toamasina, Madagascar",
+    address: "Madagascar",
     founder: "Joro Sullivan RAKOTONIAINA",
     social: {
         facebook: "https://www.facebook.com/profile.php?id=61578188340191",
