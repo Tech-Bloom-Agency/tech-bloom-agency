@@ -9,6 +9,11 @@
 		"binding": "ASSETS"
 	},
 	"send_email": [{ "name": "EMAIL" }],
+	// Les builds de branches non-production lancent `wrangler preview` :
+	// les bindings doivent y être déclarés explicitement.
+	"previews": {
+		"send_email": [{ "name": "EMAIL" }]
+	},
 	"routes": [
 		{ "pattern": "techbloom.dev", "custom_domain": true }
 	]
