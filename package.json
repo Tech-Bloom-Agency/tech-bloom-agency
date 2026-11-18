@@ -16,7 +16,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.2.2",
+    "@hookform/resolvers": "^7.0.6",
     "@iconify/icons-ion": "^1.2.10",
     "@iconify/react": "^5.2.1",
     "@next/third-parties": "^16.3.6",
