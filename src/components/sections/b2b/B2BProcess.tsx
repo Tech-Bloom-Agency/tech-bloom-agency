@@ -1,37 +1,37 @@
 "use client";
 
-import { BarChart3, Code2, Compass, Handshake, Lock, RefreshCw, Rocket, Target } from "lucide-react";
+import { ClipboardCheck, Code2, Compass, FileText, Handshake, Lock, RefreshCw, Target } from "lucide-react";
 
 export default function B2BProcess() {
     const steps = [
         {
             number: "01",
-            title: "Audit",
-            description: "On regarde ce qui fonctionne, ce qui bloque et ce qui mérite d’être renforcé.",
+            title: "Cadrage",
+            description: "On lit votre cahier des charges et on vous rend ce qu’on en a compris, points ouverts compris.",
             icon: Compass
         },
         {
             number: "02",
-            title: "Direction",
-            description: "On pose la bonne direction. Le bon message. Le bon angle pour parler à la bonne audience.",
-            icon: BarChart3
+            title: "Devis",
+            description: "Périmètre écrit, délai, et surtout ce qui est hors périmètre. Rien ne commence sans votre accord.",
+            icon: FileText
         },
         {
             number: "03",
-            title: "Création",
-            description: "On construit les éléments concrets qui donnent vie à votre présence digitale.",
+            title: "Développement",
+            description: "Commits sur votre dépôt, point hebdomadaire. Vous suivez l’avancement sans avoir à le demander.",
             icon: Code2
         },
         {
             number: "04",
-            title: "Lancement",
-            description: "On met tout en place pour que votre marque inspire confiance dès le premier contact.",
-            icon: Rocket
+            title: "Recette",
+            description: "Une liste de vérifications cochée ligne par ligne avant de vous rendre la main.",
+            icon: ClipboardCheck
         },
         {
             number: "05",
             title: "Suivi",
-            description: "On ajuste, on améliore, on fait grandir la présence de votre marque dans le temps.",
+            description: "On reste joignable après la livraison. Un correctif sur notre travail ne se renégocie pas.",
             icon: Handshake
         }
     ];
@@ -41,10 +41,10 @@ export default function B2BProcess() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        On va droit au but.
+                        Une méthode lisible, du devis à la recette.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Clarté. Priorités. Exécution. C’est la manière dont on avance.
+                        Vous engagez votre nom sur notre travail. Vous devez donc savoir à tout moment où il en est.
                     </p>
                 </div>
 

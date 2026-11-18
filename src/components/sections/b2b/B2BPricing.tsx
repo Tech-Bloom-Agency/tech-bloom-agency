@@ -6,48 +6,48 @@ import Link from "next/link";
 export default function B2BPricing() {
     const packages = [
         {
-            name: "Positionnement",
-            description: "Pour clarifier votre marque",
+            name: "Renfort ponctuel",
+            description: "Pour absorber un pic de charge",
             features: [
-                "Audit de votre présence",
-                "Message plus fort",
-                "Direction stratégique",
-                "Image plus cohérente",
-                "Premiers leviers"
+                "Lot de travail défini à l’avance",
+                "Devis avant de commencer",
+                "Livraison datée",
+                "Aucun engagement de durée",
+                "Vous gardez la relation client"
             ],
             bestValue: false
         },
         {
-            name: "Visibilité",
-            description: "Pour être vu et mémorisé",
+            name: "Équipe dédiée",
+            description: "Pour une charge régulière",
             features: [
-                "Gestion CM / SMM",
-                "Contenus premium",
-                "Planning éditorial",
-                "Pilotage des réseaux",
-                "Suivi et optimisation"
+                "Un ou plusieurs développeurs",
+                "Dans votre dépôt et vos outils",
+                "Point hebdomadaire",
+                "Montée en charge progressive",
+                "Préavis convenu à l’avance"
             ],
             bestValue: true
         },
         {
-            name: "Accompagnement",
-            description: "Pour avancer sans hésitation",
+            name: "Projet au forfait",
+            description: "Pour livrer un produit fini",
             features: [
-                "Conseil digital",
-                "Diagnostic clair",
-                "Plan d’action sur mesure",
-                "Refonte de la communication",
-                "Suivi stratégique"
+                "Cahier des charges relu avec vous",
+                "Périmètre et délai fixés au devis",
+                "Recette cochée avant livraison",
+                "Livré sous votre marque",
+                "Maintenance en option"
             ],
             bestValue: false
         }
     ];
 
     const additionalServices = [
-        { name: "Création de contenus" },
-        { name: "Refonte de site" },
-        { name: "Prise de photos / vidéos" },
-        { name: "Conseil digital" }
+        { name: "Reprise de projet existant" },
+        { name: "Audit technique" },
+        { name: "Migration et refonte" },
+        { name: "Maintenance et correctifs" }
     ];
 
     return (
@@ -58,10 +58,10 @@ export default function B2BPricing() {
                         AU BON NIVEAU
                     </div>
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Le bon accompagnement pour votre niveau.
+                        Trois façons de travailler ensemble.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        On choisit l’option qui correspond réellement à votre situation, votre image et votre croissance.
+                        Le bon format dépend de votre charge, pas de votre taille. On en discute avant de chiffrer.
                     </p>
                 </div>
 

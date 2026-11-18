@@ -13,12 +13,14 @@ export default function B2BHero() {
         <section className="surface-navy-mesh pb-24 pt-36 lg:pb-32 lg:pt-44">
             <div className="mx-auto max-w-[1200px] px-6 lg:px-12">
                 <h1 className="max-w-4xl text-balance font-heading text-[clamp(2.5rem,7vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
-                    Votre image. Votre voix. Votre croissance.
+                    Vous signez les projets. Nous écrivons le code.
                 </h1>
 
                 <p className="mt-8 max-w-2xl text-pretty font-body text-lg leading-relaxed text-beige/70 lg:text-xl">
-                    On clarifie votre message. On structure votre présence. On donne à
-                    votre marque le niveau qu&rsquo;elle mérite.
+                    Tech Bloom Agency développe en marque blanche pour les agences
+                    francophones : sites, e-commerce, applications, refontes et
+                    maintenance. Vous gardez la relation client, nous absorbons la
+                    charge technique.
                 </p>
 
                 <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -26,7 +28,7 @@ export default function B2BHero() {
                         href="/contact"
                         className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-red px-8 py-4 font-heading text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-red-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-beige"
                     >
-                        Parler de votre projet
+                        Parler de votre charge
                     </Link>
 
                     <Link

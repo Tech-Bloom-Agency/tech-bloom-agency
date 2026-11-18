@@ -1,41 +1,41 @@
 "use client";
 
-import { Check, Smartphone, Sparkles, Target } from "lucide-react";
+import { Check, Layout, LayoutDashboard, ShoppingBag } from "lucide-react";
 
 export default function B2BSolution() {
     const solutions = [
         {
-            title: "Positionnement",
-            description: "On clarifie votre message. On met en avant ce qui compte. On donne à votre marque une vraie présence.",
+            title: "Sites et refontes",
+            description: "De vos maquettes au déploiement, livré sous votre marque. Vous gardez la main sur le client et sur le discours.",
             features: [
-                "Message plus fort",
-                "Image plus claire",
-                "Valeur plus visible",
-                "Confiance renforcée"
+                "Intégration depuis vos maquettes",
+                "Next.js, React, Node",
+                "Responsive vérifié",
+                "Déploiement Vercel"
             ],
-            icon: Target
+            icon: Layout
         },
         {
-            title: "Réseaux sociaux",
-            description: "On pilote votre présence avec un ton juste, cohérent et crédible. Sans bruit. Juste ce qui aide à grandir.",
+            title: "E-commerce",
+            description: "Boutiques en ligne complètes : catalogue, paiement, commandes. Y compris la reprise d’un existant.",
             features: [
-                "Contenus alignés",
-                "Audience engagée",
-                "Visibilité durable",
-                "Réseaux maîtrisés"
+                "Catalogue et paiement",
+                "Reprise de données",
+                "Espace client",
+                "Suivi des commandes"
             ],
-            icon: Smartphone
+            icon: ShoppingBag
         },
         {
-            title: "Site web",
-            description: "Un site qui rassure, capte l’attention et guide le bon prospect vers le bon prochain pas.",
+            title: "Applications métier",
+            description: "Outils sur mesure quand le site ne suffit plus : espaces clients, tableaux de bord, intégrations.",
             features: [
-                "Design premium",
-                "Parcours clair",
-                "Action plus simple",
-                "Présence crédible"
+                "Supabase et PostgreSQL",
+                "Authentification et rôles",
+                "Tableaux de bord",
+                "API et intégrations"
             ],
-            icon: Sparkles
+            icon: LayoutDashboard
         }
     ];
 
@@ -47,10 +47,10 @@ export default function B2BSolution() {
                         NOTRE APPROCHE
                     </div>
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Une présence forte. Un message clair.
+                        Ce qu’on prend en charge.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        On structure la communication. On nettoie le message. On donne à votre marque l’impact qu’elle mérite.
+                        Trois familles de travail, toutes livrées sous votre marque. Votre client ne nous voit jamais.
                     </p>
                 </div>
 
