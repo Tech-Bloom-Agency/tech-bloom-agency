@@ -14,7 +14,6 @@ export default defineConfig({
         // Les tests de composants/hooks déclarent `@vitest-environment jsdom`.
         environment: "node",
         globals: true,
-        setupFiles: ["./vitest.setup.ts"],
         include: ["src/**/*.{test,spec}.{ts,tsx}"],
     },
 });

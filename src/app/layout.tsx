@@ -9,7 +9,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { SITE_CONFIG } from "@/lib/constants";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import GA4Events from "@/components/GA4Events";
-import BrandTransitionOverlay from "@/components/BrandTransitionOverlay";
+import MotionProvider from "@/components/MotionProvider";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -71,15 +71,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="fr" className={`${montserrat.variable} ${bitter.variable}`}>
             <body className="bg-white text-navy min-h-screen antialiased font-body">
-                <BrandTransitionOverlay />
-                <ScrollProgress />
-                <Header />
-                <main>{children}</main>
-                <Footer />
-                <WhatsAppButton />
-                <FacebookPixel />
-                <GA4Events />
-                {gaId && <GoogleAnalytics gaId={gaId} />}
+                <MotionProvider>
+                    <ScrollProgress />
+                    <Header />
+                    <main>{children}</main>
+                    <Footer />
+                    <WhatsAppButton />
+                    <FacebookPixel />
+                    <GA4Events />
+                    {gaId && <GoogleAnalytics gaId={gaId} />}
+                </MotionProvider>
             </body>
         </html>
     );
