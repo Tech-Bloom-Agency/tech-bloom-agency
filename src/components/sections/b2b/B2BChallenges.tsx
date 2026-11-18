@@ -1,28 +1,28 @@
 "use client";
 
-import { Building2, Compass, MessageSquare, Smartphone } from "lucide-react";
+import { CalendarX, Globe, UserPlus, UserX } from "lucide-react";
 
 export default function B2BChallenges() {
     const challenges = [
         {
-            title: "On ne vous voit pas assez",
-            description: "Votre marque a du potentiel, mais elle passe inaperçue dans un environnement trop bruyant.",
-            icon: Compass
+            title: "Vous refusez des projets",
+            description: "Une demande arrive, l’équipe est déjà pleine, et le projet part chez un concurrent. La charge varie plus vite que vos effectifs.",
+            icon: CalendarX
         },
         {
-            title: "Le message manque de punch",
-            description: "Le public ne comprend pas vite votre valeur. Et sans clarté, il ne prend pas action.",
-            icon: MessageSquare
+            title: "Recruter engage trop loin",
+            description: "Un développeur se recrute en plusieurs mois et s’engage sur plusieurs années, pour une charge qui change d’un trimestre à l’autre.",
+            icon: UserPlus
         },
         {
-            title: "Les réseaux ne servent pas votre image",
-            description: "Du contenu existe, mais il n’aide ni votre crédibilité ni votre croissance. Il manque de cohérence.",
-            icon: Smartphone
+            title: "Le prestataire disparaît en route",
+            description: "Un freelance injoignable au milieu d’un projet, c’est votre nom qui le porte devant le client. Le risque ne se sous-traite pas.",
+            icon: UserX
         },
         {
-            title: "Le site n’aide pas",
-            description: "Le site donne une impression trop faible pour le niveau réel de votre entreprise.",
-            icon: Building2
+            title: "La distance se paie en coordination",
+            description: "Décalage horaire, échanges en anglais, spécifications mal comprises : ce qu’on gagne sur le taux journalier se reperd en allers-retours.",
+            icon: Globe
         }
     ];
 
@@ -31,10 +31,10 @@ export default function B2BChallenges() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Le problème n’est pas votre ambition.
+                        Votre problème n’est pas le talent. C’est la capacité.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        C’est le manque de clarté. Et sans clarté, la croissance s’arrête.
+                        Une agence qui refuse du travail ne manque pas de clients. Elle manque de mains disponibles au bon moment.
                     </p>
                 </div>
 

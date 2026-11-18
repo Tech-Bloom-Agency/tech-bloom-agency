@@ -111,15 +111,12 @@ ${formData.message}`;
         <section className="py-20 px-6 bg-beige">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
-                    <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
-                        CONTACT
-                    </div>
                     <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-dark mb-6">
-                        Discutons de votre projet
+                        Parlons de votre charge.
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Remplissez ce formulaire pour recevoir un devis personnalisé
-                        et découvrir comment nous pouvons collaborer.
+                        Dites-nous votre volume et ce que vous cherchez à déléguer.
+                        On répond avec un périmètre et un délai, pas avec une plaquette.
                     </p>
                 </div>
 
