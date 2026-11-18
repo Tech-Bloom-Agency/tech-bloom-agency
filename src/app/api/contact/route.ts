@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { z } from "zod";
-import { SITE_CONFIG } from "@/lib/constants";
 
 // Schema de validation (longueurs max pour éviter les payloads abusifs)
 const contactSchema = z.object({
@@ -101,8 +101,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 3. POST webhook n8n, puis fallback Resend
-    const delivered = (await sendToWebhook(data, ip)) || (await sendFallbackEmail(data));
+    // 3. Notification par email
+    const delivered = await sendNotificationEmail(data);
 
     if (!delivered) {
       console.error("Contact form: no delivery channel succeeded");
@@ -125,92 +125,70 @@ export async function POST(request: NextRequest) {
   }
 }
 
-/**
- * Envoi vers le webhook n8n (timeout 8s). Retourne true si livré.
- */
-async function sendToWebhook(data: ContactData, ip: string): Promise<boolean> {
-  const webhookUrl = process.env.N8N_WEBHOOK_URL;
-
-  if (!webhookUrl) {
-    console.error("N8N_WEBHOOK_URL not configured");
-    return false;
-  }
-
-  try {
-    const { company: _honeypot, ...lead } = data;
-    const webhookResponse = await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...lead,
-        source: "website_contact",
-        timestamp: new Date().toISOString(),
-        ip,
-      }),
-      signal: AbortSignal.timeout(8000),
-    });
-
-    if (!webhookResponse.ok) {
-      throw new Error(`Webhook responded with ${webhookResponse.status}`);
-    }
-
-    return true;
-  } catch (webhookError) {
-    console.error("n8n webhook failed:", webhookError);
-    return false;
-  }
+/** Binding Email de Cloudflare (voir send_email dans wrangler.jsonc). */
+interface EmailBinding {
+  send(message: {
+    to: string;
+    from: string;
+    subject: string;
+    html: string;
+    text: string;
+    replyTo?: string;
+  }): Promise<{ messageId: string }>;
 }
 
 /**
- * Fallback si n8n KO : notification envoyée uniquement à l'agence via Resend.
+ * Notification envoyée uniquement à l'agence.
  * Jamais à l'adresse saisie par le visiteur (sinon relais d'emails exploitable).
  */
-async function sendFallbackEmail(data: ContactData): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY;
+async function sendNotificationEmail(data: ContactData): Promise<boolean> {
+  const { env } = getCloudflareContext();
+  const email = (env as unknown as { EMAIL?: EmailBinding }).EMAIL;
 
-  if (!apiKey) {
+  if (!email) {
+    console.error("EMAIL binding not configured");
     return false;
   }
 
-  const notifyTo = process.env.CONTACT_NOTIFY_EMAIL || SITE_CONFIG.email;
-  // Tant qu'aucun domaine n'est vérifié chez Resend, l'expéditeur partagé onboarding@resend.dev
-  // est le seul qui passe. À basculer via RESEND_FROM_EMAIL une fois le domaine en place.
-  const from = process.env.RESEND_FROM_EMAIL || "Tech Bloom Agency <onboarding@resend.dev>";
+  const notifyTo = process.env.CONTACT_NOTIFY_EMAIL || "contact@techbloom.dev";
+  const from = process.env.CONTACT_FROM_EMAIL || "Formulaire techbloom.dev <noreply@techbloom.dev>";
+
+  const champs: [string, string][] = [
+    ["Prénom", data.firstName],
+    ["Email", data.email],
+    ["Téléphone", data.phone || "Non renseigné"],
+    ["Service", data.service],
+  ];
+
+  const texte = [
+    "Nouvelle demande de contact",
+    "",
+    ...champs.map(([cle, valeur]) => `${cle} : ${valeur}`),
+    "",
+    "Message :",
+    data.message,
+  ].join("\n");
 
   try {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        from,
-        to: [notifyTo],
-        reply_to: data.email,
-        subject: `Nouvelle demande de contact — ${data.service.slice(0, 60)}`,
-        html: `
-          <h1>Nouvelle demande de contact</h1>
-          <ul>
-            <li>Prénom : ${escapeHtml(data.firstName)}</li>
-            <li>Email : ${escapeHtml(data.email)}</li>
-            <li>Téléphone : ${escapeHtml(data.phone || "Non renseigné")}</li>
-            <li>Service : ${escapeHtml(data.service)}</li>
-          </ul>
-          <p><strong>Message :</strong></p>
-          <blockquote style="white-space:pre-wrap">${escapeHtml(data.message)}</blockquote>
-        `,
-      }),
-      signal: AbortSignal.timeout(8000),
+    await email.send({
+      to: notifyTo,
+      from,
+      replyTo: data.email,
+      subject: `Nouvelle demande de contact — ${data.service.slice(0, 60)}`,
+      text: texte,
+      html: `
+        <h1>Nouvelle demande de contact</h1>
+        <ul>${champs
+          .map(([k, v]) => `<li>${k} : ${escapeHtml(v)}</li>`)
+          .join("")}</ul>
+        <p><strong>Message :</strong></p>
+        <blockquote style="white-space:pre-wrap">${escapeHtml(data.message)}</blockquote>
+      `,
     });
-
-    if (!response.ok) {
-      throw new Error(`Resend responded with ${response.status}`);
-    }
 
     return true;
   } catch (emailError) {
-    console.error("Resend fallback failed:", emailError);
+    console.error("Cloudflare email send failed:", emailError);
     return false;
   }
 }

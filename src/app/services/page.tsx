@@ -44,7 +44,7 @@ const serviceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Tech Bloom Agency",
-    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://tech-bloom-agency.vercel.app",
+    "url": process.env.NEXT_PUBLIC_SITE_URL || "https://techbloom.dev",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "MG"
