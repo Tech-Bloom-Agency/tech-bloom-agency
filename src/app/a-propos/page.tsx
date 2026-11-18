@@ -10,10 +10,8 @@ export default function AboutPage() {
         <PageWrapper>
             {/* Luxury Hero */}
             <PageHero
-                badge="À Propos"
-                title="Notre Agence"
-                subtitle="Tech Bloom."
-                description="Tech Bloom Agency a plus d'un an. Nos activités, elles, entrent dans leur troisième année, à Madagascar."
+                title="Notre agence, Tech Bloom."
+                description="Tech Bloom Agency a plus d'un an. Nos activités, elles, entrent dans leur troisième année, à Madagascar. 13 projets livrés, et 7 clients qui travaillent encore avec nous."
             />
             <About />
             <TeamSection />

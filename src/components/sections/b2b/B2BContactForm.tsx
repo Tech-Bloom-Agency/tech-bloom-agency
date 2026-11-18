@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export default function B2BContactForm() {
+    const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+    const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState({
         company: "",
         name: "",
@@ -45,32 +47,47 @@ export default function B2BContactForm() {
         e.preventDefault();
 
         if (!formData.company || !formData.name || !formData.email || !formData.message) {
-            alert("Veuillez remplir tous les champs obligatoires.");
+            setError("Veuillez remplir tous les champs obligatoires.");
             return;
         }
 
         if (formData.servicesNeeded.length === 0) {
-            alert("Veuillez sélectionner au moins un service.");
+            setError("Veuillez sélectionner au moins un service.");
             return;
         }
 
+        setError(null);
+        setStatus("sending");
+
+        // Le champ `company` de /api/contact est un piège anti-robot : une
+        // valeur non vide fait jeter la demande en silence, avec une réponse
+        // de succès. Le nom de l'agence passe donc dans le message.
+        const message = `Agence : ${formData.company}
+Taille de l'agence : ${formData.agencySize || "non renseignée"}
+Projets par mois : ${formData.projectsPerMonth || "non renseigné"}
+Services recherchés : ${formData.servicesNeeded.join(", ")}
+
+${formData.message}`;
+
         try {
-            const emailBody = `
-Entreprise: ${formData.company}
-Nom: ${formData.name}
-Email: ${formData.email}
-Téléphone: ${formData.phone || "Non renseigné"}
-Taille de l'agence: ${formData.agencySize || "Non renseignée"}
-Projets par mois: ${formData.projectsPerMonth || "Non renseigné"}
-Services recherchés: ${formData.servicesNeeded.join(', ')}
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    firstName: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    // Le schéma de l'API plafonne `service` à 100 caractères.
+                    service: `Partenariat B2B : ${formData.servicesNeeded.join(", ")}`.slice(0, 100),
+                    message,
+                }),
+            });
 
-Message:
-${formData.message}
-            `;
+            if (!response.ok) {
+                throw new Error(`L'API a répondu ${response.status}`);
+            }
 
-            const mailtoLink = `mailto:${SITE_CONFIG.b2bEmail}?subject=${encodeURIComponent("Demande de partenariat B2B")}&body=${encodeURIComponent(emailBody)}`;
-            window.location.href = mailtoLink;
-
+            setStatus("sent");
             setFormData({
                 company: "",
                 name: "",
@@ -79,18 +96,19 @@ ${formData.message}
                 agencySize: "",
                 projectsPerMonth: "",
                 servicesNeeded: [],
-                message: ""
+                message: "",
             });
-
-            alert("Votre client email s'ouvre avec votre demande prête à envoyer. Vérifiez le destinataire avant d'envoyer.");
-        } catch (error) {
-            console.error("Erreur lors de l'envoi:", error);
-            alert("Une erreur est survenue lors de la préparation de votre demande.");
+        } catch (sendError) {
+            console.error("Envoi du formulaire B2B :", sendError);
+            setStatus("error");
+            setError(
+                `L'envoi a échoué. Réessayez, ou écrivez-nous directement à ${SITE_CONFIG.b2bEmail}.`
+            );
         }
     };
 
     return (
-        <section className="py-20 px-6 bg-gradient-to-br from-primary/5 to-accent/5">
+        <section className="py-20 px-6 bg-beige">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
@@ -119,7 +137,7 @@ ${formData.message}
                                     required
                                     value={formData.company}
                                     onChange={handleInputChange}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red focus:border-transparent transition-all"
                                     placeholder="Nom de votre agence"
                                 />
                             </div>
@@ -135,7 +153,7 @@ ${formData.message}
                                     required
                                     value={formData.name}
                                     onChange={handleInputChange}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red focus:border-transparent transition-all"
                                     placeholder="Votre prénom et nom"
                                 />
                             </div>
@@ -153,7 +171,7 @@ ${formData.message}
                                     required
                                     value={formData.email}
                                     onChange={handleInputChange}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red focus:border-transparent transition-all"
                                     placeholder="contact@votre-agence.fr"
                                 />
                             </div>
@@ -168,7 +186,7 @@ ${formData.message}
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handleInputChange}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red focus:border-transparent transition-all"
                                     placeholder="+261 34 10 608 02"
                                 />
                             </div>
@@ -184,7 +202,7 @@ ${formData.message}
                                     name="agencySize"
                                     value={formData.agencySize}
                                     onChange={handleInputChange}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red focus:border-transparent transition-all"
                                 >
                                     <option value="">Sélectionnez une option</option>
                                     <option value="1-2">1-2 personnes</option>
@@ -203,7 +221,7 @@ ${formData.message}
                                     name="projectsPerMonth"
                                     value={formData.projectsPerMonth}
                                     onChange={handleInputChange}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red focus:border-transparent transition-all"
                                 >
                                     <option value="">Sélectionnez une option</option>
                                     <option value="1-2">1-2 projets</option>
@@ -228,7 +246,7 @@ ${formData.message}
                                             type="checkbox"
                                             checked={formData.servicesNeeded.includes(service)}
                                             onChange={() => handleServiceToggle(service)}
-                                            className="w-4 h-4 text-brand-blue focus:ring-accent"
+                                            className="w-4 h-4 text-brand-blue focus:ring-red"
                                         />
                                         <span className="text-gray-700">{service}</span>
                                     </label>
@@ -247,7 +265,7 @@ ${formData.message}
                                 rows={5}
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red focus:border-transparent transition-all"
                                 placeholder="Décrivez vos besoins, vos volumes, vos contraintes actuelles..."
                             />
                         </div>
@@ -255,11 +273,24 @@ ${formData.message}
                         <div className="pt-6">
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-primary to-accent text-white py-4 px-8 rounded-full font-medium hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2"
+                                disabled={status === "sending"}
+                                className="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-red px-8 py-4 font-medium text-white transition-colors duration-300 hover:bg-red-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red disabled:cursor-not-allowed disabled:opacity-60"
                             >
-                                <Send className="w-5 h-5" />
-                                Envoyer ma demande de partenariat
+                                <Send className="h-5 w-5" aria-hidden="true" />
+                                {status === "sending"
+                                    ? "Envoi en cours…"
+                                    : "Envoyer ma demande de partenariat"}
                             </button>
+
+                            <p aria-live="polite" className="mt-4 text-sm">
+                                {status === "sent" && (
+                                    <span className="font-medium text-brand-blue">
+                                        Votre demande est partie. Nous revenons vers vous
+                                        rapidement.
+                                    </span>
+                                )}
+                                {error && <span className="font-medium text-red">{error}</span>}
+                            </p>
                         </div>
                     </form>
 
@@ -270,11 +301,11 @@ ${formData.message}
                             </h3>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <div className="flex items-center gap-2 text-gray-600">
-                                    <span>📧</span>
+                                    <Mail className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                                     <a href={`mailto:${SITE_CONFIG.b2bEmail}`} className="hover:text-brand-primary transition-colors">{SITE_CONFIG.b2bEmail}</a>
                                 </div>
                                 <div className="flex items-center gap-2 text-gray-600">
-                                    <span>📱</span>
+                                    <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                                     <span>{SITE_CONFIG.b2bPhone}</span>
                                 </div>
                             </div>

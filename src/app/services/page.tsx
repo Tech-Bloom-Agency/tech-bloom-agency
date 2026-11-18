@@ -79,9 +79,7 @@ export default function ServicesPage() {
 
       {/* Luxury Hero */}
       <PageHero
-        badge="Expertises"
-        title="Nos prestations"
-        subtitle="digitales."
+        title="Nos prestations digitales."
         description="Des solutions pensées pour votre présence, votre visibilité et votre croissance : community management, SMM, création de sites web, refonte, accompagnement et contenus visuels."
       />
 

@@ -1,5 +1,8 @@
 "use client";
 
+import { Check } from "lucide-react";
+import Link from "next/link";
+
 export default function B2BPricing() {
     const packages = [
         {
@@ -48,7 +51,7 @@ export default function B2BPricing() {
     ];
 
     return (
-        <section className="py-20 px-6 bg-gradient-to-br from-accent/5 to-white">
+        <section className="py-20 px-6 bg-beige">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
@@ -89,19 +92,22 @@ export default function B2BPricing() {
                             <ul className="space-y-4 mb-8">
                                 {pkg.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
-                                        <span className="text-brand-blue mt-1 flex-shrink-0">✓</span>
+                                        <Check className="mt-1 h-4 w-4 flex-shrink-0 text-brand-blue" strokeWidth={2.5} aria-hidden="true" />
                                         <span className="text-gray-700">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
 
-                            <button className={`w-full py-3 rounded-full font-medium transition-all duration-300 ${
-                                pkg.bestValue
-                                    ? 'bg-brand-blue text-white hover:opacity-90'
-                                    : 'border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white'
-                            }`}>
+                            <Link
+                                href="/contact"
+                                className={`flex min-h-[44px] w-full items-center justify-center rounded-full py-3 font-medium transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue ${
+                                    pkg.bestValue
+                                        ? 'bg-brand-blue text-white hover:opacity-90'
+                                        : 'border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white'
+                                }`}
+                            >
                                 Parler de votre projet
-                            </button>
+                            </Link>
                         </div>
                     ))}
                 </div>
