@@ -46,8 +46,14 @@ export default function PortfolioPreview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.15, duration: 0.8 }}
-            className="group cursor-pointer"
+            className="group"
           >
+            {/* Carte entière cliquable : l'appel à l'action était un <button>
+                sans handler, enfermé dans un survol — inerte au doigt. */}
+            <Link
+              href="/portfolio"
+              className="block rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
+            >
             {/* Container image avec overlay */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-gray/10 shadow-sm group-hover:shadow-xl transition-all duration-500">
               <Image
@@ -64,9 +70,9 @@ export default function PortfolioPreview() {
                 <div className="text-center px-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-white text-sm uppercase tracking-widest mb-2">{project.category}</p>
                   <h3 className="text-white text-2xl font-heading font-bold mb-4">{project.title}</h3>
-                  <button className="inline-flex items-center text-white text-xs font-bold uppercase tracking-widest border-2 border-white px-6 py-3 rounded-full hover:bg-white hover:text-teal transition-all">
+                  <span className="inline-flex items-center rounded-full border-2 border-white px-6 py-3 text-xs font-bold uppercase tracking-widest text-white">
                     Voir le projet
-                  </button>
+                  </span>
                 </div>
               </div>
             </div>
@@ -83,6 +89,7 @@ export default function PortfolioPreview() {
                 {project.summary}
               </p>
             </div>
+            </Link>
           </motion.div>
         ))}
       </div>

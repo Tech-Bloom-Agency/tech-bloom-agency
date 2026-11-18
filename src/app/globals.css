@@ -5,6 +5,9 @@
 :root {
   /* Palette TBA officielle */
   --color-navy: #0D2A40;
+  /* Marine éclairci : présent dans les dégradés d'en-tête depuis l'origine,
+     il n'était déclaré nulle part et vivait en dur dans trois fichiers. */
+  --color-navy-light: #1A3A52;
   --color-blue: #384B70;
   --color-teal: #507687;
   --color-red: #B8001F;
@@ -78,6 +81,21 @@
 }
 
 @layer components {
+  /* Fond marine des en-têtes de page. Une seule définition, reprise par
+     PageHero et B2BHero, au lieu de trois dégradés en ligne dupliqués. */
+  .surface-navy-mesh {
+    background-color: var(--color-navy);
+    background-image:
+      radial-gradient(ellipse at 20% 30%, rgba(80, 118, 135, 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(56, 75, 112, 0.3) 0%, transparent 40%),
+      linear-gradient(
+        180deg,
+        var(--color-navy) 0%,
+        var(--color-navy-light) 50%,
+        var(--color-navy) 100%
+      );
+  }
+
   .btn-primary {
     @apply inline-flex items-center justify-center bg-[var(--color-red)] text-white px-8 py-4 rounded-full font-semibold transition-all hover:bg-[var(--color-red-hover)] hover:shadow-lg active:scale-95;
   }

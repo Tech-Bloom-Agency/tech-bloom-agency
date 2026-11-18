@@ -22,9 +22,7 @@ export default function ContactPage() {
     <PageWrapper>
       {/* Luxury Hero */}
       <PageHero
-        badge="Contact"
-        title="Parlons de votre"
-        subtitle="projet."
+        title="Parlons de votre projet."
         description="Faites le premier pas vers une présence digitale premium. Que vous soyez une PME ou un entrepreneur, nous sommes là pour transformer vos idées en réalité."
       />
 

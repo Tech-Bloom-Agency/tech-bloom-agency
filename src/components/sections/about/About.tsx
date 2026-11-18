@@ -13,9 +13,9 @@ export default function About() {
                         animate={{ opacity: 1, y: 0 }}
                         className="max-w-4xl mx-auto px-6 lg:px-8"
                     >
-                        <h1 className="text-[clamp(3rem,8vw,6rem)] font-serif font-bold text-brand-primary mb-8 text-center leading-[0.9]">
+                        <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-serif font-bold text-brand-primary mb-8 text-center leading-[1.05] tracking-[-0.02em]">
                             À propos de <br /> <span className="text-brand-dark-blue">Tech Bloom.</span>
-                        </h1>
+                        </h2>
                         <p className="text-xl lg:text-2xl text-brand-gray font-medium text-center mb-8 uppercase tracking-widest">
                             {SITE_CONFIG.taglineFr}
                         </p>

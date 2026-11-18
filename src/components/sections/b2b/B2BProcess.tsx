@@ -1,36 +1,38 @@
 "use client";
 
+import { BarChart3, Code2, Compass, Handshake, Lock, RefreshCw, Rocket, Target } from "lucide-react";
+
 export default function B2BProcess() {
     const steps = [
         {
             number: "01",
             title: "Audit",
             description: "On regarde ce qui fonctionne, ce qui bloque et ce qui mérite d’être renforcé.",
-            icon: "🧭"
+            icon: Compass
         },
         {
             number: "02",
             title: "Direction",
             description: "On pose la bonne direction. Le bon message. Le bon angle pour parler à la bonne audience.",
-            icon: "📊"
+            icon: BarChart3
         },
         {
             number: "03",
             title: "Création",
             description: "On construit les éléments concrets qui donnent vie à votre présence digitale.",
-            icon: "💻"
+            icon: Code2
         },
         {
             number: "04",
             title: "Lancement",
             description: "On met tout en place pour que votre marque inspire confiance dès le premier contact.",
-            icon: "🚀"
+            icon: Rocket
         },
         {
             number: "05",
             title: "Suivi",
             description: "On ajuste, on améliore, on fait grandir la présence de votre marque dans le temps.",
-            icon: "🤝"
+            icon: Handshake
         }
     ];
 
@@ -64,7 +66,7 @@ export default function B2BProcess() {
                                 {/* Contenu */}
                                 <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'}`}>
                                     <div className="bg-brand-light p-8 rounded-agency border border-gray-200 hover:shadow-lg transition-all duration-300">
-                                        <div className="text-4xl mb-4">{step.icon}</div>
+                                        <step.icon className="mb-4 h-8 w-8 text-brand-blue" strokeWidth={1.75} aria-hidden="true" />
                                         <h3 className="text-2xl font-sans font-bold text-brand-dark mb-4">
                                             {step.title}
                                         </h3>
@@ -85,17 +87,17 @@ export default function B2BProcess() {
                         </h3>
                         <div className="grid md:grid-cols-3 gap-6 mt-6">
                             <div className="text-center">
-                                <div className="text-3xl mb-2">🔒</div>
+                                <Lock className="mx-auto mb-2 h-7 w-7 text-brand-blue" strokeWidth={1.75} aria-hidden="true" />
                                 <h4 className="font-bold text-gray-800 mb-2">Confiance</h4>
                                 <p className="text-gray-600 text-sm">Une relation claire, directe et respectueuse</p>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl mb-2">🎯</div>
+                                <Target className="mx-auto mb-2 h-7 w-7 text-brand-blue" strokeWidth={1.75} aria-hidden="true" />
                                 <h4 className="font-bold text-gray-800 mb-2">Objectif</h4>
                                 <p className="text-gray-600 text-sm">Des décisions guidées par les résultats</p>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl mb-2">🔄</div>
+                                <RefreshCw className="mx-auto mb-2 h-7 w-7 text-brand-blue" strokeWidth={1.75} aria-hidden="true" />
                                 <h4 className="font-bold text-gray-800 mb-2">Adaptation</h4>
                                 <p className="text-gray-600 text-sm">L’accompagnement évolue avec votre croissance</p>
                             </div>
