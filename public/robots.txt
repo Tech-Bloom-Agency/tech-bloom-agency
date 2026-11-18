@@ -8,7 +8,7 @@ Disallow: /merci
 Disallow: /admin/
 
 # Host
-Host: https://tech-bloom-agency.vercel.app
+Host: https://techbloom.dev
 
 # Sitemaps
-Sitemap: https://tech-bloom-agency.vercel.app/sitemap.xml
+Sitemap: https://techbloom.dev/sitemap.xml

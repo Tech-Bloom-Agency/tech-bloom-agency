@@ -49,3 +49,7 @@ skills-lock.json
 # Rapports d'audit impeccable (les autres fichiers .impeccable/ sont versionnés :
 # config.json, surfaces/, design.json — ils documentent le système de design)
 .impeccable/audit/
+
+# Cloudflare Workers (OpenNext)
+.open-next/
+.wrangler/
