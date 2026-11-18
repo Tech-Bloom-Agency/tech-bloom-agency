@@ -20,9 +20,9 @@
     "@iconify/icons-ion": "^1.2.10",
     "@iconify/react": "^5.2.1",
     "@next/third-parties": "^16.3.6",
-    "@react-three/drei": "^9.88.0",
-    "@react-three/fiber": "^8.15.0",
-    "@types/three": "^0.183.1",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@types/three": "^0.187.0",
     "date-fns": "^3.6.0",
     "framer-motion": "^11.0.0",
     "gray-matter": "^4.0.3",
@@ -36,8 +36,8 @@
     "react-hot-toast": "^2.4.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
-    "three": "^0.183.1",
-    "three-mesh-bvh": "0.8.0",
+    "three": "^0.187.0",
+    "three-mesh-bvh": "0.9.18",
     "zod": "^4.3.6"
   },
   "devDependencies": {
