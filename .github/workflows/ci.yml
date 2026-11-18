@@ -13,7 +13,8 @@ on:
 # Une seule exécution par branche/PR : les pushes successifs annulent les runs obsolètes.
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  # Jamais d'annulation sur prod : ce run porte le déploiement.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/prod' }}
 
 permissions:
   contents: read
@@ -85,3 +86,40 @@ jobs:
       - name: npm audit
         continue-on-error: true
         run: npm audit --audit-level=high
+
+  deploy:
+    name: Déploiement Cloudflare Workers
+    # Le déploiement ne part que depuis prod, et seulement si lint,
+    # typecheck, tests et build sont verts.
+    needs: quality
+    if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    # Les déploiements ne se chevauchent pas.
+    concurrency:
+      group: deploy-prod
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Construit le Worker (next build + adaptation OpenNext).
+      - name: Build Worker
+        run: npm run cf:build
+
+      # wrangler est déjà une devDependency : pas d'action tierce à maintenir.
+      - name: Deploy
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
