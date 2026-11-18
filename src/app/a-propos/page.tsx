@@ -1,5 +1,4 @@
 import About from "@/components/sections/about/About";
-import StatsSection from "@/components/sections/home/StatsSection";
 import TeamSection from "@/components/sections/about/TeamSection";
 import Testimonials from "@/components/sections/home/Testimonials";
 import CTASection from "@/components/sections/shared/CTASection";
@@ -11,13 +10,10 @@ export default function AboutPage() {
         <PageWrapper>
             {/* Luxury Hero */}
             <PageHero
-                badge="À Propos"
-                title="Notre Agence"
-                subtitle="Tech Bloom."
-                description="Une équipe passionnée transformant vos visions en réalités digitales depuis plus de 3 ans à Madagascar."
+                title="Notre agence, Tech Bloom."
+                description="Tech Bloom Agency a plus d'un an. Nos activités, elles, entrent dans leur troisième année, à Madagascar. 13 projets livrés, et 7 clients qui travaillent encore avec nous."
             />
             <About />
-            <StatsSection />
             <TeamSection />
             <Testimonials />
             <CTASection />

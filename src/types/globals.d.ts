@@ -1,6 +1,6 @@
 /**
  * Déclarations globales pour les scripts tiers injectés côté client
- * (Google Analytics 4, Meta Pixel, Calendly). Évite les `@ts-ignore`
+ * (Google Analytics 4, Meta Pixel). Évite les `@ts-ignore`
  * dispersés dans les composants de tracking.
  */
 
@@ -23,10 +23,6 @@ declare global {
 
     interface Window {
         dataLayer?: unknown[];
-        Calendly?: {
-            initPopupWidget: (options: { url: string }) => void;
-            initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
-        };
         gtag?: GtagFn;
         fbq?: FbqFn;
         _fbq?: FbqFn;

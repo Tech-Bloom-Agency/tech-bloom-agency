@@ -24,16 +24,6 @@ export default function Navbar({ scrolled }: NavbarProps) {
   const pathname = usePathname();
   const onDarkHero = !scrolled && DARK_HERO_ROUTES.includes(pathname);
 
-  // Calendly integration
-  const openCalendly = () => {
-    const calendlyUrl = SITE_CONFIG.calendlyUrl;
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({ url: calendlyUrl });
-    } else {
-      window.open(calendlyUrl, "_blank");
-    }
-  };
-
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-6"
@@ -68,12 +58,14 @@ export default function Navbar({ scrolled }: NavbarProps) {
               {link.label}
             </Link>
           ))}
-          <button
-            onClick={openCalendly}
+          <a
+            href={SITE_CONFIG.bookingUrl}
+            target="_blank"
+            rel="noreferrer"
             className="btn-primary py-3 px-6 text-xs uppercase tracking-widest"
           >
             Réserver un appel
-          </button>
+          </a>
         </div>
 
         {/* Mobile menu button */}
@@ -129,15 +121,15 @@ export default function Navbar({ scrolled }: NavbarProps) {
             ))}
 
             <div className="pt-8 mt-auto border-t border-gray-100">
-               <button
-                onClick={() => {
-                  setIsOpen(false);
-                  openCalendly();
-                }}
-                className="w-full block text-center bg-red text-white py-5 rounded-agency-md text-lg font-bold hover:bg-red-hover transition-colors"
+              <a
+                href={SITE_CONFIG.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="block w-full rounded-agency-md bg-red py-5 text-center text-lg font-bold text-white transition-colors hover:bg-red-hover"
               >
                 Réserver un appel
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

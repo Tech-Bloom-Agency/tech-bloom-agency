@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { services } from "@/data/services";
-import { ArrowUpRight, Code, Palette, TrendingUp, Users, Wrench, FileSearch } from "lucide-react";
+import { ArrowUpRight, Code, FileSearch, Palette, Sparkle, TrendingUp, Users, Wrench } from "lucide-react";
 import Link from "next/link";
 
 // Map icon names to components
@@ -62,7 +62,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
               <span className="relative text-3xl text-navy">
                 {(() => {
                   const IconComponent = iconMap[service.icon];
-                  return IconComponent ? <IconComponent className="w-8 h-8" /> : <span>✦</span>;
+                  return IconComponent ? <IconComponent className="w-8 h-8" /> : <Sparkle className="h-8 w-8" aria-hidden="true" />;
                 })()}
               </span>
             </div>
@@ -120,9 +120,7 @@ export default function HomeServices() {
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-heading font-black text-navy leading-[0.9] tracking-tight">
               Marketing digital
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue to-teal">
-                qui convertit
-              </span>
+              <span className="text-red">qui convertit</span>
             </h2>
           </motion.div>
 

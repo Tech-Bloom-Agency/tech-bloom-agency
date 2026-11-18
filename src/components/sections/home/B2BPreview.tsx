@@ -69,9 +69,7 @@ export default function B2BPreview() {
             <h2 className="text-4xl lg:text-6xl xl:text-7xl font-heading font-black text-white leading-[0.9] tracking-tight">
               Agence débordée ?{" "}
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal to-blue">
-                Déléguez sans stress.
-              </span>
+              Déléguez sans stress.
             </h2>
 
             {/* Description */}

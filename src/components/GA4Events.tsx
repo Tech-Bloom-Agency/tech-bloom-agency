@@ -8,7 +8,6 @@
  * - form_submit: Soumission formulaires
  * - portfolio_view: Visite fiche projet
  * - whatsapp_click: Clic bouton WA
- * - calendly_open: Ouverture Calendly
  *
  * Les typages de `window.gtag` / `window.fbq` vivent dans src/types/globals.d.ts
  */
@@ -78,20 +77,9 @@ export default function GA4Events() {
 
     document.addEventListener("click", handleWhatsAppClick);
 
-    // 3. Calendly Open (si popup)
-    const handleCalendlyOpen = () => {
-      window.gtag?.("event", "calendly_open", {
-        source: pathname,
-      });
-    };
-
-    // Écouter l'événement custom Calendly
-    document.addEventListener("calendly_popup_opened", handleCalendlyOpen);
-
     return () => {
       document.removeEventListener("click", handleCTAClick);
       document.removeEventListener("click", handleWhatsAppClick);
-      document.removeEventListener("calendly_popup_opened", handleCalendlyOpen);
     };
   }, [pathname]);
 
