@@ -23,7 +23,7 @@ export default function LegalMentions() {
                         <div>
                             <h2 className="text-3xl font-sans font-bold text-brand-dark mb-6">1. Éditeur du site</h2>
                             <p className="text-gray-700 leading-relaxed">
-                                Le site <strong>tech-bloom-agency.com</strong> est édité par :<br />
+                                Le site <strong>techbloom.dev</strong> est édité par :<br />
                                 <strong>Tech Bloom Agency</strong><br />
                                 Responsable : {SITE_CONFIG.founder}<br />
                                 Adresse : {SITE_CONFIG.address}<br />
