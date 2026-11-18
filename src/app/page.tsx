@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/home/Hero";
-import StatsSection from "@/components/sections/home/StatsSection";
 import HomeServices from "@/components/sections/home/HomeServices";
 import PortfolioPreview from "@/components/sections/home/PortfolioPreview";
 import Testimonials from "@/components/sections/home/Testimonials";
@@ -41,9 +40,9 @@ export const metadata: Metadata = {
 };
 
 // Schema.org JSON-LD
-const localBusinessSchema = {
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Organization",
   "name": "Tech Bloom Agency",
   "alternateName": "TBA",
   "description": "Agence digitale à Madagascar : création de sites web, branding, marketing digital et community management.",
@@ -59,40 +58,12 @@ const localBusinessSchema = {
   },
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Toamasina",
     "addressCountry": "MG"
   },
   "areaServed": ["Madagascar","France","Belgique","Suisse","Afrique francophone"],
-  "openingHours": "Mo-Fr 08:00-18:00",
   "sameAs": [
     "https://facebook.com/techbloomagency",
     "https://linkedin.com/company/tech-bloom-agency"
-  ]
-};
-
-const aggregateRatingSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Tech Bloom Agency",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.6",
-    "reviewCount": "3",
-    "bestRating": "5"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Longin — Runrobe" },
-      "reviewBody": "L'efficacité du travail fourni par Tech Bloom Agency est satisfaisante.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Erica — Girl's Touch" },
-      "reviewBody": "C'était d'une facilité et fluidité optimalement parfait.",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }
   ]
 };
 
@@ -102,18 +73,11 @@ export default function Page() {
       {/* JSON-LD Scripts */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
       {/* Luxury Hero with 3D animations and parallax */}
       <Hero />
-
-      {/* Animated stats with counters */}
-      <StatsSection />
 
       {/* Services with luxury card effects */}
       <HomeServices />

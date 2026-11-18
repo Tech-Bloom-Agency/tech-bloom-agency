@@ -3,8 +3,9 @@ name: CI
 # Garde-fou qualité : tout ce qui arrive sur preprod/prod doit passer
 # lint + typecheck + build avant que Vercel ne déploie.
 on:
+  # Toute PR, quelle que soit sa base : une PR empilée sur une branche de
+  # travail doit être vérifiée comme les autres.
   pull_request:
-    branches: [prod, preprod]
   push:
     branches: [prod, preprod]
   workflow_dispatch:

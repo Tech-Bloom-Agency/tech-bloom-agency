@@ -1,26 +1,28 @@
 "use client";
 
+import { Building2, Compass, MessageSquare, Smartphone } from "lucide-react";
+
 export default function B2BChallenges() {
     const challenges = [
         {
             title: "On ne vous voit pas assez",
             description: "Votre marque a du potentiel, mais elle passe inaperçue dans un environnement trop bruyant.",
-            icon: "🧭"
+            icon: Compass
         },
         {
             title: "Le message manque de punch",
             description: "Le public ne comprend pas vite votre valeur. Et sans clarté, il ne prend pas action.",
-            icon: "💬"
+            icon: MessageSquare
         },
         {
             title: "Les réseaux ne servent pas votre image",
             description: "Du contenu existe, mais il n’aide ni votre crédibilité ni votre croissance. Il manque de cohérence.",
-            icon: "📲"
+            icon: Smartphone
         },
         {
             title: "Le site n’aide pas",
             description: "Le site donne une impression trop faible pour le niveau réel de votre entreprise.",
-            icon: "🏢"
+            icon: Building2
         }
     ];
 
@@ -42,7 +44,7 @@ export default function B2BChallenges() {
                             key={index}
                             className="bg-brand-light p-8 rounded-agency border border-gray-100 hover:shadow-lg transition-all duration-300"
                         >
-                            <div className="text-4xl mb-4">{challenge.icon}</div>
+                            <challenge.icon className="mb-4 h-8 w-8 text-brand-blue" strokeWidth={1.75} aria-hidden="true" />
                             <h3 className="text-2xl font-sans font-bold text-brand-dark mb-4">
                                 {challenge.title}
                             </h3>
