@@ -2,9 +2,9 @@
 
 
 const TECH_STACK = [
-     "WordPress", "Supabase", "IA",
-    "Node JS", "React", "Next.js", "Figma",
-    "Tailwind CSS", "TypeScript", "PostgreSQL", "Docker"
+    "Next.js", "React", "Node.js", "Supabase", "PostgreSQL", "Docker",
+    "Vercel", "Claude Code", "Codex", "Google", "Meta Business Suite",
+    "Canva", "CapCut",
 ];
 
 export default function ToolsSection() {
@@ -12,8 +12,7 @@ export default function ToolsSection() {
         <section className="py-32 bg-white relative overflow-hidden border-t border-brand-light-gray">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
                 <div className="mb-20 space-y-6">
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase text-brand-red-rose">Technologies</span>
-                    <h2 className="text-4xl lg:text-6xl font-serif font-bold text-brand-primary leading-[0.9]">
+                    <h2 className="text-4xl lg:text-6xl font-heading font-bold text-brand-primary leading-[0.9]">
                         Open Source <br />
                         <span className="text-brand-dark-blue opacity-50">& Fiabilité.</span>
                     </h2>

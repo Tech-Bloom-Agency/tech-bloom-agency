@@ -42,12 +42,11 @@ const serviceSchema = {
   "@type": "Service",
   "serviceType": "Services digitaux",
   "provider": {
-    "@type": "LocalBusiness",
+    "@type": "Organization",
     "name": "Tech Bloom Agency",
     "url": process.env.NEXT_PUBLIC_SITE_URL || "https://tech-bloom-agency.vercel.app",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Toamasina",
       "addressCountry": "MG"
     }
   },
@@ -80,9 +79,7 @@ export default function ServicesPage() {
 
       {/* Luxury Hero */}
       <PageHero
-        badge="Expertises"
-        title="Nos prestations"
-        subtitle="digitales."
+        title="Nos prestations digitales."
         description="Des solutions pensées pour votre présence, votre visibilité et votre croissance : community management, SMM, création de sites web, refonte, accompagnement et contenus visuels."
       />
 

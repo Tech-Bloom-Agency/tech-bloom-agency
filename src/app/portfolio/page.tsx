@@ -36,8 +36,7 @@ export default function PortfolioPage() {
     <PageWrapper>
       {/* Luxury Hero */}
       <PageHero
-        badge="Portfolio"
-        title="Nos Réalisations"
+        title="Nos réalisations"
         description="Découvrez comment Tech Bloom Agency transforme les visions de ses clients en succès digitaux concrets : sites web, branding, marketing et optimisation."
       />
 

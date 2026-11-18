@@ -10,8 +10,7 @@ export default function Blog() {
         <div>
             {/* Luxury Hero */}
             <PageHero
-                badge="Blog"
-                title="Le Blog Tech Bloom"
+                title="Le blog Tech Bloom"
                 description="Conseils d'experts, tendances et guides pratiques pour accompagner la croissance des PME et entrepreneurs."
             />
 

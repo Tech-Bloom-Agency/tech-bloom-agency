@@ -1,5 +1,4 @@
 import { ContactFormWrapper } from "@/components/sections/contact/ContactFormWrapper";
-import { CalendlyEmbed } from "@/components/sections/contact/CalendlyEmbed";
 import PageWrapper from "@/components/layout/PageWrapper";
 import PageHero from "@/components/ui/PageHero";
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
@@ -8,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact — Tech Bloom Agency | Madagascar",
-  description: "Contactez Tech Bloom Agency pour votre projet digital. Formulaire de contact, prise de rendez-vous Calendly et coordonnées directes.",
+  description: "Contactez Tech Bloom Agency pour votre projet digital. Formulaire de contact, prise de rendez-vous en ligne et coordonnées directes.",
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -23,9 +22,7 @@ export default function ContactPage() {
     <PageWrapper>
       {/* Luxury Hero */}
       <PageHero
-        badge="Contact"
-        title="Parlons de votre"
-        subtitle="projet."
+        title="Parlons de votre projet."
         description="Faites le premier pas vers une présence digitale premium. Que vous soyez une PME ou un entrepreneur, nous sommes là pour transformer vos idées en réalité."
       />
 
@@ -37,7 +34,7 @@ export default function ContactPage() {
             <ContactFormWrapper />
           </div>
 
-          {/* Colonne Droite : Infos + Calendly */}
+          {/* Colonne droite : coordonnées et prise de rendez-vous */}
           <div className="space-y-12">
             {/* Coordonnées */}
             <div className="bg-white p-8 rounded-md shadow-lg border border-gray/20">
@@ -147,15 +144,23 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Calendly Embed */}
+            {/* Prise de rendez-vous */}
             <div className="bg-white p-8 rounded-md shadow-lg border border-gray/20">
               <h2 className="text-2xl font-heading font-bold text-navy mb-6">
                 Réserver un appel
               </h2>
               <p className="text-gray mb-6">
-                Choisissez directement un créneau qui vous convient dans notre calendrier.
+                Choisissez directement un créneau qui vous convient dans notre
+                calendrier.
               </p>
-              <CalendlyEmbed />
+              <a
+                href={SITE_CONFIG.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary inline-block px-8 py-4 text-sm uppercase tracking-widest"
+              >
+                Voir les créneaux disponibles
+              </a>
             </div>
           </div>
         </div>

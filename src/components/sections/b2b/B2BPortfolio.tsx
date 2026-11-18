@@ -1,5 +1,7 @@
 "use client";
 
+import { BarChart3, Building2, Check, Palette, ShoppingBag } from "lucide-react";
+
 export default function B2BPortfolio() {
     const projects = [
         {
@@ -12,7 +14,7 @@ export default function B2BPortfolio() {
                 "Zero bug post-livraison"
             ],
             tech: ["Next.js", "Stripe", "Prismic"],
-            image: "🛍️"
+            image: ShoppingBag
         },
         {
             title: "Application SaaS",
@@ -24,7 +26,7 @@ export default function B2BPortfolio() {
                 "40% de marge supplémentaire"
             ],
             tech: ["React", "Node.js", "MongoDB"],
-            image: "🏢"
+            image: Building2
         },
         {
             title: "Site vitrine premium",
@@ -36,7 +38,7 @@ export default function B2BPortfolio() {
                 "Livré sous 3 semaines"
             ],
             tech: ["Next.js", "Tailwind", "Framer Motion"],
-            image: "🎨"
+            image: Palette
         },
         {
             title: "Dashboard analytics",
@@ -48,7 +50,7 @@ export default function B2BPortfolio() {
                 "Nouveau service lancé"
             ],
             tech: ["React", "Chart.js", "API REST"],
-            image: "📊"
+            image: BarChart3
         }
     ];
 
@@ -75,7 +77,7 @@ export default function B2BPortfolio() {
                             className="bg-brand-light rounded-agency border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
                         >
                             <div className="p-8">
-                                <div className="text-6xl mb-6 text-center">{project.image}</div>
+                                <project.image className="mx-auto mb-6 h-12 w-12 text-brand-blue" strokeWidth={1.5} aria-hidden="true" />
                                 
                                 <div className="mb-6">
                                     <span className="inline-block bg-brand-dark/10 text-brand-dark px-3 py-1 rounded-full text-sm font-medium mb-3">
@@ -94,7 +96,7 @@ export default function B2BPortfolio() {
                                     <ul className="space-y-2">
                                         {project.results.map((result, idx) => (
                                             <li key={idx} className="flex items-start gap-3">
-                                                <span className="text-brand-blue">✓</span>
+                                                <Check className="mt-1 h-4 w-4 flex-shrink-0 text-brand-blue" strokeWidth={2.5} aria-hidden="true" />
                                                 <span className="text-gray-700">{result}</span>
                                             </li>
                                         ))}
@@ -120,7 +122,7 @@ export default function B2BPortfolio() {
                 </div>
 
                 <div className="text-center">
-                    <div className="bg-gradient-to-r from-primary to-accent rounded-agency p-8 text-white">
+                    <div className="bg-blue rounded-agency p-8 text-white">
                         <h3 className="text-2xl font-sans font-bold mb-4">
                             Prêt à démultiplier votre activité ?
                         </h3>

@@ -1,5 +1,7 @@
 "use client";
 
+import { Check, Smartphone, Sparkles, Target } from "lucide-react";
+
 export default function B2BSolution() {
     const solutions = [
         {
@@ -11,7 +13,7 @@ export default function B2BSolution() {
                 "Valeur plus visible",
                 "Confiance renforcée"
             ],
-            icon: "🎯"
+            icon: Target
         },
         {
             title: "Réseaux sociaux",
@@ -22,7 +24,7 @@ export default function B2BSolution() {
                 "Visibilité durable",
                 "Réseaux maîtrisés"
             ],
-            icon: "📱"
+            icon: Smartphone
         },
         {
             title: "Site web",
@@ -33,12 +35,12 @@ export default function B2BSolution() {
                 "Action plus simple",
                 "Présence crédible"
             ],
-            icon: "✨"
+            icon: Sparkles
         }
     ];
 
     return (
-        <section className="py-20 px-6 bg-gradient-to-br from-accent/5 to-primary/5">
+        <section className="py-20 px-6 bg-beige">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <div className="inline-block bg-brand-blue text-white px-6 py-2 rounded-full text-sm font-medium mb-6">
@@ -58,7 +60,7 @@ export default function B2BSolution() {
                             key={index}
                             className="bg-white p-8 rounded-agency border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                         >
-                            <div className="text-5xl mb-6">{solution.icon}</div>
+                            <solution.icon className="mb-6 h-9 w-9 text-brand-blue" strokeWidth={1.75} aria-hidden="true" />
                             <h3 className="text-2xl font-sans font-bold text-brand-dark mb-4">
                                 {solution.title}
                             </h3>
@@ -68,7 +70,7 @@ export default function B2BSolution() {
                             <ul className="space-y-2">
                                 {solution.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start gap-3">
-                                        <span className="text-brand-blue mt-1">✓</span>
+                                        <Check className="mt-1 h-4 w-4 flex-shrink-0 text-brand-blue" strokeWidth={2.5} aria-hidden="true" />
                                         <span className="text-gray-700">{feature}</span>
                                     </li>
                                 ))}
