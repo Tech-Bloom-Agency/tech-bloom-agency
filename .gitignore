@@ -45,3 +45,5 @@ coverage
 .agents/
 .claude/skills/
 skills-lock.json
+.impeccable/
+.taste-skill/

@@ -34,6 +34,10 @@ export default function HeroCanvas() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Décor pur : inutile d'imposer une rotation permanente à qui a demandé
+    // moins d'animation au niveau système.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     // Garde anti-hydratation : le canvas WebGL ne doit pas être rendu côté serveur.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
