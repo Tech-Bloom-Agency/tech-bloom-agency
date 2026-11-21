@@ -86,13 +86,26 @@ function PortfolioCard({ project }: { project: PortfolioProject }) {
       <Link href={`/portfolio/${project.slug}`}>
         {/* Container Image */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-gray/10 shadow-sm group-hover:shadow-xl transition-all duration-500">
-          <Image
-            src={project.images[0]}
-            alt={project.title}
-            fill
-            className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          {/* Une référence anonymisée n'a pas de visuel : plutôt qu'une photo
+              de stock, un panneau typographique aux couleurs de la marque. */}
+          {project.images.length > 0 ? (
+            <Image
+              src={project.images[0]}
+              alt={project.title}
+              fill
+              className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex flex-col justify-end bg-navy p-6">
+              <span className="font-body text-[10px] uppercase tracking-[0.25em] text-teal">
+                {project.category}
+              </span>
+              <span className="mt-2 font-heading text-xl font-bold leading-tight text-white">
+                {project.title}
+              </span>
+            </div>
+          )}
           
           {/* Overlay teal au hover */}
           <div className="absolute inset-0 bg-teal/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

@@ -37,13 +37,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: project.title,
       description: project.shortDesc,
       url: `/portfolio/${project.slug}`,
-      images: [{ url: project.images[0], width: 1200, height: 630 }],
+      images: [{ url: project.images[0] ?? "/og/default.jpg", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: project.title,
       description: project.shortDesc,
-      images: [project.images[0]],
+      images: [project.images[0] ?? "/og/default.jpg"],
     },
   };
 }
@@ -169,22 +169,35 @@ export default async function ProjectPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Image principale */}
+            {/* Image principale, ou panneau typographique pour une
+                référence anonymisée. */}
             <div className="relative aspect-video overflow-hidden rounded-md shadow-xl">
-              <Image
-                src={project.images[0]}
-                alt={project.title}
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              {project.images.length > 0 ? (
+                <Image
+                  src={project.images[0]}
+                  alt={project.title}
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              ) : (
+                <div className="absolute inset-0 flex flex-col justify-end bg-navy p-8">
+                  <span className="font-body text-xs uppercase tracking-[0.25em] text-teal">
+                    {project.category}
+                  </span>
+                  <span className="mt-3 font-heading text-2xl font-bold leading-tight text-white lg:text-3xl">
+                    {project.title}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Galerie Images */}
+      {/* Galerie Images — masquée pour une référence sans visuel. */}
+      {project.images.length > 0 && (
       <section className="py-16 bg-beige">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
           <h2 className="text-3xl font-heading font-bold text-navy mb-8">Galerie</h2>
@@ -204,6 +217,7 @@ export default async function ProjectPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      )}
 
       {/* Description & Stack */}
       <section className="py-16 bg-white">

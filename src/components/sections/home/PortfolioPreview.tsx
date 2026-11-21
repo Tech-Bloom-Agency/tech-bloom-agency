@@ -1,13 +1,13 @@
 "use client";
 import { ArrowRight } from "lucide-react";
-import { projects } from "@/data/projects";
+import { portfolioData } from "@/data/portfolio";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 
 export default function PortfolioPreview() {
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = portfolioData.slice(0, 3);
 
   return (
     <Section id="portfolio" padding="lg" className="bg-white">
@@ -41,7 +41,7 @@ export default function PortfolioPreview() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {featuredProjects.map((project, index) => (
           <motion.div
-            key={project.id}
+            key={project.slug}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -51,19 +51,30 @@ export default function PortfolioPreview() {
             {/* Carte entière cliquable : l'appel à l'action était un <button>
                 sans handler, enfermé dans un survol — inerte au doigt. */}
             <Link
-              href="/portfolio"
+              href={`/portfolio/${project.slug}`}
               className="block rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
             >
             {/* Container image avec overlay */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-gray/10 shadow-sm group-hover:shadow-xl transition-all duration-500">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority={index === 0} // Charger le premier projet en priorité
-              />
+              {project.images.length > 0 ? (
+                <Image
+                  src={project.images[0]}
+                  alt={project.title}
+                  fill
+                  className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index === 0}
+                />
+              ) : (
+                <div className="absolute inset-0 flex flex-col justify-end bg-navy p-6">
+                  <span className="font-body text-[10px] uppercase tracking-[0.25em] text-teal">
+                    {project.category}
+                  </span>
+                  <span className="mt-2 font-heading text-xl font-bold leading-tight text-white">
+                    {project.title}
+                  </span>
+                </div>
+              )}
               
               {/* Overlay teal au hover */}
               <div className="absolute inset-0 bg-teal/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -86,7 +97,7 @@ export default function PortfolioPreview() {
                 {project.title}
               </h3>
               <p className="text-gray text-xs font-medium leading-relaxed line-clamp-2">
-                {project.summary}
+                {project.shortDesc}
               </p>
             </div>
             </Link>
