@@ -8,7 +8,7 @@ import { WHATSAPP_LINK } from "@/lib/constants";
  * 1 s (`setTimeout`), donc absent du HTML servi — invisible sur connexion
  * lente et inexistant si le JS échouait. Le libellé était en `group-hover`,
  * donc jamais affiché sur mobile, et l'icône était un combiné téléphone et
- * non le glyphe WhatsApp. Un gérant de restaurant doit comprendre où il
+ * non le glyphe WhatsApp. Un visiteur non technicien doit comprendre où il
  * clique sans survoler et sans attendre.
  */
 export default function WhatsAppButton() {

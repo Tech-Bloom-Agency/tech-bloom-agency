@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
     name: "Tech Bloom Agency",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://techbloom.dev",
     taglineFr: "Marketing digital & croissance locale",
-    description: "Agence de marketing digital à Antananarivo, Madagascar. Sites web, visibilité locale et réservation en ligne pour restaurants, hôtels et PME.",
+    description: "Agence digitale à Antananarivo, Madagascar. Création et refonte de sites web, community management, branding, SEO et accompagnement digital pour PME, entrepreneurs et agences partenaires.",
 
     // Adresse de contact principale (celle utilisée dans les emails signés).
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "sullivan@techbloom.dev",
@@ -40,10 +40,9 @@ export const WHATSAPP_LINK = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${encod
 )}`;
 
 export const NAV_LINKS = [
-    { href: "/restaurants-hotels", label: "Restaurants & Hôtels" },
+    { href: "/a-propos", label: "À propos" },
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Projets" },
     { href: "/b2b", label: "Partenaires" },
-    { href: "/a-propos", label: "À propos" },
     { href: "/contact", label: "Contact" }
 ];

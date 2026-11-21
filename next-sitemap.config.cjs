@@ -21,6 +21,12 @@ module.exports = {
     "/mentions-legales",
     "/politique-confidentialite",
     "/admin/*",
+    // Page d'atterrissage de campagne : atteignable par lien direct dans les
+    // emails de prospection, mais hors sitemap et hors index (voir le
+    // `robots: noindex` de sa metadata). Tech Bloom Agency est une agence
+    // digitale généraliste ; un segment de prospection ne doit pas devenir
+    // son positionnement aux yeux de Google.
+    "/restaurants-hotels",
   ],
   
   // Transformation des URLs

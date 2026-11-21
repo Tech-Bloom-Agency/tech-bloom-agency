@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
+import { FORMULES } from "@/data/secteurs";
 
 // Schema de validation Zod
 const contactSchema = z.object({
@@ -22,10 +23,14 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export function ContactForm() {
   const searchParams = useSearchParams();
-  // Les CTA des formules pointent vers /contact?formule=..., les cartes de
-  // services vers /contact?service=... : les deux pré-remplissent le choix.
-  const preselectedService =
-    searchParams.get("formule") || searchParams.get("service");
+  // Les CTA de la page d'atterrissage pointent vers /contact?formule=..., les
+  // cartes de services vers /contact?service=... : les deux pré-remplissent.
+  const formuleParam = searchParams.get("formule");
+  const preselectedService = formuleParam || searchParams.get("service");
+
+  const formuleLabel = formuleParam
+    ? FORMULES.find((f) => f.id === formuleParam)?.nom ?? null
+    : null;
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -189,20 +194,12 @@ export function ContactForm() {
               className="w-full bg-beige border-none rounded-md p-4 focus:ring-2 focus:ring-blue transition-all"
             >
               <option value="">Sélectionnez un service</option>
-              <optgroup label="Restaurants & hôtels">
-                <option value="carte-de-visite-web">
-                  Carte de Visite Web — 1 750 000 Ar
-                </option>
-                <option value="visible-et-joignable">
-                  Visible &amp; Joignable — 3 150 000 Ar
-                </option>
-                <option value="reservation-directe">
-                  Réservation Directe — 4 500 000 Ar
-                </option>
-                <option value="restaurants-hotels-conseil">
-                  Je ne sais pas encore quelle formule
-                </option>
-              </optgroup>
+              {/* La formule n'apparaît que pour qui arrive de la page
+                  d'atterrissage avec ?formule=... : les tarifs de campagne
+                  ne sont pas proposés aux autres visiteurs. */}
+              {formuleLabel && (
+                <option value={formuleParam ?? ""}>{formuleLabel}</option>
+              )}
               <option value="creation-web">Création de site web</option>
               <option value="branding">Branding & Identité visuelle</option>
               <option value="marketing">Marketing digital</option>

@@ -5,11 +5,11 @@ import { blogPosts } from '@/data/blog'
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  // L'offre restaurants & hôtels est la page de destination des campagnes :
-  // priorité juste derrière l'accueil.
+  // La page d'atterrissage de campagne est volontairement hors sitemap et
+  // hors index : elle est atteignable par lien direct uniquement, pour que le
+  // site ne se présente pas comme une agence spécialisée dans un secteur.
   const routes = [
     { path: '', priority: 1 },
-    { path: '/restaurants-hotels', priority: 0.9 },
     { path: '/services', priority: 0.8 },
     { path: '/portfolio', priority: 0.8 },
     { path: '/b2b', priority: 0.8 },

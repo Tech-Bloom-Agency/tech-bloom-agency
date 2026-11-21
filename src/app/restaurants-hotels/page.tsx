@@ -45,7 +45,12 @@ export const metadata: Metadata = {
     images: ["/og/default.jpg"],
   },
   alternates: { canonical: "/restaurants-hotels" },
-  robots: { index: true, follow: true },
+  // Page d'atterrissage de campagne, atteignable par lien direct uniquement.
+  // Hors index volontairement : Tech Bloom Agency est une agence digitale
+  // généraliste, et restaurants/hôtels n'est qu'une cible de prospection.
+  // Les tarifs affichés ici ne doivent pas non plus devenir le discours
+  // public de l'agence ni encadrer les devis des autres prestations.
+  robots: { index: false, follow: false },
 };
 
 /**
