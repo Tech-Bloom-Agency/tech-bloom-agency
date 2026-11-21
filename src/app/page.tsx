@@ -11,7 +11,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Tech Bloom Agency — Marketing Digital Madagascar | SEO, Social Media, Sites Web",
-  description: "Agence marketing digital à Madagascar. SEO, community management, publicité, branding et création de sites web orientés conversion.",
+  description: "Agence digitale à Antananarivo, Madagascar. Création et refonte de sites web, SEO, community management, publicité et branding orientés conversion.",
   keywords: [
     "marketing digital Madagascar",
     "community manager Madagascar",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Tech Bloom Agency — Marketing Digital Madagascar",
-    description: "SEO, community management, publicité et création de sites web orientés vente à Madagascar.",
+    description: "Création de sites web, SEO, community management, publicité et branding, depuis Antananarivo.",
     url: "/",
     siteName: "Tech Bloom Agency",
     images: [{ url: "/og/og-home.jpg", width: 1200, height: 630, alt: "Tech Bloom Agency" }],

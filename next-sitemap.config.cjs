@@ -54,8 +54,7 @@ module.exports = {
         ],
       },
     ],
-    additionalSitemaps: [
-      `${process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://techbloom.dev"}/sitemap.xml`,
-    ],
+    // Pas d'additionalSitemaps ici : /sitemap.xml EST l'index généré, il se
+    // référençait donc lui-même, ce qui crée une boucle pour les robots.
   },
 };

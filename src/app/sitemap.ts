@@ -2,6 +2,13 @@ import { MetadataRoute } from 'next'
 import { SITE_CONFIG } from '@/lib/constants'
 import { blogPosts } from '@/data/blog'
 
+/**
+ * ATTENTION — cette route est masquée en production : next-sitemap (postbuild)
+ * écrit public/sitemap.xml et public/sitemap-0.xml, et un fichier statique
+ * prime sur une route. Le sitemap réellement servi est donc celui de
+ * next-sitemap.config.cjs ; toute exclusion doit être faite là-bas aussi.
+ * Les deux sont tenus alignés en attendant de n'en garder qu'un.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
