@@ -29,11 +29,10 @@ const bitter = Bitter({
 
 export const metadata: Metadata = {
     title: {
-        default: "Tech Bloom Agency – Agence digitale premium",
+        default: "Tech Bloom Agency — Agence digitale à Antananarivo, Madagascar",
         template: `%s | ${SITE_CONFIG.name}`,
     },
-    description:
-        "Concevoir des produits digitaux performants. Agence experte en UX/UI, développement Next.js et stratégie SEO.",
+    description: SITE_CONFIG.description,
     metadataBase: SITE_CONFIG.url ? new URL(SITE_CONFIG.url) : null,
     alternates: {
         canonical: '/',

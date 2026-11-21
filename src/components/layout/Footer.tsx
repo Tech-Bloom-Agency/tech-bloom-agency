@@ -78,8 +78,33 @@ export default function Footer() {
                         <div className="space-y-6">
                             <h3 className="text-[10px] font-bold text-brand-primary uppercase tracking-[0.2em]">Contact</h3>
                             <ul className="space-y-4 text-xs font-bold uppercase tracking-widest">
-                                <li className="hover:text-brand-red-rose transition-colors cursor-pointer">{SITE_CONFIG.email}</li>
-                                <li className="hover:text-brand-red-rose transition-colors cursor-pointer">{SITE_CONFIG.phone}</li>
+                                {/* Liens réels : l'ancienne version affichait un
+                                    curseur « main » sur de simples <li>, donc un
+                                    appui sans effet sur mobile. */}
+                                <li>
+                                    <a
+                                        href={`mailto:${SITE_CONFIG.email}`}
+                                        className="normal-case tracking-normal hover:text-brand-red-rose transition-colors"
+                                    >
+                                        {SITE_CONFIG.email}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href={`mailto:${SITE_CONFIG.emailAlt}`}
+                                        className="normal-case tracking-normal opacity-70 hover:text-brand-red-rose hover:opacity-100 transition-colors"
+                                    >
+                                        {SITE_CONFIG.emailAlt}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href={`tel:${SITE_CONFIG.phoneE164}`}
+                                        className="hover:text-brand-red-rose transition-colors"
+                                    >
+                                        {SITE_CONFIG.phone}
+                                    </a>
+                                </li>
                                 <li className="opacity-60">{SITE_CONFIG.address}</li>
                             </ul>
                         </div>
@@ -93,7 +118,7 @@ export default function Footer() {
                         <div className="flex items-center space-x-8 text-[10px] font-bold uppercase tracking-[0.1em]">
                             <Link href="/mentions-legales" className="hover:text-brand-primary transition-colors">Confidentialité</Link>
                             <Link href="/mentions-legales" className="hover:text-brand-primary transition-colors">Mentions légales</Link>
-                            <span className="opacity-40">Madagascar</span>
+                            <span className="opacity-40">{SITE_CONFIG.address}</span>
                         </div>
                     </div>
                 </div>

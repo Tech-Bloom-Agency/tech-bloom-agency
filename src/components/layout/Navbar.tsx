@@ -44,7 +44,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-12">
+        <div className="hidden lg:flex items-center gap-x-6 xl:gap-x-9">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -71,7 +71,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen((v) => !v)}
-          className="md:hidden p-2 transition-colors"
+          className="lg:hidden p-2 transition-colors"
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={isOpen}
         >
@@ -90,7 +90,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-white z-[60] md:hidden flex flex-col p-8 pt-24 space-y-8"
+            className="fixed inset-0 bg-white z-[60] lg:hidden flex flex-col p-8 pt-24 space-y-8"
           >
             <Link
               href="/"

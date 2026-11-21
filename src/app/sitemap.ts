@@ -1,22 +1,35 @@
 import { MetadataRoute } from 'next'
 import { SITE_CONFIG } from '@/lib/constants'
+import { blogPosts } from '@/data/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date()
+
+  // L'offre restaurants & hôtels est la page de destination des campagnes :
+  // priorité juste derrière l'accueil.
   const routes = [
-    '',
-    '/a-propos',
-    '/services',
-    '/portfolio',
-    '/blog',
-    '/contact',
-    '/mentions-legales',
-    '/b2b',
+    { path: '', priority: 1 },
+    { path: '/restaurants-hotels', priority: 0.9 },
+    { path: '/services', priority: 0.8 },
+    { path: '/portfolio', priority: 0.8 },
+    { path: '/b2b', priority: 0.8 },
+    { path: '/a-propos', priority: 0.7 },
+    { path: '/contact', priority: 0.7 },
+    { path: '/blog', priority: 0.6 },
+    { path: '/mentions-legales', priority: 0.3 },
   ].map((route) => ({
-    url: `${SITE_CONFIG.url}${route}`,
-    lastModified: new Date(),
+    url: `${SITE_CONFIG.url}${route.path}`,
+    lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route.priority,
   }))
 
-  return routes
+  const articles = blogPosts.map((post) => ({
+    url: `${SITE_CONFIG.url}/blog/${post.id}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'yearly' as const,
+    priority: 0.5,
+  }))
+
+  return [...routes, ...articles]
 }

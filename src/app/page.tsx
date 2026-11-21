@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/home/Hero";
+import SecteursPreview from "@/components/sections/home/SecteursPreview";
 import HomeServices from "@/components/sections/home/HomeServices";
 import PortfolioPreview from "@/components/sections/home/PortfolioPreview";
 import Testimonials from "@/components/sections/home/Testimonials";
@@ -39,31 +40,44 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-// Schema.org JSON-LD
+// Schema.org JSON-LD — ProfessionalService (sous-type de LocalBusiness) pour
+// le référencement local à Antananarivo. L'ancien bloc publiait l'email Gmail
+// personnel du fondateur, inversait son prénom et pointait vers une page
+// Facebook inexistante ; il n'avait pas non plus de ville.
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Tech Bloom Agency",
+  "@type": "ProfessionalService",
+  "name": SITE_CONFIG.name,
   "alternateName": "TBA",
-  "description": "Agence digitale à Madagascar : création de sites web, branding, marketing digital et community management.",
+  "description": SITE_CONFIG.description,
   "url": SITE_CONFIG.url,
   "logo": `${SITE_CONFIG.url}/logo/TBA-logo-horizontal.png`,
   "image": `${SITE_CONFIG.url}/og/og-home.jpg`,
-  "telephone": "+261341060802",
-  "email": "sullivanjoro3@gmail.com",
+  "telephone": SITE_CONFIG.phoneE164,
+  "email": SITE_CONFIG.email,
   "founder": {
     "@type": "Person",
-    "name": "Sullivan Joro Rakotoniaina",
+    "name": SITE_CONFIG.founder,
     "jobTitle": "Fondateur et Directeur"
   },
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": SITE_CONFIG.city,
+    "addressRegion": SITE_CONFIG.region,
     "addressCountry": "MG"
   },
-  "areaServed": ["Madagascar","France","Belgique","Suisse","Afrique francophone"],
+  "areaServed": [
+    "Antananarivo",
+    "Madagascar",
+    "France",
+    "Belgique",
+    "Suisse",
+    "Afrique francophone"
+  ],
   "sameAs": [
-    "https://facebook.com/techbloomagency",
-    "https://linkedin.com/company/tech-bloom-agency"
+    SITE_CONFIG.social.facebook,
+    SITE_CONFIG.social.instagram,
+    SITE_CONFIG.social.linkedin
   ]
 };
 
@@ -78,6 +92,9 @@ export default function Page() {
 
       {/* Luxury Hero with 3D animations and parallax */}
       <Hero />
+
+      {/* Entrée vers l'offre restaurants & hôtels */}
+      <SecteursPreview />
 
       {/* Services with luxury card effects */}
       <HomeServices />

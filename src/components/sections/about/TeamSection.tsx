@@ -1,7 +1,18 @@
 import { SITE_CONFIG } from "@/lib/constants";
-import { Award, Briefcase, Zap, Github, Linkedin, Mail } from "lucide-react";
-import Image from "next/image";
+import { Award, Briefcase, Zap, Linkedin, Mail } from "lucide-react";
 
+/**
+ * Équipe.
+ *
+ * Les deux portraits étaient des photos Pexels, commentées « Image de
+ * placeholder » dans le code et servies en production avec le nom du
+ * fondateur en texte alternatif. Un monogramme ne prétend ressembler à
+ * personne : il tient la place jusqu'à de vraies photos.
+ *
+ * Les icônes sociales étaient de simples pictogrammes avec un curseur
+ * « main » et aucun lien — un appui sans effet sur mobile. Elles ne
+ * s'affichent désormais que lorsqu'une adresse existe réellement.
+ */
 const TEAM = [
     {
         name: SITE_CONFIG.founder,
@@ -9,7 +20,18 @@ const TEAM = [
         expertise: "Stratégie, Web Dev, IA",
         experience: "5+ ans",
         tools: ["Next.js", "Claude/GPT", "Tailwind", "Figma"],
-        image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800", // Image de placeholder
+        links: [
+            {
+                label: "Écrire à Sullivan",
+                href: `mailto:${SITE_CONFIG.email}`,
+                icon: Mail,
+            },
+            {
+                label: "Tech Bloom Agency sur LinkedIn",
+                href: SITE_CONFIG.social.linkedin,
+                icon: Linkedin,
+            },
+        ],
     },
     {
         name: "Liana R.",
@@ -17,9 +39,18 @@ const TEAM = [
         expertise: "Content Strategy, Branding",
         experience: "3+ ans",
         tools: ["Canva", "Meta Business Suite", "Capcut"],
-        image: "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=800", // Image de placeholder
-    }
+        links: [],
+    },
 ];
+
+/** « Sullivan Joro RAKOTONIAINA » → « SR ». */
+function initiales(nom: string): string {
+    const mots = nom.trim().split(/\s+/).filter(Boolean);
+    if (mots.length === 0) return "?";
+    const premier = mots[0][0];
+    const dernier = mots.length > 1 ? mots[mots.length - 1][0] : "";
+    return (premier + dernier).toUpperCase();
+}
 
 export default function TeamSection() {
     return (
@@ -33,23 +64,21 @@ export default function TeamSection() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                    {TEAM.map((member, index) => (
-                        <div key={index} className="group bg-brand-light rounded-agency p-8 border border-gray-100 hover:border-brand-blue/20 transition-all duration-500 hover:shadow-2xl">
+                    {TEAM.map((member) => (
+                        <div key={member.name} className="group bg-brand-light rounded-agency p-8 border border-gray-100 hover:border-brand-blue/20 transition-all duration-500 hover:shadow-2xl">
                             <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-                                <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-agency overflow-hidden shadow-lg flex-shrink-0">
-                                    <Image
-                                        src={member.image}
-                                        alt={member.name}
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
+                                <div
+                                    aria-hidden="true"
+                                    className="flex w-32 h-32 md:w-48 md:h-48 shrink-0 items-center justify-center rounded-agency bg-navy font-heading text-4xl md:text-5xl font-bold tracking-wide text-beige shadow-lg"
+                                >
+                                    {initiales(member.name)}
                                 </div>
                                 <div className="space-y-4 text-center md:text-left">
                                     <div>
                                         <h3 className="text-2xl font-sans font-bold text-brand-dark">{member.name}</h3>
                                         <p className="text-brand-blue font-semibold">{member.role}</p>
                                     </div>
-                                    
+
                                     <div className="space-y-2">
                                         <div className="flex items-center gap-2 text-sm text-gray-600 justify-center md:justify-start">
                                             <Award size={16} className="text-brand-blue" />
@@ -65,11 +94,25 @@ export default function TeamSection() {
                                         </div>
                                     </div>
 
-                                    <div className="flex justify-center md:justify-start gap-4 pt-2">
-                                        <Linkedin size={20} className="text-gray-400 hover:text-brand-blue cursor-pointer" />
-                                        <Github size={20} className="text-gray-400 hover:text-brand-blue cursor-pointer" />
-                                        <Mail size={20} className="text-gray-400 hover:text-brand-blue cursor-pointer" />
-                                    </div>
+                                    {member.links.length > 0 && (
+                                        <div className="flex justify-center md:justify-start gap-4 pt-2">
+                                            {member.links.map((lien) => {
+                                                const Icone = lien.icon;
+                                                return (
+                                                    <a
+                                                        key={lien.href}
+                                                        href={lien.href}
+                                                        aria-label={lien.label}
+                                                        target={lien.href.startsWith("http") ? "_blank" : undefined}
+                                                        rel={lien.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                                        className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-gray-400 transition-colors hover:text-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+                                                    >
+                                                        <Icone size={20} aria-hidden="true" />
+                                                    </a>
+                                                );
+                                            })}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

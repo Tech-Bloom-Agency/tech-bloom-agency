@@ -22,7 +22,10 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export function ContactForm() {
   const searchParams = useSearchParams();
-  const preselectedService = searchParams.get("service");
+  // Les CTA des formules pointent vers /contact?formule=..., les cartes de
+  // services vers /contact?service=... : les deux pré-remplissent le choix.
+  const preselectedService =
+    searchParams.get("formule") || searchParams.get("service");
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -186,6 +189,20 @@ export function ContactForm() {
               className="w-full bg-beige border-none rounded-md p-4 focus:ring-2 focus:ring-blue transition-all"
             >
               <option value="">Sélectionnez un service</option>
+              <optgroup label="Restaurants & hôtels">
+                <option value="carte-de-visite-web">
+                  Carte de Visite Web — 1 750 000 Ar
+                </option>
+                <option value="visible-et-joignable">
+                  Visible &amp; Joignable — 3 150 000 Ar
+                </option>
+                <option value="reservation-directe">
+                  Réservation Directe — 4 500 000 Ar
+                </option>
+                <option value="restaurants-hotels-conseil">
+                  Je ne sais pas encore quelle formule
+                </option>
+              </optgroup>
               <option value="creation-web">Création de site web</option>
               <option value="branding">Branding & Identité visuelle</option>
               <option value="marketing">Marketing digital</option>

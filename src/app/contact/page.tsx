@@ -56,6 +56,12 @@ export default function ContactPage() {
                     >
                       {SITE_CONFIG.email}
                     </a>
+                    <a
+                      href={`mailto:${SITE_CONFIG.emailAlt}`}
+                      className="mt-1 block text-sm font-medium text-gray hover:text-blue transition-colors"
+                    >
+                      {SITE_CONFIG.emailAlt}
+                    </a>
                   </div>
                 </div>
 
@@ -68,7 +74,7 @@ export default function ContactPage() {
                       Téléphone
                     </p>
                     <a
-                      href={`tel:${SITE_CONFIG.phone}`}
+                      href={`tel:${SITE_CONFIG.phoneE164}`}
                       className="text-lg font-semibold text-navy hover:text-blue transition-colors"
                     >
                       {SITE_CONFIG.phone}
