@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { BarChart3, Building2, Check, Palette, ShoppingBag } from "lucide-react";
 
 export default function B2BPortfolio() {
@@ -129,20 +130,18 @@ export default function B2BPortfolio() {
                         <p className="text-lg mb-6 opacity-90">
                             Rejoignez nos partenaires et transformez vos contraintes en opportunités de croissance.
                         </p>
-                        <div className="grid md:grid-cols-3 gap-6 text-center">
-                            <div>
-                                <div className="text-3xl font-bold mb-2">50+</div>
-                                <div className="text-sm opacity-80">Projets réalisés</div>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold mb-2">25+</div>
-                                <div className="text-sm opacity-80">Agences partenaires</div>
-                            </div>
-                            <div>
-                                <div className="text-3xl font-bold mb-2">98%</div>
-                                <div className="text-sm opacity-80">Clients satisfaits</div>
-                            </div>
-                        </div>
+                        {/* Retiré : « 50+ projets réalisés », « 25+ agences
+                            partenaires », « 98% clients satisfaits ». Aucun de
+                            ces trois chiffres n'était défendable, et ils
+                            contredisaient le « 13 projets livrés » de
+                            l'accueil. Un appel à l'action vaut mieux qu'un
+                            compteur qu'on ne peut pas prouver en rendez-vous. */}
+                        <Link
+                            href="/contact?service=accompagnement-digital"
+                            className="inline-flex min-h-[52px] items-center justify-center bg-white px-8 text-sm font-bold uppercase tracking-[0.15em] text-blue transition-colors hover:bg-beige focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                        >
+                            Devenir partenaire
+                        </Link>
                     </div>
                 </div>
             </div>
