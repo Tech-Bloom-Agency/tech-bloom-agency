@@ -24,8 +24,9 @@ export default function DelaiEtPaiement() {
                             horaires. C&apos;est la seule chose que nous attendons de vous.
                         </p>
                         <p className="mt-6 text-pretty font-body text-base leading-relaxed text-beige/60">
-                            Si nous dépassons ce délai pour une raison qui nous
-                            appartient, vous ne payez pas la dernière échéance.
+                            Ce délai est écrit dans votre devis, avec le périmètre
+                            exact. Si quelque chose doit glisser, vous l&apos;apprenez
+                            de nous le jour où nous le savons, pas à la livraison.
                         </p>
                     </div>
 

@@ -24,6 +24,14 @@ export interface Formule {
     miseEnAvant: boolean;
 }
 
+/**
+ * Ce qui se renouvelle après la première année. Le montant n'est pas affiché :
+ * il figure dans le devis. À remplacer par un chiffre dès que Sullivan l'a
+ * fixé, pour qu'un gérant ne le découvre pas au treizième mois.
+ */
+export const RENOUVELLEMENT =
+    "À partir de la deuxième année, le nom de domaine et l'hébergement se renouvellent. Le montant est indiqué dans votre devis, avant que vous n'engagiez quoi que ce soit.";
+
 /** Délai d'exécution annoncé, identique pour les trois formules. */
 export const DELAI_LIVRAISON = "14 jours ouvrés";
 
@@ -62,6 +70,7 @@ export const FORMULES: Formule[] = [
             "Horaires, photos et présentation de votre établissement",
             "Votre fiche Google créée ou reprise en main",
             "Nom de domaine et hébergement la première année",
+            "Deux séries de retours incluses sur la maquette",
         ],
         miseEnAvant: false,
     },
@@ -81,6 +90,7 @@ export const FORMULES: Formule[] = [
             "Formulaire de demande relié à votre boîte mail",
             "Galerie photo de votre établissement",
             "Statistiques simples : combien de visites, combien d'appels",
+            "Deux séries de retours incluses sur la maquette",
         ],
         miseEnAvant: true,
     },
@@ -94,11 +104,12 @@ export const FORMULES: Formule[] = [
         inclus: [
             "Tout ce que contient Visible & Joignable",
             "Réservation en ligne : date, heure, nombre de couverts ou de nuits",
-            "La demande vous arrive aussitôt par email et par WhatsApp",
+            "La demande vous arrive aussitôt par email, avec tous les détails",
             "Vous confirmez ou refusez en un clic, depuis votre téléphone",
             "Vos créneaux, votre capacité et vos jours de fermeture paramétrables",
             "Aucune commission prélevée sur vos réservations",
             "Récapitulatif de vos réservations de la semaine",
+            "Deux séries de retours incluses sur la maquette",
         ],
         miseEnAvant: false,
     },

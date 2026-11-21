@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Check } from "lucide-react";
-import { FORMULES, DELAI_LIVRAISON } from "@/data/secteurs";
+import { FORMULES, DELAI_LIVRAISON, RENOUVELLEMENT } from "@/data/secteurs";
 
 /**
  * Les trois formules, avec leurs prix en ariary.
@@ -133,6 +133,12 @@ export default function FormulesTarifs() {
                         </article>
                     ))}
                 </div>
+
+                {/* Ce qui revient après la première année : écrit ici pour
+                    qu'un gérant ne le découvre pas au treizième mois. */}
+                <p className="mt-10 max-w-3xl border-l-2 border-teal pl-5 text-pretty font-body text-sm leading-relaxed text-navy/65">
+                    {RENOUVELLEMENT}
+                </p>
             </div>
         </section>
     );
