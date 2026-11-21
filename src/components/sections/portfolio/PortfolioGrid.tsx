@@ -149,6 +149,12 @@ function PortfolioCard({ project }: { project: PortfolioProject }) {
                   Facebook
                 </a>
               )}
+              {/* Site livré et public : la preuve la plus directe. */}
+              {project.socialLinks.website && (
+                <span className="inline-flex items-center rounded-full bg-teal/10 px-3 py-1 text-[10px] uppercase tracking-wider text-teal">
+                  Site en ligne
+                </span>
+              )}
             </div>
           )}
         </div>

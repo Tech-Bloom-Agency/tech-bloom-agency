@@ -1,15 +1,21 @@
 /**
- * Offre restaurants & hôtels.
+ * Offre restaurants & hôtels (page d'atterrissage de campagne).
  *
- * Les trois formules, le délai et l'échéancier sont des engagements
- * commerciaux : ils vivent ici, en un seul endroit, pour qu'un changement de
- * tarif ne demande pas de retoucher le JSX.
+ * Les trois formules, le délai et l'échéancier vivent ici, en un seul
+ * endroit, pour qu'un changement de tarif ne demande pas de retoucher le JSX.
+ *
+ * Les montants sont INDICATIFS : ils donnent un ordre de grandeur et un point
+ * de départ. Le devis ferme vient après un échange où l'on comprend la
+ * demande — ce qui est déjà en place, ce qui manque, ce que la personne perd
+ * aujourd'hui. Aucun écran ne doit laisser croire qu'on vend un paquet sans
+ * avoir écouté.
  */
 
 export interface Formule {
     id: string;
     nom: string;
     prixAriary: number;
+    /** Montant indicatif, formaté. Jamais présenté comme un devis. */
     prixAffiche: string;
     promesse: string;
     pourQui: string;

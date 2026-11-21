@@ -147,6 +147,25 @@ export default async function ProjectPage({ params }: PageProps) {
                   <p className="text-xs text-gray uppercase tracking-widest mb-1">Année</p>
                   <p className="font-semibold text-navy">{project.year}</p>
                 </div>
+                {/* Le site livré, quand il est public : c'est la preuve la plus
+                    directe du travail. Le champ existait dans le type sans
+                    jamais être affiché. */}
+                {project.socialLinks?.website && (
+                  <div>
+                    <p className="text-xs text-gray uppercase tracking-widest mb-1">
+                      En ligne
+                    </p>
+                    <a
+                      href={project.socialLinks.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-[32px] items-center gap-1.5 font-semibold text-blue underline underline-offset-4 transition-colors hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+                    >
+                      {project.socialLinks.website.replace(/^https?:\/\//, "")}
+                      <ExternalLink size={14} aria-hidden="true" />
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
 

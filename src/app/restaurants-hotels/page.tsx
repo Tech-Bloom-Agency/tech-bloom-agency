@@ -11,7 +11,7 @@ import { FORMULES, SECTEURS, DELAI_LIVRAISON } from "@/data/secteurs";
 export const metadata: Metadata = {
   title: "Site web pour restaurants et hôtels à Antananarivo — Tarifs | Tech Bloom Agency",
   description:
-    "Sites web pour restaurants et hôtels à Madagascar : bouton WhatsApp, visibilité Google locale et réservation en ligne sans commission. Trois formules à partir de 1 750 000 Ar, livrées en 14 jours ouvrés.",
+    "Sites web pour restaurants et hôtels à Madagascar : bouton WhatsApp, visibilité Google locale et réservation en ligne sans commission. Trois formules, tarifs indicatifs à partir de 1 750 000 Ar, livrées en 14 jours ouvrés.",
   keywords: [
     "site web restaurant Antananarivo",
     "site web hôtel Madagascar",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     title: "Sites web pour restaurants et hôtels — Tech Bloom Agency",
     description:
-      "Trois formules claires, prix affichés en ariary, livraison en 14 jours ouvrés. WhatsApp, visibilité Google et réservation directe.",
+      "Trois formules claires, tarifs indicatifs en ariary, livraison en 14 jours ouvrés. WhatsApp, visibilité Google et réservation directe.",
     url: "/restaurants-hotels",
     siteName: SITE_CONFIG.name,
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sites web pour restaurants et hôtels — Tech Bloom Agency",
     description:
-      "Trois formules, prix affichés, livraison en 14 jours ouvrés à Antananarivo.",
+      "Trois formules, tarifs indicatifs, livraison en 14 jours ouvrés à Antananarivo.",
     images: ["/og/default.jpg"],
   },
   alternates: { canonical: "/restaurants-hotels" },
@@ -86,8 +86,12 @@ const offreSchema = {
       "@type": "Offer",
       "name": formule.nom,
       "description": formule.promesse,
-      "price": formule.prixAriary,
-      "priceCurrency": "MGA",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": formule.prixAriary,
+        "priceCurrency": "MGA",
+        "valueAddedTaxIncluded": true,
+      },
       "itemOffered": {
         "@type": "Service",
         "name": formule.nom,
@@ -120,7 +124,7 @@ export default function RestaurantsHotelsPage() {
           <p className="mt-8 max-w-2xl text-pretty font-body text-lg leading-relaxed text-beige/70 lg:text-xl">
             Bouton WhatsApp sur chaque écran, visibilité sur Google à{" "}
             {SITE_CONFIG.city}, et réservation en direct sans commission. Trois
-            formules, prix affichés, livraison en {DELAI_LIVRAISON}.
+            formules, tarifs indicatifs, livraison en {DELAI_LIVRAISON}.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 font-body text-sm text-beige/60">

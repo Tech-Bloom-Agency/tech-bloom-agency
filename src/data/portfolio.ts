@@ -24,6 +24,34 @@ export interface PortfolioProject {
 
 export const portfolioData: PortfolioProject[] = [
   {
+    // Faits vérifiés le 21/11/2026 : site en ligne (HTTP 200), titre et
+    // description relevés sur passionprestige.mg, dépendances lues dans le
+    // package.json du dépôt, visuels repris du site du client.
+    slug: "passion-prestige",
+    title: "Passion Prestige Madagascar",
+    client: "Passion Prestige",
+    category: "Application web",
+    shortDesc: "Site et réservation en ligne pour six maisons de beauté et de bien-être à Madagascar.",
+    description: "Plateforme réunissant six maisons — coiffure, soins, spa et bien-être — sous une même marque. Le visiteur choisit la maison, la prestation, le praticien puis son créneau, et reçoit sa confirmation sans passer un appel. Les équipes disposent d'un espace de gestion pour leur planning, leurs praticiens, leurs prestations et leurs rendez-vous. Déployé sur Cloudflare Workers.",
+    images: [
+      "/portfolio/passion-prestige/imperial-accueil.jpg",
+      "/portfolio/passion-prestige/salon-coiffure.jpg",
+      "/portfolio/passion-prestige/majorel-transat.jpg"
+    ],
+    stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Cloudflare Workers"],
+    socialLinks: {
+      website: "https://passionprestige.mg"
+    },
+    // Périmètre livré, et non des chiffres de performance : aucune mesure
+    // n'a été relevée côté client à ce jour.
+    results: [
+      "Réservation en ligne pour six établissements",
+      "Planning et rendez-vous gérés par les équipes",
+      "Prise de rendez-vous sans appel téléphonique"
+    ],
+    year: 2026
+  },
+  {
     slug: "ecommerce-mode-textile",
     title: "E-commerce Mode & Textile",
     client: "Mode-Eco",

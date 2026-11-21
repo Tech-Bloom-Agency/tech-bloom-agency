@@ -16,12 +16,19 @@ export default function FormulesTarifs() {
                     Trois formules
                 </span>
                 <h2 className="max-w-3xl text-balance font-heading text-4xl font-bold leading-tight tracking-[-0.02em] text-navy md:text-5xl">
-                    Des prix affichés, et un devis qui ne bouge pas.
+                    Des ordres de grandeur, pour savoir où vous mettez les pieds.
                 </h2>
                 <p className="mt-6 max-w-2xl text-pretty font-body text-lg leading-relaxed text-navy/70">
-                    Le même tarif pour un restaurant ou un hôtel. Chaque formule
-                    contient la précédente. Livraison en {DELAI_LIVRAISON}, quelle que
-                    soit la formule.
+                    Chaque formule contient la précédente, et la livraison est de{" "}
+                    {DELAI_LIVRAISON} dans les trois cas. Ces montants sont
+                    indicatifs : ils vous évitent de demander un devis pour savoir
+                    si c&apos;est dans vos moyens.
+                </p>
+                <p className="mt-5 max-w-2xl text-pretty font-body text-base leading-relaxed text-navy/60">
+                    Le devis, lui, vient après : nous regardons d&apos;abord ce que
+                    vous avez déjà, ce qui vous manque et ce que vous perdez
+                    aujourd&apos;hui. Le périmètre est écrit avant que vous
+                    n&apos;engagiez quoi que ce soit.
                 </p>
 
                 <div className="mt-16 grid gap-6 lg:grid-cols-3 lg:items-start">
@@ -58,7 +65,14 @@ export default function FormulesTarifs() {
                             </p>
 
                             <p
-                                className={`mt-8 font-heading text-[2rem] font-bold leading-none tracking-[-0.02em] ${
+                                className={`mt-8 font-body text-xs uppercase tracking-[0.15em] ${
+                                    formule.miseEnAvant ? "text-beige/60" : "text-navy/50"
+                                }`}
+                            >
+                                À partir de
+                            </p>
+                            <p
+                                className={`mt-1 font-heading text-[2rem] font-bold leading-none tracking-[-0.02em] ${
                                     formule.miseEnAvant ? "text-white" : "text-navy"
                                 }`}
                             >
@@ -69,7 +83,7 @@ export default function FormulesTarifs() {
                                     formule.miseEnAvant ? "text-beige/60" : "text-navy/50"
                                 }`}
                             >
-                                Tout compris, une seule fois
+                                Tarif indicatif · devis après échange
                             </p>
 
                             <p
@@ -114,7 +128,7 @@ export default function FormulesTarifs() {
                                         : "border-2 border-navy text-navy hover:bg-navy hover:text-white focus-visible:outline-navy"
                                 }`}
                             >
-                                Demander cette formule
+                                En parler pour mon établissement
                             </Link>
                         </article>
                     ))}
